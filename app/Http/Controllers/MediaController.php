@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Media;
 use App\Models\Album;
+use App\Models\Media;
 use App\Models\Tag;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
 
 class MediaController extends Controller
 {
@@ -49,7 +51,11 @@ class MediaController extends Controller
     {
         $request->validate([
             'file' => 'required|file|mimes:jpeg,jpg,png,gif,mp4,mov,avi,wmv|max:51200', // 50MB max
-            'album_id' => 'nullable|exists:albums,id',
+            'album_id' => [
+                'nullable',
+                Rule::exists('albums', 'id')
+                    ->where(fn ($query) => $query->where('user_id', $request->user()->id)),
+            ],
             'description' => 'nullable|string|max:1000',
             'privacy' => 'nullable|in:public,friends_only,private',
             'tags' => 'nullable|array',
@@ -64,8 +70,8 @@ class MediaController extends Controller
         $fileType = str_starts_with($mimeType, 'image') ? 'image' : 'video';
 
         // Store the file
-        $directory = 'media/' . $fileType . 's/' . $user->id;
-        $fileName = Str::random(40) . '.' . $file->getClientOriginalExtension();
+        $directory = 'media/'.$fileType.'s/'.$user->id;
+        $fileName = Str::random(40).'.'.$file->getClientOriginalExtension();
         $filePath = $file->storeAs($directory, $fileName, 'public');
 
         // Get file dimensions for images
@@ -115,7 +121,7 @@ class MediaController extends Controller
         $media = Media::with(['user', 'album', 'tags'])->findOrFail($id);
 
         // Check if user can view this media
-        if (!$media->isVisibleTo($request->user())) {
+        if (! $media->isVisibleTo($request->user())) {
             return response()->json(['message' => 'Unauthorized'], 403);
         }
 
@@ -135,7 +141,11 @@ class MediaController extends Controller
         }
 
         $request->validate([
-            'album_id' => 'nullable|exists:albums,id',
+            'album_id' => [
+                'nullable',
+                Rule::exists('albums', 'id')
+                    ->where(fn ($query) => $query->where('user_id', $request->user()->id)),
+            ],
             'description' => 'nullable|string|max:1000',
             'privacy' => 'sometimes|in:public,friends_only,private',
             'tags' => 'nullable|array',
@@ -190,7 +200,7 @@ class MediaController extends Controller
     public function feed(Request $request)
     {
         $user = $request->user();
-        
+
         $media = Media::with(['user', 'album', 'tags'])
             ->visibleTo($user)
             ->orderBy('created_at', 'desc')
@@ -204,14 +214,18 @@ class MediaController extends Controller
      */
     public function gallery(Request $request, $userId)
     {
-        $user = \App\Models\User::findOrFail($userId);
+        $user = User::findOrFail($userId);
         $viewer = $request->user();
 
         // Get albums visible to viewer
-        $albums = Album::with('media')
+        $albums = Album::with([
+            'media' => fn ($query) => $query->visibleTo($viewer),
+        ])
             ->where('user_id', $userId)
             ->visibleTo($viewer)
-            ->withCount('media')
+            ->withCount([
+                'media' => fn ($query) => $query->visibleTo($viewer),
+            ])
             ->orderBy('created_at', 'desc')
             ->get();
 

@@ -1,17 +1,24 @@
 <?php
 
-use App\Http\Controllers\ConversationController;
-use App\Http\Controllers\MessageController;
-use App\Http\Controllers\MediaController;
 use App\Http\Controllers\AlbumController;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\ConversationController;
+use App\Http\Controllers\FeedController;
+use App\Http\Controllers\FollowerController;
+use App\Http\Controllers\FriendshipController;
+use App\Http\Controllers\GroupController;
+use App\Http\Controllers\GroupMemberController;
+use App\Http\Controllers\GroupPostController;
+use App\Http\Controllers\GroupSearchController;
+use App\Http\Controllers\LikeController;
+use App\Http\Controllers\MediaController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\ShareController;
+use App\Http\Controllers\UserSearchController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PostController;
-use App\Http\Controllers\CommentController;
-use App\Http\Controllers\LikeController;
-use App\Http\Controllers\ShareController;
-use App\Http\Controllers\FeedController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,15 +48,16 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/messages/unread-count', [MessageController::class, 'unreadCount']);
     Route::get('/messages/conversation/{user}', [MessageController::class, 'conversation']);
     Route::get('/messages/{message}', [MessageController::class, 'show']);
+    Route::get('/messages/{message}/attachments/{attachment}', [MessageController::class, 'downloadAttachment']);
     Route::delete('/messages/{message}', [MessageController::class, 'destroy']);
-    
+
     // Message Reactions
     Route::post('/messages/{message}/reactions', [MessageController::class, 'addReaction']);
     Route::delete('/messages/{message}/reactions/{emoji}', [MessageController::class, 'removeReaction']);
-    
+
     // Typing Indicator
     Route::post('/messages/typing', [MessageController::class, 'typing']);
-    
+
     // Conversations
     Route::get('/conversations', [ConversationController::class, 'index']);
     Route::post('/conversations', [ConversationController::class, 'store']);
@@ -86,21 +94,21 @@ Route::middleware('auth:sanctum')->group(function () {
 
 // Friend request routes
 Route::middleware('auth:sanctum')->prefix('friendships')->group(function () {
-    Route::get('/', [\App\Http\Controllers\FriendshipController::class, 'index']);
-    Route::post('/send', [\App\Http\Controllers\FriendshipController::class, 'send']);
-    Route::post('/accept', [\App\Http\Controllers\FriendshipController::class, 'accept']);
-    Route::post('/reject', [\App\Http\Controllers\FriendshipController::class, 'reject']);
+    Route::get('/', [FriendshipController::class, 'index']);
+    Route::post('/send', [FriendshipController::class, 'send']);
+    Route::post('/accept', [FriendshipController::class, 'accept']);
+    Route::post('/reject', [FriendshipController::class, 'reject']);
 });
 
 // Follower routes
 Route::middleware('auth:sanctum')->prefix('followers')->group(function () {
-    Route::get('/', [\App\Http\Controllers\FollowerController::class, 'index']);
-    Route::post('/follow', [\App\Http\Controllers\FollowerController::class, 'follow']);
-    Route::post('/unfollow', [\App\Http\Controllers\FollowerController::class, 'unfollow']);
+    Route::get('/', [FollowerController::class, 'index']);
+    Route::post('/follow', [FollowerController::class, 'follow']);
+    Route::post('/unfollow', [FollowerController::class, 'unfollow']);
 });
 
 // User search routes
-Route::middleware('auth:sanctum')->get('/users/search', [\App\Http\Controllers\UserSearchController::class, 'search']);
+Route::middleware(['auth:sanctum', 'throttle:user-search'])->get('/users/search', [UserSearchController::class, 'search']);
 
 // Media routes
 Route::middleware('auth:sanctum')->prefix('media')->group(function () {
@@ -126,32 +134,32 @@ Route::middleware('auth:sanctum')->prefix('albums')->group(function () {
 // Group routes
 Route::middleware('auth:sanctum')->prefix('groups')->group(function () {
     // Group search and discovery (must be before /{id} routes)
-    Route::get('/search/query', [\App\Http\Controllers\GroupSearchController::class, 'search']);
-    Route::get('/search/suggestions', [\App\Http\Controllers\GroupSearchController::class, 'suggestions']);
-    Route::get('/search/popular', [\App\Http\Controllers\GroupSearchController::class, 'popular']);
-    
+    Route::get('/search/query', [GroupSearchController::class, 'search']);
+    Route::get('/search/suggestions', [GroupSearchController::class, 'suggestions']);
+    Route::get('/search/popular', [GroupSearchController::class, 'popular']);
+
     // Group CRUD
-    Route::get('/', [\App\Http\Controllers\GroupController::class, 'index']);
-    Route::post('/', [\App\Http\Controllers\GroupController::class, 'store']);
-    Route::get('/{id}', [\App\Http\Controllers\GroupController::class, 'show']);
-    Route::put('/{id}', [\App\Http\Controllers\GroupController::class, 'update']);
-    Route::delete('/{id}', [\App\Http\Controllers\GroupController::class, 'destroy']);
-    
+    Route::get('/', [GroupController::class, 'index']);
+    Route::post('/', [GroupController::class, 'store']);
+    Route::get('/{id}', [GroupController::class, 'show']);
+    Route::put('/{id}', [GroupController::class, 'update']);
+    Route::delete('/{id}', [GroupController::class, 'destroy']);
+
     // Group members
-    Route::get('/{id}/members', [\App\Http\Controllers\GroupController::class, 'members']);
-    Route::get('/{id}/pending-members', [\App\Http\Controllers\GroupController::class, 'pendingMembers']);
-    
+    Route::get('/{id}/members', [GroupController::class, 'members']);
+    Route::get('/{id}/pending-members', [GroupController::class, 'pendingMembers']);
+
     // Group membership management
-    Route::post('/{groupId}/join', [\App\Http\Controllers\GroupMemberController::class, 'join']);
-    Route::post('/{groupId}/leave', [\App\Http\Controllers\GroupMemberController::class, 'leave']);
-    Route::post('/{groupId}/members/{userId}/approve', [\App\Http\Controllers\GroupMemberController::class, 'approve']);
-    Route::post('/{groupId}/members/{userId}/reject', [\App\Http\Controllers\GroupMemberController::class, 'reject']);
-    Route::delete('/{groupId}/members/{userId}', [\App\Http\Controllers\GroupMemberController::class, 'removeMember']);
-    Route::put('/{groupId}/members/{userId}/role', [\App\Http\Controllers\GroupMemberController::class, 'updateRole']);
-    
+    Route::post('/{groupId}/join', [GroupMemberController::class, 'join']);
+    Route::post('/{groupId}/leave', [GroupMemberController::class, 'leave']);
+    Route::post('/{groupId}/members/{userId}/approve', [GroupMemberController::class, 'approve']);
+    Route::post('/{groupId}/members/{userId}/reject', [GroupMemberController::class, 'reject']);
+    Route::delete('/{groupId}/members/{userId}', [GroupMemberController::class, 'removeMember']);
+    Route::put('/{groupId}/members/{userId}/role', [GroupMemberController::class, 'updateRole']);
+
     // Group posts
-    Route::get('/{groupId}/posts', [\App\Http\Controllers\GroupPostController::class, 'index']);
-    Route::post('/{groupId}/posts', [\App\Http\Controllers\GroupPostController::class, 'store']);
-    Route::put('/{groupId}/posts/{postId}', [\App\Http\Controllers\GroupPostController::class, 'update']);
-    Route::delete('/{groupId}/posts/{postId}', [\App\Http\Controllers\GroupPostController::class, 'destroy']);
+    Route::get('/{groupId}/posts', [GroupPostController::class, 'index']);
+    Route::post('/{groupId}/posts', [GroupPostController::class, 'store']);
+    Route::put('/{groupId}/posts/{postId}', [GroupPostController::class, 'update']);
+    Route::delete('/{groupId}/posts/{postId}', [GroupPostController::class, 'destroy']);
 });

@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Like;
-use App\Models\Post;
 use App\Events\PostLiked;
 use App\Events\PostUnliked;
-use Illuminate\Http\Request;
+use App\Models\Like;
+use App\Models\Post;
 
 class LikeController extends Controller
 {
@@ -18,6 +17,7 @@ class LikeController extends Controller
     public function toggle($postId)
     {
         $post = Post::findOrFail($postId);
+        $this->authorize('view', $post);
 
         $like = Like::where('post_id', $post->id)
             ->where('user_id', auth()->id())
@@ -27,7 +27,7 @@ class LikeController extends Controller
             $like->delete();
             $liked = false;
             $likesCount = $post->likes()->count();
-            
+
             event(new PostUnliked($post, auth()->user(), $likesCount));
         } else {
             Like::create([
@@ -36,7 +36,7 @@ class LikeController extends Controller
             ]);
             $liked = true;
             $likesCount = $post->likes()->count();
-            
+
             event(new PostLiked($post, auth()->user(), $likesCount));
         }
 
@@ -48,6 +48,9 @@ class LikeController extends Controller
 
     public function index($postId)
     {
+        $post = Post::findOrFail($postId);
+        $this->authorize('view', $post);
+
         $likes = Like::where('post_id', $postId)
             ->with('user')
             ->orderBy('created_at', 'desc')

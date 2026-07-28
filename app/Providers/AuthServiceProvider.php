@@ -3,6 +3,16 @@
 namespace App\Providers;
 
 // use Illuminate\Support\Facades\Gate;
+use App\Models\Group;
+use App\Models\Message;
+use App\Models\Post;
+use App\Models\Team;
+use App\Models\User;
+use App\Policies\GroupPolicy;
+use App\Policies\MessagePolicy;
+use App\Policies\PostPolicy;
+use App\Policies\TeamPolicy;
+use App\Policies\UserPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
 class AuthServiceProvider extends ServiceProvider
@@ -14,8 +24,11 @@ class AuthServiceProvider extends ServiceProvider
      */
     #[\Override]
     protected $policies = [
-        \App\Models\User::class => \App\Policies\UserPolicy::class,
-        \App\Models\Group::class => \App\Policies\GroupPolicy::class,
+        User::class => UserPolicy::class,
+        Group::class => GroupPolicy::class,
+        Post::class => PostPolicy::class,
+        Message::class => MessagePolicy::class,
+        Team::class => TeamPolicy::class,
     ];
 
     /**

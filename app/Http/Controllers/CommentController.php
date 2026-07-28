@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\CommentCreated;
 use App\Models\Comment;
 use App\Models\Post;
-use App\Events\CommentCreated;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -15,8 +15,11 @@ class CommentController extends Controller
         $this->middleware('auth');
     }
 
-    public function index($postId)
+    public function index(Request $request, $postId)
     {
+        $post = Post::findOrFail($postId);
+        $this->authorize('view', $post);
+
         $comments = Comment::where('post_id', $postId)
             ->with('user')
             ->orderBy('created_at', 'desc')
@@ -36,6 +39,7 @@ class CommentController extends Controller
         }
 
         $post = Post::findOrFail($postId);
+        $this->authorize('view', $post);
 
         $comment = Comment::create([
             'user_id' => auth()->id(),
@@ -44,7 +48,7 @@ class CommentController extends Controller
         ]);
 
         $comment->load('user');
-        
+
         $commentsCount = $post->comments()->count();
         event(new CommentCreated($comment, $commentsCount));
 

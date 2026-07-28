@@ -20,7 +20,16 @@ class MessagePolicy
      */
     public function view(User $user, Message $message): bool
     {
-        return $message->sender_id === $user->id || $message->receiver_id === $user->id;
+        if ($message->sender_id === $user->id || $message->receiver_id === $user->id) {
+            return true;
+        }
+
+        return $message->conversation_id !== null
+            && $message->conversation()
+                ->whereHas('participants', fn ($query) => $query
+                    ->where('user_id', $user->id)
+                    ->whereNull('conversation_participants.left_at'))
+                ->exists();
     }
 
     /**

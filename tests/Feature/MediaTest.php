@@ -2,10 +2,9 @@
 
 namespace Tests\Feature;
 
-use App\Models\User;
-use App\Models\Media;
 use App\Models\Album;
-use App\Models\Tag;
+use App\Models\Media;
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
@@ -68,10 +67,10 @@ class MediaTest extends TestCase
         ]);
 
         $response->assertStatus(201);
-        
+
         $media = Media::where('user_id', $user->id)->first();
         $this->assertEquals(2, $media->tags()->count());
-        
+
         $this->assertDatabaseHas('tags', ['name' => 'nature']);
         $this->assertDatabaseHas('tags', ['name' => 'sunset']);
     }
@@ -93,7 +92,7 @@ class MediaTest extends TestCase
     {
         $owner = User::factory()->create();
         $viewer = User::factory()->create();
-        
+
         $media = Media::factory()->create([
             'user_id' => $owner->id,
             'privacy' => 'private',
@@ -108,7 +107,7 @@ class MediaTest extends TestCase
     {
         $owner = User::factory()->create();
         $viewer = User::factory()->create();
-        
+
         $media = Media::factory()->create([
             'user_id' => $owner->id,
             'privacy' => 'public',
@@ -143,7 +142,7 @@ class MediaTest extends TestCase
     {
         $owner = User::factory()->create();
         $other = User::factory()->create();
-        
+
         $media = Media::factory()->create([
             'user_id' => $owner->id,
         ]);
@@ -159,7 +158,7 @@ class MediaTest extends TestCase
     {
         Storage::fake('public');
         $user = User::factory()->create();
-        
+
         $media = Media::factory()->create([
             'user_id' => $user->id,
             'file_path' => 'test/path.jpg',
@@ -177,7 +176,7 @@ class MediaTest extends TestCase
     {
         $owner = User::factory()->create();
         $other = User::factory()->create();
-        
+
         $media = Media::factory()->create([
             'user_id' => $owner->id,
         ]);
@@ -200,5 +199,41 @@ class MediaTest extends TestCase
         ]);
 
         $response->assertStatus(401);
+    }
+
+    public function test_user_cannot_assign_media_to_another_users_album(): void
+    {
+        Storage::fake('public');
+        $user = User::factory()->create();
+        $otherAlbum = Album::factory()->create();
+
+        $response = $this->actingAs($user)->postJson('/api/media', [
+            'file' => UploadedFile::fake()->image('test.jpg'),
+            'album_id' => $otherAlbum->id,
+        ]);
+
+        $response->assertStatus(422);
+        $response->assertJsonValidationErrors(['album_id']);
+    }
+
+    public function test_public_album_does_not_expose_private_media(): void
+    {
+        $owner = User::factory()->create();
+        $viewer = User::factory()->create();
+        $album = Album::factory()->public()->create(['user_id' => $owner->id]);
+        Media::factory()->private()->create([
+            'user_id' => $owner->id,
+            'album_id' => $album->id,
+        ]);
+        $publicMedia = Media::factory()->public()->create([
+            'user_id' => $owner->id,
+            'album_id' => $album->id,
+        ]);
+
+        $this->actingAs($viewer)
+            ->getJson("/api/albums/{$album->id}")
+            ->assertOk()
+            ->assertJsonCount(1, 'media')
+            ->assertJsonPath('media.0.id', $publicMedia->id);
     }
 }

@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Share;
-use App\Models\Post;
 use App\Events\PostShared;
 use App\Events\PostUnshared;
-use Illuminate\Http\Request;
+use App\Models\Post;
+use App\Models\Share;
 
 class ShareController extends Controller
 {
@@ -18,6 +17,7 @@ class ShareController extends Controller
     public function toggle($postId)
     {
         $post = Post::findOrFail($postId);
+        $this->authorize('view', $post);
 
         $share = Share::where('post_id', $post->id)
             ->where('user_id', auth()->id())
@@ -27,7 +27,7 @@ class ShareController extends Controller
             $share->delete();
             $shared = false;
             $sharesCount = $post->shares()->count();
-            
+
             event(new PostUnshared($post, auth()->user(), $sharesCount));
         } else {
             Share::create([
@@ -36,7 +36,7 @@ class ShareController extends Controller
             ]);
             $shared = true;
             $sharesCount = $post->shares()->count();
-            
+
             event(new PostShared($post, auth()->user(), $sharesCount));
         }
 
@@ -48,6 +48,9 @@ class ShareController extends Controller
 
     public function index($postId)
     {
+        $post = Post::findOrFail($postId);
+        $this->authorize('view', $post);
+
         $shares = Share::where('post_id', $postId)
             ->with('user')
             ->orderBy('created_at', 'desc')

@@ -2,9 +2,9 @@
 
 namespace Tests\Feature;
 
-use App\Models\User;
-use App\Models\Post;
 use App\Models\Friendship;
+use App\Models\Post;
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -46,7 +46,7 @@ class PostPrivacyTest extends TestCase
     {
         $owner = User::factory()->create();
         $viewer = User::factory()->create();
-        
+
         $post = Post::factory()->create([
             'user_id' => $owner->id,
             'privacy' => 'private',
@@ -61,7 +61,7 @@ class PostPrivacyTest extends TestCase
     {
         $owner = User::factory()->create();
         $viewer = User::factory()->create();
-        
+
         $post = Post::factory()->create([
             'user_id' => $owner->id,
             'privacy' => 'public',
@@ -76,14 +76,14 @@ class PostPrivacyTest extends TestCase
     {
         $owner = User::factory()->create();
         $friend = User::factory()->create();
-        
+
         // Create friendship
         Friendship::create([
             'requester_id' => $owner->id,
             'addressee_id' => $friend->id,
             'status' => 'accepted',
         ]);
-        
+
         $post = Post::factory()->create([
             'user_id' => $owner->id,
             'privacy' => 'friends_only',
@@ -98,7 +98,7 @@ class PostPrivacyTest extends TestCase
     {
         $owner = User::factory()->create();
         $nonFriend = User::factory()->create();
-        
+
         $post = Post::factory()->create([
             'user_id' => $owner->id,
             'privacy' => 'friends_only',
@@ -141,5 +141,24 @@ class PostPrivacyTest extends TestCase
             'user_id' => $user->id,
             'privacy' => 'public',
         ]);
+    }
+
+    public function test_non_viewer_cannot_read_or_interact_with_private_post(): void
+    {
+        $owner = User::factory()->create();
+        $viewer = User::factory()->create();
+        $post = Post::factory()->create([
+            'user_id' => $owner->id,
+            'privacy' => 'private',
+        ]);
+
+        $this->actingAs($viewer)->getJson("/api/posts/{$post->id}/comments")->assertForbidden();
+        $this->actingAs($viewer)->postJson("/api/posts/{$post->id}/comments", [
+            'content' => 'Unauthorized',
+        ])->assertForbidden();
+        $this->actingAs($viewer)->postJson("/api/posts/{$post->id}/like")->assertForbidden();
+        $this->actingAs($viewer)->getJson("/api/posts/{$post->id}/likes")->assertForbidden();
+        $this->actingAs($viewer)->postJson("/api/posts/{$post->id}/share")->assertForbidden();
+        $this->actingAs($viewer)->getJson("/api/posts/{$post->id}/shares")->assertForbidden();
     }
 }

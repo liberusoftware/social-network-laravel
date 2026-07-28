@@ -23,7 +23,7 @@ class UserSearchTest extends TestCase
         $response->assertStatus(200);
         $response->assertJsonStructure([
             'users' => [
-                '*' => ['id', 'name', 'email', 'profile_photo_url', 'friends_count', 'followers_count', 'following_count'],
+                '*' => ['id', 'name', 'profile_photo_url', 'friends_count', 'followers_count', 'following_count'],
             ],
         ]);
 
@@ -31,7 +31,7 @@ class UserSearchTest extends TestCase
         $this->assertCount(2, $users);
     }
 
-    public function test_user_can_search_by_email(): void
+    public function test_user_cannot_search_by_or_retrieve_email(): void
     {
         $user1 = User::factory()->create(['email' => 'john@example.com']);
         $user2 = User::factory()->create(['email' => 'jane@example.com']);
@@ -41,9 +41,9 @@ class UserSearchTest extends TestCase
 
         $response = $this->getJson('/api/users/search?query=john');
 
-        $response->assertStatus(200);
-        $users = $response->json('users');
-        $this->assertGreaterThanOrEqual(1, count($users));
+        $response->assertOk()
+            ->assertJsonCount(0, 'users')
+            ->assertJsonMissingPath('users.0.email');
     }
 
     public function test_search_requires_query_parameter(): void

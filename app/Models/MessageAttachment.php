@@ -29,11 +29,6 @@ class MessageAttachment extends Model
         return $this->belongsTo(Message::class);
     }
 
-    public function getUrlAttribute(): string
-    {
-        return \Storage::url($this->path);
-    }
-
     public function isImage(): bool
     {
         return str_starts_with($this->mime_type, 'image/');
@@ -53,11 +48,11 @@ class MessageAttachment extends Model
     {
         $bytes = $this->size;
         $units = ['B', 'KB', 'MB', 'GB'];
-        
+
         for ($i = 0; $bytes > 1024; $i++) {
             $bytes /= 1024;
         }
-        
-        return round($bytes, 2) . ' ' . $units[$i];
+
+        return round($bytes, 2).' '.$units[$i];
     }
 }

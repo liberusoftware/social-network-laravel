@@ -21,7 +21,7 @@ use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable implements HasDefaultTenant, HasTenants, FilamentUser
+class User extends Authenticatable implements FilamentUser, HasDefaultTenant, HasTenants
 {
     use HasApiTokens;
     use HasConnectedAccounts;
@@ -29,13 +29,14 @@ class User extends Authenticatable implements HasDefaultTenant, HasTenants, Fila
     use HasProfilePhoto {
         HasProfilePhoto::profilePhotoUrl as getPhotoUrl;
     }
-    use Notifiable;
-    // use SetsProfilePhotoFromUrl;
-    use TwoFactorAuthenticatable;
     use HasRoles, HasTeams {
         HasTeams::teams insteadof HasRoles;
         HasRoles::teams as roleTeams;
     }
+
+    use Notifiable;
+    // use SetsProfilePhotoFromUrl;
+    use TwoFactorAuthenticatable;
 
     /**
      * The attributes that are mass assignable.
@@ -106,12 +107,15 @@ class User extends Authenticatable implements HasDefaultTenant, HasTenants, Fila
 
     public function canAccessTenant(Model $tenant): bool
     {
-        return true; //$this->ownedTeams->contains($tenant);
+        return $tenant instanceof Team && $this->belongsToTeam($tenant);
     }
 
     public function canAccessPanel(Panel $panel): bool
     {
-        //        return $this->hasVerifiedEmail();
+        if ($panel->getId() === 'admin') {
+            return $this->hasAnyRole(['super_admin', 'admin']);
+        }
+
         return true;
     }
 
@@ -160,6 +164,7 @@ class User extends Authenticatable implements HasDefaultTenant, HasTenants, Fila
             ->withPivot('joined_at', 'last_read_at')
             ->withTimestamps();
     }
+
     // Friend request relationships
     public function sentFriendRequests()
     {
@@ -224,6 +229,7 @@ class User extends Authenticatable implements HasDefaultTenant, HasTenants, Fila
 
         if ($friendship) {
             $friendship->update(['status' => 'accepted']);
+
             return $friendship;
         }
 
@@ -239,6 +245,7 @@ class User extends Authenticatable implements HasDefaultTenant, HasTenants, Fila
 
         if ($friendship) {
             $friendship->update(['status' => 'declined']);
+
             return $friendship;
         }
 

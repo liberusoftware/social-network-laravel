@@ -48,11 +48,12 @@ class AlbumController extends Controller
     public function show(Request $request, $id)
     {
         $album = Album::with(['media' => function ($query) use ($request) {
-            $query->orderBy('created_at', 'desc');
+            $query->visibleTo($request->user())
+                ->orderBy('created_at', 'desc');
         }])->findOrFail($id);
 
         // Check if user can view this album
-        if (!$album->isVisibleTo($request->user())) {
+        if (! $album->isVisibleTo($request->user())) {
             return response()->json(['message' => 'Unauthorized'], 403);
         }
 
@@ -108,10 +109,14 @@ class AlbumController extends Controller
     public function publicAlbums(Request $request)
     {
         $user = $request->user();
-        
-        $albums = Album::with('media')
+
+        $albums = Album::with([
+            'media' => fn ($query) => $query->visibleTo($user),
+        ])
             ->visibleTo($user)
-            ->withCount('media')
+            ->withCount([
+                'media' => fn ($query) => $query->visibleTo($user),
+            ])
             ->orderBy('created_at', 'desc')
             ->paginate(20);
 

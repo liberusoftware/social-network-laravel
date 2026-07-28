@@ -19,7 +19,7 @@ class MessageAttachmentTest extends TestCase
     {
         parent::setUp();
         $this->artisan('migrate');
-        Storage::fake('public');
+        Storage::fake('local');
     }
 
     public function test_user_can_send_message_with_attachment()
@@ -42,8 +42,8 @@ class MessageAttachmentTest extends TestCase
             'id',
             'content',
             'attachments' => [
-                '*' => ['id', 'filename', 'original_filename', 'mime_type', 'size']
-            ]
+                '*' => ['id', 'filename', 'original_filename', 'mime_type', 'size'],
+            ],
         ]);
 
         $message = Message::find($response->json('id'));
@@ -51,7 +51,7 @@ class MessageAttachmentTest extends TestCase
 
         // Check file was stored
         $attachment = $message->attachments->first();
-        Storage::disk('public')->assertExists($attachment->path);
+        Storage::disk('local')->assertExists($attachment->path);
     }
 
     public function test_user_can_send_message_with_multiple_attachments()
@@ -140,7 +140,7 @@ class MessageAttachmentTest extends TestCase
         ]);
 
         // Create a fake file
-        Storage::disk('public')->put($attachment->path, 'fake content');
+        Storage::disk('local')->put($attachment->path, 'fake content');
 
         Sanctum::actingAs($sender);
 
@@ -149,7 +149,7 @@ class MessageAttachmentTest extends TestCase
         $response->assertStatus(200);
 
         // Check file was deleted
-        Storage::disk('public')->assertMissing($attachment->path);
+        Storage::disk('local')->assertMissing($attachment->path);
     }
 
     public function test_message_attachment_has_correct_attributes()
@@ -181,5 +181,46 @@ class MessageAttachmentTest extends TestCase
         ]);
 
         $response->assertStatus(201);
+    }
+
+    public function test_executable_attachment_is_rejected()
+    {
+        $sender = User::factory()->create();
+        $receiver = User::factory()->create();
+
+        Sanctum::actingAs($sender);
+
+        $response = $this->postJson('/api/messages', [
+            'receiver_id' => $receiver->id,
+            'attachments' => [
+                UploadedFile::fake()->create('payload.php', 1, 'application/x-php'),
+            ],
+        ]);
+
+        $response->assertStatus(422);
+        $response->assertJsonValidationErrors(['attachments.0']);
+    }
+
+    public function test_only_message_participants_can_download_an_attachment()
+    {
+        $sender = User::factory()->create();
+        $receiver = User::factory()->create();
+        $outsider = User::factory()->create();
+        $message = Message::factory()->create([
+            'sender_id' => $sender->id,
+            'receiver_id' => $receiver->id,
+        ]);
+        $attachment = MessageAttachment::factory()->create([
+            'message_id' => $message->id,
+        ]);
+        Storage::disk('local')->put($attachment->path, 'private attachment');
+
+        Sanctum::actingAs($outsider);
+        $this->getJson("/api/messages/{$message->id}/attachments/{$attachment->id}")
+            ->assertForbidden();
+
+        Sanctum::actingAs($receiver);
+        $this->get("/api/messages/{$message->id}/attachments/{$attachment->id}")
+            ->assertOk();
     }
 }

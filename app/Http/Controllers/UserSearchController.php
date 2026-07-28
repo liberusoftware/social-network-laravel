@@ -15,20 +15,18 @@ class UserSearchController extends Controller
     public function search(Request $request)
     {
         $request->validate([
-            'query' => 'required|string|min:1',
+            'query' => 'required|string|min:2|max:100',
         ]);
 
         $query = $request->input('query');
 
         $users = User::where('name', 'like', "%{$query}%")
-            ->orWhere('email', 'like', "%{$query}%")
             ->limit(20)
             ->get()
             ->map(function ($user) {
                 return [
                     'id' => $user->id,
                     'name' => $user->name,
-                    'email' => $user->email,
                     'profile_photo_url' => $user->profile_photo_url,
                     'friends_count' => $user->friends_count,
                     'followers_count' => $user->followers_count,

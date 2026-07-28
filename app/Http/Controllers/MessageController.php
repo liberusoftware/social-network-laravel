@@ -20,7 +20,7 @@ class MessageController extends Controller
     public function index(Request $request)
     {
         $user = Auth::user();
-        
+
         $messages = Message::where('receiver_id', $user->id)
             ->orWhere('sender_id', $user->id)
             ->with(['sender', 'receiver', 'attachments', 'reactions'])
@@ -38,12 +38,12 @@ class MessageController extends Controller
             'content' => 'required_without:attachments|string|max:5000',
             'encrypted' => 'boolean',
             'attachments' => 'nullable|array|max:5',
-            'attachments.*' => 'file|max:10240', // 10MB max per file
+            'attachments.*' => 'file|max:10240|mimes:jpg,jpeg,png,pdf,txt,doc,docx',
         ]);
 
         if ($validator->fails()) {
             return response()->json([
-                'errors' => $validator->errors()
+                'errors' => $validator->errors(),
             ], 422);
         }
 
@@ -52,14 +52,14 @@ class MessageController extends Controller
         // For direct messages
         if ($request->receiver_id && $user->id == $request->receiver_id) {
             return response()->json([
-                'error' => 'You cannot send a message to yourself'
+                'error' => 'You cannot send a message to yourself',
             ], 422);
         }
 
         // For conversation messages
         if ($request->conversation_id) {
             $conversation = Conversation::find($request->conversation_id);
-            if (!$conversation->participants()->where('user_id', $user->id)->exists()) {
+            if (! $conversation->participants()->where('user_id', $user->id)->exists()) {
                 return response()->json(['error' => 'You are not a participant of this conversation'], 403);
             }
         }
@@ -84,8 +84,8 @@ class MessageController extends Controller
         // Handle file attachments
         if ($request->hasFile('attachments')) {
             foreach ($request->file('attachments') as $file) {
-                $filename = Str::uuid() . '.' . $file->getClientOriginalExtension();
-                $path = $file->storeAs('message-attachments', $filename, 'public');
+                $filename = Str::uuid().'.'.$file->extension();
+                $path = $file->storeAs('message-attachments', $filename, 'local');
 
                 MessageAttachment::create([
                     'message_id' => $message->id,
@@ -111,7 +111,7 @@ class MessageController extends Controller
     {
         $this->authorize('view', $message);
 
-        if ($message->receiver_id === Auth::id() && !$message->isRead()) {
+        if ($message->receiver_id === Auth::id() && ! $message->isRead()) {
             $message->markAsRead();
         }
 
@@ -120,17 +120,31 @@ class MessageController extends Controller
         return response()->json($message);
     }
 
+    public function downloadAttachment(Message $message, MessageAttachment $attachment)
+    {
+        $this->authorize('view', $message);
+
+        abort_unless($attachment->message_id === $message->id, 404);
+        abort_unless(Storage::disk('local')->exists($attachment->path), 404);
+
+        return Storage::disk('local')->download(
+            $attachment->path,
+            $attachment->original_filename,
+            ['X-Content-Type-Options' => 'nosniff']
+        );
+    }
+
     public function conversation(Request $request, User $user)
     {
         $authUser = Auth::user();
-        
+
         $messages = Message::betweenUsers($authUser->id, $user->id)
             ->with(['sender', 'receiver', 'attachments', 'reactions.user'])
             ->orderBy('created_at', 'asc')
             ->get();
 
         $messages->each(function ($message) use ($authUser) {
-            if ($message->receiver_id === $authUser->id && !$message->isRead()) {
+            if ($message->receiver_id === $authUser->id && ! $message->isRead()) {
                 $message->markAsRead();
             }
         });
@@ -143,7 +157,7 @@ class MessageController extends Controller
         $authUser = Auth::user();
 
         // Check if user is participant
-        if (!$conversation->participants()->where('user_id', $authUser->id)->exists()) {
+        if (! $conversation->participants()->where('user_id', $authUser->id)->exists()) {
             return response()->json(['error' => 'Unauthorized'], 403);
         }
 
@@ -161,26 +175,26 @@ class MessageController extends Controller
 
         // Delete attachments from storage
         foreach ($message->attachments as $attachment) {
-            Storage::disk('public')->delete($attachment->path);
+            Storage::disk('local')->delete($attachment->path);
         }
 
         $message->delete();
 
         return response()->json([
-            'message' => 'Message deleted successfully'
+            'message' => 'Message deleted successfully',
         ]);
     }
 
     public function unreadCount(Request $request)
     {
         $user = Auth::user();
-        
+
         $count = Message::where('receiver_id', $user->id)
             ->unread()
             ->count();
 
         return response()->json([
-            'unread_count' => $count
+            'unread_count' => $count,
         ]);
     }
 
@@ -243,4 +257,3 @@ class MessageController extends Controller
         return response()->json(['message' => 'Typing event broadcasted']);
     }
 }
-
