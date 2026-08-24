@@ -15,12 +15,30 @@
       "Liberu\\SocialNetwork\\SocialCore\\": "src/"
     }
   },
-  "extra": {"liberu": {"name": "social-network-social-core"}},
+  "extra": {
+    "liberu": {
+      "name": "social-network-social-core"
+    }
+  },
   "version": "0.1.0",
   "autoload-dev": {
-    "psr-4": {"Liberu\\SocialNetwork\\SocialCore\\Tests\\": "tests/"}
+    "psr-4": {
+      "Liberu\\SocialNetwork\\SocialCore\\Tests\\": "tests/"
+    }
   },
-  "require-dev": {"pestphp/pest": "^5.0"},
-  "config": {"allow-plugins": {"pestphp/pest-plugin": true}},
-  "scripts": {"test": "pest"}
+  "require-dev": {
+    "pestphp/pest": "^5.0"
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  },
+  "scripts": {
+    "test": "pest",
+    "test:unit": "pest tests/Unit",
+    "test:feature": "pest tests/Feature",
+    "test:coverage": "pest --coverage --min=100 --coverage-clover=coverage.xml",
+    "test:parallel": "pest --parallel"
+  }
 }

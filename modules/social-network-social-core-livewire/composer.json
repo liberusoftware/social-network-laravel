@@ -3,9 +3,32 @@
   "description": "Livewire 4 adapter for Liberu Social Network Social Core.",
   "type": "liberu-module",
   "license": "MIT",
-  "require": {"php": "^8.5", "livewire/livewire": "^4.0", "liberusoftware/module-social-network-social-core": "^0.1"},
-  "autoload": {"psr-4": {"Liberu\\SocialNetwork\\SocialCore\\Livewire\\": "src/"}},
-  "extra": {"liberu": {"name": "social-network-social-core-livewire"}},
+  "require": {
+    "php": "^8.5",
+    "livewire/livewire": "^4.0",
+    "liberusoftware/module-social-network-social-core": "^0.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Liberu\\SocialNetwork\\SocialCore\\Livewire\\": "src/"
+    }
+  },
+  "extra": {
+    "liberu": {
+      "name": "social-network-social-core-livewire"
+    }
+  },
   "version": "0.1.0",
-  "config": {"allow-plugins": {"pestphp/pest-plugin": true}}
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  },
+  "scripts": {
+    "test": "pest",
+    "test:unit": "pest tests/Unit",
+    "test:feature": "pest tests/Feature",
+    "test:coverage": "pest --coverage --min=100 --coverage-clover=coverage.xml",
+    "test:parallel": "pest --parallel"
+  }
 }

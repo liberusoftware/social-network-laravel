@@ -1,1 +1,35 @@
-{"name":"liberusoftware/module-social-network-social-graph-livewire","description":"Livewire adapter for Social Graph.","type":"liberu-module","license":"MIT","version":"0.1.0","require":{"php":"^8.5","livewire/livewire":"^4.0","liberusoftware/module-social-network-social-graph":"^0.1","liberusoftware/module-social-network-profiles":"^0.1"},"autoload":{"psr-4":{"Liberu\\SocialNetwork\\SocialGraph\\Livewire\\":"src/"}},"extra":{"liberu":{"name":"social-network-social-graph-livewire"}},"config":{"allow-plugins":{"pestphp/pest-plugin":true}}}
+{
+  "name": "liberusoftware/module-social-network-social-graph-livewire",
+  "description": "Livewire adapter for Social Graph.",
+  "type": "liberu-module",
+  "license": "MIT",
+  "version": "0.1.0",
+  "require": {
+    "php": "^8.5",
+    "livewire/livewire": "^4.0",
+    "liberusoftware/module-social-network-social-graph": "^0.1",
+    "liberusoftware/module-social-network-profiles": "^0.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Liberu\\SocialNetwork\\SocialGraph\\Livewire\\": "src/"
+    }
+  },
+  "extra": {
+    "liberu": {
+      "name": "social-network-social-graph-livewire"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  },
+  "scripts": {
+    "test": "pest",
+    "test:unit": "pest tests/Unit",
+    "test:feature": "pest tests/Feature",
+    "test:coverage": "pest --coverage --min=100 --coverage-clover=coverage.xml",
+    "test:parallel": "pest --parallel"
+  }
+}

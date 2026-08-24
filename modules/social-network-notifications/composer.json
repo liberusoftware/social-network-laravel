@@ -1,1 +1,36 @@
-{"name":"liberusoftware/module-social-network-notifications","description":"Notification preferences, delivery, grouping, digests, quiet hours, and read state.","type":"liberu-module","license":"MIT","version":"0.1.0","require":{"php":"^8.5","illuminate/database":"^13.0","illuminate/events":"^13.0","illuminate/support":"^13.0","liberusoftware/module-social-network-profiles":"^0.1"},"autoload":{"psr-4":{"Liberu\\SocialNetwork\\Notifications\\":"src/"}},"extra":{"liberu":{"name":"social-network-notifications"}},"config":{"allow-plugins":{"pestphp/pest-plugin":true}}}
+{
+  "name": "liberusoftware/module-social-network-notifications",
+  "description": "Notification preferences, delivery, grouping, digests, quiet hours, and read state.",
+  "type": "liberu-module",
+  "license": "MIT",
+  "version": "0.1.0",
+  "require": {
+    "php": "^8.5",
+    "illuminate/database": "^13.0",
+    "illuminate/events": "^13.0",
+    "illuminate/support": "^13.0",
+    "liberusoftware/module-social-network-profiles": "^0.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Liberu\\SocialNetwork\\Notifications\\": "src/"
+    }
+  },
+  "extra": {
+    "liberu": {
+      "name": "social-network-notifications"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  },
+  "scripts": {
+    "test": "pest",
+    "test:unit": "pest tests/Unit",
+    "test:feature": "pest tests/Feature",
+    "test:coverage": "pest --coverage --min=100 --coverage-clover=coverage.xml",
+    "test:parallel": "pest --parallel"
+  }
+}
