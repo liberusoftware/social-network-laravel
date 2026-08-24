@@ -3,7 +3,7 @@
   "description": "Tenant-aware follows, friendship requests, lists, suggestions, and relationship visibility.",
   "type": "liberu-module",
   "license": "MIT",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "require": {
     "php": "^8.5",
     "illuminate/database": "^13.0",
