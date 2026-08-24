@@ -1,0 +1,6 @@
+openapi: 3.1.0
+info: {title: Social Network Events API, version: 1.0.0}
+paths:
+  /api/v1/social-network/events: {get: {operationId: social.network.events.list, security: [{sanctum: []}], responses: {'200': {description: Events}}}, post: {operationId: social.network.events.create, security: [{sanctum: []}], responses: {'201': {description: Event created}}}}
+  /api/v1/social-network/events/{event}/attendance: {post: {operationId: social.network.events.attendance, security: [{sanctum: []}], parameters: [{name: event, in: path, required: true, schema: {type: string}}], responses: {'200': {description: Attendance updated}}}}
+components: {securitySchemes: {sanctum: {type: http, scheme: bearer, bearerFormat: Sanctum}}}

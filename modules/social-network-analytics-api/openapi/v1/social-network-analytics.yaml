@@ -1,0 +1,7 @@
+openapi: 3.0.3
+info: {title: Social Network Analytics API, version: 0.1.0}
+paths:
+  /api/v1/social-network/analytics/metrics/{metric}:
+    get:
+      summary: Read an aggregated metric
+      responses: {'200': {description: OK}}
