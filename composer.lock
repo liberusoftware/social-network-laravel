@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c523fd336093606503e1e6dffe2d0dac",
+    "content-hash": "9193ac326b0273ffee4905b3bce16226",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -6537,6 +6537,145 @@
                 "MIT"
             ],
             "description": "Livewire 4 adapter for Liberu Social Network Profiles.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-social-network-publishing",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/social-network-publishing",
+                "reference": "00c2fb8b6e7e1788eb05bd4a87106b8ca627d376"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/events": "^13.0",
+                "illuminate/support": "^13.0",
+                "liberusoftware/module-social-network-profiles": "^0.1",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "social-network-publishing"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\SocialNetwork\\Publishing\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Posts, articles, drafts, audiences, edits, mentions, hashtags, polls, links, and schedules.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-social-network-publishing-api",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/social-network-publishing-api",
+                "reference": "8da34cadd7e7e9ffca3fe29c425c58a7d355dfc7"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "laravel/sanctum": "^4.0",
+                "liberusoftware/module-social-network-profiles": "^0.1",
+                "liberusoftware/module-social-network-publishing": "^0.1",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "social-network-publishing-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\SocialNetwork\\Publishing\\Api\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Versioned API adapter for Social Network Publishing.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-social-network-publishing-filament",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/social-network-publishing-filament",
+                "reference": "8304c6f4c6bbba3f186270a452afcf15ed1af7b0"
+            },
+            "require": {
+                "filament/filament": "^5.1",
+                "liberusoftware/module-social-network-profiles": "^0.1",
+                "liberusoftware/module-social-network-publishing": "^0.1",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "social-network-publishing-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\SocialNetwork\\Publishing\\Filament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament adapter for Social Network Publishing.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-social-network-publishing-livewire",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/social-network-publishing-livewire",
+                "reference": "4f1092277970736ec71c4270fbaf9994b573a48d"
+            },
+            "require": {
+                "liberusoftware/module-social-network-profiles": "^0.1",
+                "liberusoftware/module-social-network-publishing": "^0.1",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "social-network-publishing-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\SocialNetwork\\Publishing\\Livewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Livewire adapter for Social Network Publishing.",
             "transport-options": {
                 "symlink": false,
                 "relative": true

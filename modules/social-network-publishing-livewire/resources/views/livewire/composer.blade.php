@@ -1,0 +1,1 @@
+<div><form wire:submit="save" class="space-y-2"><input wire:model="title" type="text" aria-label="Title"><textarea wire:model="body" aria-label="Body"></textarea><button type="submit">Save draft</button></form></div>

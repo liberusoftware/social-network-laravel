@@ -1,0 +1,6 @@
+openapi: 3.1.0
+info: {title: Social Network Publishing API, version: 1.0.0}
+paths:
+  /api/v1/social-network/publishing/publications: {post: {operationId: social.network.publishing.create, security: [{sanctum: []}], responses: {'201': {description: Publication created}, '422': {description: Validation problem}}}}
+  /api/v1/social-network/publishing/publications/{publication}/publish: {post: {operationId: social.network.publishing.publish, security: [{sanctum: []}], parameters: [{name: publication, in: path, required: true, schema: {type: string}}], responses: {'200': {description: Publication published}}}}
+components: {securitySchemes: {sanctum: {type: http, scheme: bearer, bearerFormat: Sanctum}}}
