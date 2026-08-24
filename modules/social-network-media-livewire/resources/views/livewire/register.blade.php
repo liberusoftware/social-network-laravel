@@ -1,0 +1,1 @@
+<div><form wire:submit="save"><select wire:model="type"><option>image</option><option>video</option><option>audio</option><option>file</option></select><input wire:model="path" type="text" aria-label="Path"><input wire:model="altText" type="text" aria-label="Alt text"><button type="submit">Register media</button></form></div>

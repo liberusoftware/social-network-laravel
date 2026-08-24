@@ -1,0 +1,4 @@
+openapi: 3.1.0
+info: {title: Social Network Media API, version: 1.0.0}
+paths: {/api/v1/social-network/media: {post: {operationId: social.network.media.register, security: [{sanctum: []}], responses: {'201': {description: Media registered}, '422': {description: Validation problem}}}}}
+components: {securitySchemes: {sanctum: {type: http, scheme: bearer, bearerFormat: Sanctum}}}
