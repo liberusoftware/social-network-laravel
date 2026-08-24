@@ -19,6 +19,7 @@ final readonly class PublishPublication
     public function handle(Profile $author, Publication $publication): Publication
     {
         $this->authorizer->publish($author, $publication);
+        abort_unless($publication->author_profile_id === $author->getKey(), 403);
         $published = DB::transaction(function () use ($publication): Publication {
             $publication->update(['state' => 'published', 'published_at' => Carbon::now()]);
 
