@@ -23,11 +23,13 @@
   "version": "0.1.0",
   "autoload-dev": {
     "psr-4": {
-      "Liberu\\SocialNetwork\\SocialCore\\Tests\\": "tests/"
+      "Liberu\\SocialNetwork\\SocialCore\\Tests\\": "tests/",
+      "Tests\\": "tests/"
     }
   },
   "require-dev": {
-    "pestphp/pest": "^5.0"
+    "pestphp/pest": "^5.0",
+    "liberusoftware/package-testbench": "^1.7"
   },
   "config": {
     "allow-plugins": {

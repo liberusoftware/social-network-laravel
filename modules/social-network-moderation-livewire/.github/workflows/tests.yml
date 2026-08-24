@@ -1,0 +1,18 @@
+name: Package tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    uses: liberusoftware/.github/.github/workflows/package-tests.yml@75d1786646b095ba49360f735f27e0b2fa932b8d
+    with:
+      coverage-threshold: 0
+      phpstan-level: -1
