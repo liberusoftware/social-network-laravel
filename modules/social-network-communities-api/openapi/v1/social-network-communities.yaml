@@ -1,0 +1,4 @@
+openapi: 3.1.0
+info: {title: Social Network Communities API, version: 1.0.0}
+paths: {/api/v1/social-network/communities: {post: {operationId: social.network.communities.create, security: [{sanctum: []}], responses: {'201': {description: Community created}}}}, /api/v1/social-network/communities/{community}/join: {post: {operationId: social.network.communities.join, security: [{sanctum: []}], parameters: [{name: community, in: path, required: true, schema: {type: string}}], responses: {'202': {description: Membership created}}}}
+components: {securitySchemes: {sanctum: {type: http, scheme: bearer, bearerFormat: Sanctum}}}

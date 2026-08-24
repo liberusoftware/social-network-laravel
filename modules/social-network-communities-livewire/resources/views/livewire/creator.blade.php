@@ -1,0 +1,1 @@
+<div><form wire:submit="save"><input wire:model="name" type="text" aria-label="Community name"><textarea wire:model="description" aria-label="Description"></textarea><button type="submit">Create community</button></form></div>
