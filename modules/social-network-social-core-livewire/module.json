@@ -1,0 +1,14 @@
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "social-network-social-core-livewire",
+  "display_name": "Social Network Social Core Livewire",
+  "description": "Livewire 4 settings interaction for Social Core.",
+  "version": "0.1.0",
+  "category": "presentation",
+  "provider": "Liberu\\SocialNetwork\\SocialCore\\Livewire\\SocialCoreLivewireServiceProvider",
+  "requires": {"php": "^8.5", "laravel": "^13.0", "packages": {"liberusoftware/module-social-network-social-core": "^0.1"}},
+  "presentation": {"livewire": ["social-core-settings"]},
+  "capabilities": ["social-network.social-core.livewire"],
+  "default_enabled": true,
+  "features": ["Interactive Social Core settings", "Validation feedback", "Tenant-aware state"]
+}

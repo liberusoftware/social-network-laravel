@@ -1,0 +1,59 @@
+openapi: 3.1.0
+info:
+  title: Social Network Social Core API
+  version: 1.0.0
+paths:
+  /api/v1/social-network/social-core:
+    get:
+      operationId: social.network.social.core.get
+      security: [{ sanctum: [] }]
+      responses:
+        '200':
+          description: Authorized team settings.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Resource' }
+        '404': { description: Team context is unavailable or concealed. }
+    patch:
+      operationId: social.network.social.core.update
+      security: [{ sanctum: [] }]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/UpdateRequest' }
+      responses:
+        '200':
+          description: Updated settings.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Resource' }
+        '422': { description: Validation problem. }
+components:
+  securitySchemes:
+    sanctum: { type: http, scheme: bearer, bearerFormat: Sanctum }
+  schemas:
+    Resource:
+      type: object
+      required: [data]
+      properties:
+        data:
+          type: object
+          required: [id, type, deployment_mode]
+          properties:
+            id: { type: string }
+            type: { type: string, const: social-network-social-core }
+            deployment_mode: { type: string, enum: [hosted, self_hosted, federated] }
+            network_settings: { type: object, additionalProperties: true }
+            terminology: { type: object, additionalProperties: true }
+            feature_policy: { type: object, additionalProperties: true }
+            shared_ids: { type: object, additionalProperties: true }
+    UpdateRequest:
+      type: object
+      additionalProperties: false
+      properties:
+        deployment_mode: { type: string, enum: [hosted, self_hosted, federated] }
+        network_settings: { type: object, additionalProperties: true }
+        terminology: { type: object, additionalProperties: true }
+        feature_policy: { type: object, additionalProperties: true }
+        shared_ids: { type: object, additionalProperties: true }

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "social-network-social-core-filament",
+  "display_name": "Social Network Social Core Filament",
+  "description": "Filament 5 administration surface for Social Core.",
+  "version": "0.1.0",
+  "category": "presentation",
+  "provider": "Liberu\\SocialNetwork\\SocialCore\\Filament\\SocialCoreFilamentServiceProvider",
+  "requires": {"php": "^8.5", "laravel": "^13.0", "packages": {"liberusoftware/module-social-network-social-core": "^0.1"}},
+  "presentation": {"filament": {"app": ["Liberu\\SocialNetwork\\SocialCore\\Filament\\SocialCoreFilamentPlugin"]}},
+  "capabilities": ["social-network.social-core.filament"],
+  "default_enabled": true,
+  "features": ["Social Core settings page", "Deployment mode administration", "Policy-aware Filament actions"]
+}
