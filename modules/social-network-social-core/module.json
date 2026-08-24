@@ -1,0 +1,17 @@
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "social-network-social-core",
+  "display_name": "Social Network Social Core",
+  "description": "Network settings, deployment mode, terminology, feature policy, shared IDs, and events.",
+  "version": "0.1.0",
+  "category": "product",
+  "provider": "Liberu\\SocialNetwork\\SocialCore\\SocialCoreServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {"liberusoftware/module-manager": "^1.0"}
+  },
+  "capabilities": ["social-network.social-core"],
+  "default_enabled": true,
+  "features": ["Network settings", "Deployment mode", "Terminology", "Feature policy", "Shared IDs", "Events"]
+}

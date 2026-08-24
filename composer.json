@@ -201,6 +201,11 @@
         {
             "type": "vcs",
             "url": "https://github.com/liberusoftware/theme-base.git"
+        },
+        {
+            "type": "path",
+            "url": "modules/social-network-social-core",
+            "options": {"symlink": false}
         }
     ],
     "require": {
@@ -243,6 +248,7 @@
         "liberusoftware/localization-core-livewire": "^1.0",
         "liberusoftware/localization-mymemory": "^1.0",
         "liberusoftware/module-manager": "^1.0",
+        "liberusoftware/module-social-network-social-core": "@dev",
         "liberusoftware/notifications": "^1.0",
         "liberusoftware/observability": "^1.0",
         "liberusoftware/organizations-teams": "^1.0",

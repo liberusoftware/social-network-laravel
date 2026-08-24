@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "65bfca91cd46392de592237ddb6b393d",
+    "content-hash": "6106a86ee8cadc3c09a0190d2571f783",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -6405,6 +6405,54 @@
                 "issues": "https://github.com/liberusoftware/module-module-manager-filament/issues"
             },
             "time": "2026-08-07T14:25:35+00:00"
+        },
+        {
+            "name": "liberusoftware/module-social-network-social-core",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/social-network-social-core",
+                "reference": "44893d2886e80513d5d9f0ff82e67ee17184d247"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/events": "^13.0",
+                "illuminate/support": "^13.0",
+                "liberusoftware/module-manager": "^1.0",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "social-network-social-core"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\SocialNetwork\\SocialCore\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Liberu\\SocialNetwork\\SocialCore\\Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Tenant-aware social network settings, policy, terminology, and lifecycle events.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "liberusoftware/notifications",
@@ -20611,7 +20659,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {},
+    "stability-flags": {
+        "liberusoftware/module-social-network-social-core": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
