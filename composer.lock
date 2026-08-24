@@ -9514,16 +9514,16 @@
         },
         {
             "name": "liberusoftware/search",
-            "version": "1.5.1",
+            "version": "1.5.2",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/module-search.git",
-                "reference": "d2617f80de4c267adf4593b357b545c9ec762188"
+                "url": "https://github.com/liberusoftware/module-search.git",
+                "reference": "8e95f92ac57e37a8808164c56ec03240190336c3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/liberusoftware/module-search/zipball/d2617f80de4c267adf4593b357b545c9ec762188",
-                "reference": "d2617f80de4c267adf4593b357b545c9ec762188",
+                "url": "https://api.github.com/repos/liberusoftware/module-search/zipball/8e95f92ac57e37a8808164c56ec03240190336c3",
+                "reference": "8e95f92ac57e37a8808164c56ec03240190336c3",
                 "shasum": ""
             },
             "require": {
@@ -9563,10 +9563,10 @@
             ],
             "description": "Provider-neutral authorized search contracts and local Eloquent driver.",
             "support": {
-                "source": "https://github.com/liberusoftware/module-search/tree/1.5.1",
+                "source": "https://github.com/liberusoftware/module-search/tree/v1.5.2",
                 "issues": "https://github.com/liberusoftware/module-search/issues"
             },
-            "time": "2026-08-07T14:25:44+00:00"
+            "time": "2026-08-24T17:42:40+00:00"
         },
         {
             "name": "liberusoftware/search-api",
@@ -10061,16 +10061,16 @@
         },
         {
             "name": "liberusoftware/theme-support",
-            "version": "1.4.2",
+            "version": "1.4.3",
             "source": {
                 "type": "git",
-                "url": "git@github.com:liberusoftware/module-theme-support.git",
-                "reference": "22c3d18d23d802265d68f03e58f8dda8b88b48fa"
+                "url": "https://github.com/liberusoftware/module-theme-support.git",
+                "reference": "cc7019f1d077e498ad647bb566a28ae009b2cb1e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/liberusoftware/module-theme-support/zipball/22c3d18d23d802265d68f03e58f8dda8b88b48fa",
-                "reference": "22c3d18d23d802265d68f03e58f8dda8b88b48fa",
+                "url": "https://api.github.com/repos/liberusoftware/module-theme-support/zipball/cc7019f1d077e498ad647bb566a28ae009b2cb1e",
+                "reference": "cc7019f1d077e498ad647bb566a28ae009b2cb1e",
                 "shasum": ""
             },
             "require": {
@@ -10116,10 +10116,10 @@
             ],
             "description": "Theme discovery and host presentation support for Liberu applications.",
             "support": {
-                "source": "https://github.com/liberusoftware/module-theme-support/tree/1.4.2",
+                "source": "https://github.com/liberusoftware/module-theme-support/tree/v1.4.3",
                 "issues": "https://github.com/liberusoftware/module-theme-support/issues"
             },
-            "time": "2026-08-07T14:25:46+00:00"
+            "time": "2026-08-24T17:42:47+00:00"
         },
         {
             "name": "liberusoftware/theme-support-livewire",

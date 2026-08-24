@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.5.2 - 2026-08-24
+
+- Prioritize exact user-name matches in filtered search results.
+
 ## 1.3.0 - 2026-08-06
 
 - The demo-shaped `searchPosts()`/`searchGroups()` leave for `search-demo`. `searchAll()` now

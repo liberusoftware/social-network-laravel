@@ -25,9 +25,7 @@ class SearchService
             $query->search($searchTerm);
 
             // Exact name matches must precede incidental matches in another
-            // searchable field (for example, a generated email containing the
-            // same token). This keeps the result deterministic for users and
-            // avoids leaking ranking to database insertion order.
+            // searchable field, keeping results deterministic.
             $query->orderByRaw('CASE WHEN LOWER(name) = LOWER(?) THEN 0 ELSE 1 END', [$searchTerm]);
         }
 
