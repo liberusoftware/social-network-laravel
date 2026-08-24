@@ -5,7 +5,7 @@
 
 ## Custom Theme System - Complete Implementation
 
-**Repository**: liberusoftware/boilerplate-laravel  
+**Repository**: liberusoftware/social-network-laravel\
 **Branch**: copilot/improve-modules-and-theme-support  
 **Implementation Date**: February 16-17, 2026  
 **Status**: ✅ Complete and Production Ready
@@ -396,7 +396,7 @@ php artisan test --coverage
 - **Test Suite**: `tests/Unit/ThemeManagerTest.php`
 
 ### Contact
-- **Repository**: https://github.com/liberusoftware/boilerplate-laravel
+- **Repository**: https://github.com/liberusoftware/social-network-laravel
 - **Branch**: copilot/improve-modules-and-theme-support
 - **Documentation**: See `/docs/THEME_*.md` files
 

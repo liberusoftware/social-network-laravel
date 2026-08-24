@@ -355,7 +355,7 @@ separate decision.
 
 ### Issue tracker
 
-Issues live in GitHub Issues on `liberusoftware/boilerplate-laravel`, driven by the `gh` CLI.
+Issues live in GitHub Issues on `liberusoftware/social-network-laravel`, driven by the `gh` CLI.
 See `docs/agents/issue-tracker.md`.
 
 ### Triage labels

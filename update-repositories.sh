@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PROJECTS_DIR="$HOME/Projects/liberu"
-BOILERPLATE_DIR="$PROJECTS_DIR/boilerplate-laravel"
+BOILERPLATE_DIR="$PROJECTS_DIR/social-network-laravel"
 LOG_FILE="$PROJECTS_DIR/update-projects.log"
 TIMESTAMP=$(date "+%Y-%m-%d %H:%M:%S")
 
@@ -106,8 +106,8 @@ for repo in "${REPOS[@]}"; do
 
     # # --- Placeholder for custom updates ---
     # # Example: Copy selective boilerplate files
-    # # cp -r "$PROJECTS_DIR/boilerplate-laravel/app/." "$TARGET_DIR/app/"
-    # # cp -r "$PROJECTS_DIR/boilerplate-laravel/config/." "$TARGET_DIR/config/"
+    # # cp -r "$PROJECTS_DIR/social-network-laravel/app/." "$TARGET_DIR/app/"
+    # # cp -r "$PROJECTS_DIR/social-network-laravel/config/." "$TARGET_DIR/config/"
 
     # Commit & push any changes
     if ! git diff --quiet || ! git diff --cached --quiet; then

@@ -1,6 +1,6 @@
 # Handoff — conformance steps 2–4
 
-**Repo:** `/home/tom/code/boilerplate-laravel`
+**Repo:** `/home/tom/code/social-network-laravel`
 **Branch:** `docs/conformance-plan`
 **Date:** 2026-08-05
 **Sibling checkout:** `/home/tom/code/package-testbench` (its own repo, clean, pushed)
@@ -117,7 +117,7 @@ reverted.
 - **`superpowers:systematic-debugging`** — if a package suite goes red after migration. The
   failures here have consistently had a cause one layer below the symptom.
 - **`mattpocock-skills:wayfinder`** — only if the destination changes. Map
-  [#612](https://github.com/liberusoftware/boilerplate-laravel/issues/612) is closed, 15/15.
+  [#612](https://github.com/liberusoftware/social-network-laravel/issues/612) is closed, 15/15.
 
 **Do not** invoke `/handoff` into `/tmp`. `CLAUDE.md` overrides that skill's default: handoffs
 live in `docs/handoffs/`, because WSL wipes `/tmp` exactly when the next session needs it.

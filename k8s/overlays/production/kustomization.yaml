@@ -5,7 +5,7 @@ resources:
 - ../../base
 - hpa.yaml
 
-namespace: boilerplate-laravel
+namespace: social-network-laravel
 
 patches:
 - patch: |-
@@ -14,10 +14,10 @@ patches:
       value: 3
   target:
     kind: Deployment
-    name: boilerplate-laravel
+    name: social-network-laravel
 
 configMapGenerator:
-- name: boilerplate-config
+- name: social-network-config
   behavior: merge
   literals:
   - APP_ENV=production
@@ -25,5 +25,5 @@ configMapGenerator:
   - LOG_LEVEL=warning
 
 images:
-- name: ghcr.io/liberusoftware/boilerplate-laravel
+- name: ghcr.io/liberusoftware/social-network-laravel
   newTag: latest

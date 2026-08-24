@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0bbdb8c9cf1416b5b564df907738099a",
+    "content-hash": "4f0291d6b8270451c6e9fa8b77603377",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -9517,7 +9517,7 @@
             "version": "1.5.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/module-search.git",
+                "url": "git@github.com:liberusoftware/module-search.git",
                 "reference": "8e95f92ac57e37a8808164c56ec03240190336c3"
             },
             "dist": {
@@ -10064,7 +10064,7 @@
             "version": "1.4.3",
             "source": {
                 "type": "git",
-                "url": "https://github.com/liberusoftware/module-theme-support.git",
+                "url": "git@github.com:liberusoftware/module-theme-support.git",
                 "reference": "cc7019f1d077e498ad647bb566a28ae009b2cb1e"
             },
             "dist": {

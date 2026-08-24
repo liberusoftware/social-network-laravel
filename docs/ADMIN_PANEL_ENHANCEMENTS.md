@@ -347,4 +347,4 @@ For issues or questions:
 - Check Filament documentation: https://filamentphp.com
 - Review Filament Shield docs: https://filamentshield.com
 - Consult Laravel documentation: https://laravel.com/docs
-- GitHub Issues: https://github.com/liberusoftware/boilerplate-laravel/issues
+- GitHub Issues: https://github.com/liberusoftware/social-network-laravel/issues

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ config('app.name', 'Boilerplate Laravel') }} — a foundation you keep</title>
-    <meta name="description" content="A Laravel + Filament + Livewire boilerplate that ships a credible, working app: auth, teams, roles, search, themes and multi-language on a polished default.">
+    <meta name="description" content="A Laravel + Filament + Livewire social network that ships a credible, working app: auth, teams, roles, search, themes and multi-language on a polished default.">
 
     @fonts
 
@@ -275,7 +275,7 @@
         </a>
         <nav class="nav__links" aria-label="Primary">
             <a href="#features" class="muted">Features</a>
-            <a href="https://github.com/liberusoftware/boilerplate-laravel" class="muted" rel="noopener">GitHub</a>
+            <a href="https://github.com/liberusoftware/social-network-laravel" class="muted" rel="noopener">GitHub</a>
             @if (Route::has('login'))
                 <a href="{{ route('login') }}" class="muted nav__login">Log in</a>
             @endif
@@ -303,7 +303,7 @@
                     @if (Route::has('register'))
                         <a href="{{ route('register') }}" class="btn btn--primary">Get started free</a>
                     @endif
-                    <a href="https://github.com/liberusoftware/boilerplate-laravel" class="btn btn--ghost" rel="noopener">
+                    <a href="https://github.com/liberusoftware/social-network-laravel" class="btn btn--ghost" rel="noopener">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.54 2.87 8.39 6.84 9.75.5.09.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.36 1.12 2.94.85.09-.66.35-1.12.63-1.38-2.22-.26-4.55-1.14-4.55-5.05 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.34 9.34 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.92-2.34 4.79-4.57 5.04.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .27.18.59.69.49A10.02 10.02 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"/></svg>
                         View on GitHub
                     </a>
@@ -316,7 +316,7 @@
             </div>
 
             <div class="reveal" data-d="4">
-                <div class="mock" role="img" aria-label="The boilerplate's team messaging screen in the Clear Signal teal theme: a sidebar with Dashboard, Teams, Messages and Settings, beside a team conversation.">
+                <div class="mock" role="img" aria-label="The social network's team messaging screen in the Clear Signal teal theme: a sidebar with Dashboard, Teams, Messages and Settings, beside a team conversation.">
                     <div class="mock__bar">
                         <div class="mock__dots" aria-hidden="true"><i></i><i></i><i></i></div>
                         <div class="mock__addr">app · messages</div>
@@ -380,7 +380,7 @@
                     <p>An install / enable / disable module system, Horizon-managed Redis queues, and Octane + RoadRunner for production — all running locally via <code>docker compose up</code>. Pest and PHPStan level 5 keep it honest.</p>
                 </div>
                 <div class="feature feature--cta">
-                    <a href="https://github.com/liberusoftware/boilerplate-laravel" rel="noopener">
+                    <a href="https://github.com/liberusoftware/social-network-laravel" rel="noopener">
                         Read the source
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
                     </a>
@@ -395,7 +395,7 @@
             <div>
                 <div class="section-head">
                     <h2>Distinctly un-stock, by construction.</h2>
-                    <p>The boilerplate ships its own design system — “Clear Signal”: a teal signal on a quiet neutral workbench. Switch it site-wide from the admin panel; the interface recedes so the task stays in focus.</p>
+                    <p>The social network ships its own design system — “Clear Signal”: a teal signal on a quiet neutral workbench. Switch it site-wide from the admin panel; the interface recedes so the task stays in focus.</p>
                 </div>
                 <div class="swatches" aria-hidden="true">
                     <div class="swatch"><div class="chip" style="background:#0b6b74"></div><div class="lab">teal / ink</div></div>
@@ -432,7 +432,7 @@
     <div class="wrap foot">
         <span>© {{ date('Y') }} {{ config('app.name', 'Boilerplate Laravel') }} · MIT licensed</span>
         <nav class="foot__links" aria-label="Footer">
-            <a href="https://github.com/liberusoftware/boilerplate-laravel" rel="noopener">GitHub</a>
+            <a href="https://github.com/liberusoftware/social-network-laravel" rel="noopener">GitHub</a>
             <a href="#features">Features</a>
             @if (Route::has('login'))<a href="{{ route('login') }}">Log in</a>@endif
             @if (Route::has('register'))<a href="{{ route('register') }}">Get started</a>@endif

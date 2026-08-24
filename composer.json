@@ -1,12 +1,12 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "liberusoftware/boilerplate-laravel",
+    "name": "liberusoftware/social-network-laravel",
     "type": "project",
-    "description": "Liberu boilerplate Laravel application.",
+    "description": "Liberu social network Laravel application.",
     "keywords": [
         "laravel",
         "framework",
-        "boilerplate"
+        "social-network"
     ],
     "license": "MIT",
     "repositories": [

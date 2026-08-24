@@ -5,7 +5,7 @@ Where this fleet stands against the code-level standards in
 
 **This document fixes nothing.** Each finding is its own decision, taken afterwards with the
 measurement in hand. Charted as
-[Wayfinder: audit boilerplate-laravel against the Liberu code-level standards](https://github.com/liberusoftware/boilerplate-laravel/issues/642);
+[Wayfinder: audit social-network-laravel against the Liberu code-level standards](https://github.com/liberusoftware/social-network-laravel/issues/642);
 the predecessor effort's structural conformance is `CONFORMANCE.md`.
 
 ## How to read a finding
@@ -24,14 +24,14 @@ decision this document exists to inform. `unknown` is a legitimate cost.
 
 There is no *breaks a test* rank. The fleet's CI is green, so anything that broke a test would
 already be red and would be a bug report rather than an audit finding. Settled in
-[Define what a finding is, and how findings rank](https://github.com/liberusoftware/boilerplate-laravel/issues/645).
+[Define what a finding is, and how findings rank](https://github.com/liberusoftware/social-network-laravel/issues/645).
 
 **⚠ security** is a flag, not a rank. The four ranks describe *realized* consequence — what is
 broken, what is untrue, what is ungated, what is cosmetic. A supply-chain exposure has no realized
 consequence; it is risk, and *unenforced* is already the risk bucket. The flag records impact within
 that bucket without asserting a false ordering between "arbitrary code execution someday" and "a
 consumer breaks today". Settled in
-[Does the ranking need a security rank](https://github.com/liberusoftware/boilerplate-laravel/issues/651).
+[Does the ranking need a security rank](https://github.com/liberusoftware/social-network-laravel/issues/651).
 
 **Rank compares across the document; cost separates within a class.** A class whose rules share one
 failure mode will legitimately show one rank — see the CI class below, where all 17 findings are
@@ -42,7 +42,7 @@ failure mode will legitimately show one rank — see the CI class below, where a
 Not per standard. Every rule in the corpus was classified by the **mechanism that could catch it**,
 and the classes cut across the files — `FILAMENT.md`, `LIVEWIRE.md` and `THEMES.md` hold most of one
 class between them while `TESTING.md` holds a quarter of another. The full per-standard tables are in
-[the rule classification](https://github.com/liberusoftware/boilerplate-laravel/blob/research/standards-classification/docs/research/standards-rule-classification.md).
+[the rule classification](https://github.com/liberusoftware/social-network-laravel/blob/research/standards-classification/docs/research/standards-rule-classification.md).
 
 | Class | Clusters | Audited |
 | --- | --- | --- |

@@ -1,14 +1,14 @@
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: boilerplate-network-policy
-  namespace: boilerplate-laravel
+  name: social-network-network-policy
+  namespace: social-network-laravel
   labels:
-    app: boilerplate-laravel
+    app: social-network-laravel
 spec:
   podSelector:
     matchLabels:
-      app: boilerplate-laravel
+      app: social-network-laravel
   policyTypes:
   - Ingress
   - Egress
@@ -25,7 +25,7 @@ spec:
   - from:
     - podSelector:
         matchLabels:
-          app: boilerplate-laravel
+          app: social-network-laravel
     ports:
     - protocol: TCP
       port: 8000
@@ -44,7 +44,7 @@ spec:
   - to:
     - podSelector:
         matchLabels:
-          app: boilerplate-laravel
+          app: social-network-laravel
   - to: []
     ports:
     - protocol: TCP

@@ -1,6 +1,6 @@
 # Handoff — conformance step 5
 
-**Repo:** `/home/tom/code/boilerplate-laravel` · **Branch:** `docs/conformance-plan` (pushed)
+**Repo:** `/home/tom/code/social-network-laravel` · **Branch:** `docs/conformance-plan` (pushed)
 **Sibling checkout:** `/home/tom/code/package-testbench` (clean, pushed, **1.7.0**)
 **Date:** 2026-08-06
 

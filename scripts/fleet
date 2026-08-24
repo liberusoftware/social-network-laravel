@@ -13,7 +13,7 @@ that refuses to guess which repositories it applies to.
     fleet status                          # what is checked out, dirty, unpushed
     fleet clone                           # ensure every repository is present
     fleet run 'vendor/bin/pest'           # fan a command out
-    fleet run ../boilerplate-laravel/scripts/migrate-testbench .
+    fleet run ../social-network-laravel/scripts/migrate-testbench .
     fleet commit -m 'Adopt the testbench' # stage, commit, push main
     fleet tag 1.2.0 --only search identity-core
 

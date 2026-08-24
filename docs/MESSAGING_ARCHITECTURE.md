@@ -187,7 +187,7 @@
 ## File Structure
 
 ```
-liberusoftware/boilerplate-laravel
+liberusoftware/social-network-laravel
 ├── app/
 │   ├── Http/Controllers/
 │   │   └── MessageController.php          (Main API controller)
