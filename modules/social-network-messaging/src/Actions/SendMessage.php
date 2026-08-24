@@ -21,7 +21,10 @@ final readonly class SendMessage
     {
         $this->authorizer->send($sender);
         $body = trim($body);
-        if ($body === '' || mb_strlen($body) > (int) config('social-network-messaging.max_body_length')) {
+        if ($body === '' && $attachments === []) {
+            throw new InvalidArgumentException('A message requires body text or an attachment.');
+        }
+        if (mb_strlen($body) > (int) config('social-network-messaging.max_body_length')) {
             throw new InvalidArgumentException('Message body is invalid.');
         }
         abort_unless(DB::table('social_conversation_members')->where(['conversation_id' => $conversationId, 'profile_id' => $sender->getKey()])->exists(), 403);
