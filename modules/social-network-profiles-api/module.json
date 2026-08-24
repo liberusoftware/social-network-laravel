@@ -1,0 +1,13 @@
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "social-network-profiles-api",
+  "display_name": "Social Network Profiles API",
+  "description": "Authenticated versioned HTTP adapter for Profiles.",
+  "version": "0.1.0",
+  "category": "presentation",
+  "provider": "Liberu\\SocialNetwork\\Profiles\\Api\\ProfilesApiServiceProvider",
+  "requires": {"php": "^8.5", "laravel": "^13.0", "packages": {"liberusoftware/module-social-network-profiles": "^0.1"}},
+  "capabilities": ["social-network.profiles.api"],
+  "default_enabled": true,
+  "features": ["Versioned profile endpoints", "Profile updates", "Profile blocking"]
+}

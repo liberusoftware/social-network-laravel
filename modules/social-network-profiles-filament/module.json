@@ -1,0 +1,14 @@
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "social-network-profiles-filament",
+  "display_name": "Social Network Profiles Filament",
+  "description": "Filament 5 profile administration surface.",
+  "version": "0.1.0",
+  "category": "presentation",
+  "provider": "Liberu\\SocialNetwork\\Profiles\\Filament\\ProfilesFilamentServiceProvider",
+  "requires": {"php": "^8.5", "laravel": "^13.0", "packages": {"liberusoftware/module-social-network-profiles": "^0.1"}},
+  "presentation": {"filament": {"app": ["Liberu\\SocialNetwork\\Profiles\\Filament\\ProfilesFilamentPlugin"]}},
+  "capabilities": ["social-network.profiles.filament"],
+  "default_enabled": true,
+  "features": ["Profile administration", "Visibility controls", "Verification state"]
+}

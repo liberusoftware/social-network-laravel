@@ -1,0 +1,56 @@
+openapi: 3.1.0
+info:
+  title: Social Network Profiles API
+  version: 1.0.0
+paths:
+  /api/v1/social-network/profiles/me:
+    get:
+      operationId: social.network.profiles.getCurrent
+      security: [{ sanctum: [] }]
+      responses: {'200': {description: Current authorized profile, content: {application/json: {schema: {$ref: '#/components/schemas/Resource'}}}}}
+    patch:
+      operationId: social.network.profiles.update
+      security: [{ sanctum: [] }]
+      requestBody: {required: true, content: {application/json: {schema: {$ref: '#/components/schemas/UpdateRequest'}}}}
+      responses: {'200': {description: Updated profile, content: {application/json: {schema: {$ref: '#/components/schemas/Resource'}}}}, '422': {description: Validation problem}}
+  /api/v1/social-network/profiles/{id}:
+    get:
+      operationId: social.network.profiles.get
+      security: [{ sanctum: [] }]
+      parameters: [{name: id, in: path, required: true, schema: {type: string}}]
+      responses: {'200': {description: Authorized profile, content: {application/json: {schema: {$ref: '#/components/schemas/Resource'}}}}, '404': {description: Concealed profile}}
+  /api/v1/social-network/profiles/me/blocks/{id}:
+    post:
+      operationId: social.network.profiles.block
+      security: [{ sanctum: [] }]
+      parameters: [{name: id, in: path, required: true, schema: {type: string}}]
+      responses: {'204': {description: Profile blocked}, '422': {description: Invalid block}}
+components:
+  securitySchemes: {sanctum: {type: http, scheme: bearer, bearerFormat: Sanctum}}
+  schemas:
+    Resource:
+      type: object
+      required: [data]
+      properties:
+        data:
+          type: object
+          required: [id, type, handle, visibility]
+          properties:
+            id: {type: string}
+            type: {type: string, const: social-network-profiles}
+            handle: {type: string}
+            bio: {type: [string, 'null']}
+            attributes: {type: object, additionalProperties: true}
+            avatar_path: {type: [string, 'null']}
+            verification: {type: string, enum: [unverified, pending, verified, rejected]}
+            visibility: {type: string, enum: [public, followers, private]}
+            lifecycle_state: {type: string, enum: [active, suspended, deleted]}
+    UpdateRequest:
+      type: object
+      additionalProperties: false
+      properties:
+        handle: {type: string, minLength: 3, maxLength: 32}
+        bio: {type: [string, 'null'], maxLength: 5000}
+        attributes: {type: object, additionalProperties: true}
+        avatar_path: {type: [string, 'null']}
+        visibility: {type: string, enum: [public, followers, private]}

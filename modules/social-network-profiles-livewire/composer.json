@@ -1,0 +1,11 @@
+{
+  "name": "liberusoftware/module-social-network-profiles-livewire",
+  "description": "Livewire 4 adapter for Liberu Social Network Profiles.",
+  "type": "liberu-module",
+  "license": "MIT",
+  "require": {"php": "^8.5", "livewire/livewire": "^4.0", "liberusoftware/module-social-network-profiles": "^0.1"},
+  "autoload": {"psr-4": {"Liberu\\SocialNetwork\\Profiles\\Livewire\\": "src/"}},
+  "extra": {"liberu": {"name": "social-network-profiles-livewire"}},
+  "version": "0.1.0",
+  "config": {"allow-plugins": {"pestphp/pest-plugin": true}}
+}
