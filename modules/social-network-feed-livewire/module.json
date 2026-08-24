@@ -1,1 +1,30 @@
-{"$schema":"https://schemas.liberu.dev/module/v1.json","name":"social-network-feed-livewire","display_name":"Social Network Feed Livewire","description":"Livewire feed timeline.","version":"0.1.0","category":"presentation","provider":"Liberu\\SocialNetwork\\Feed\\Livewire\\FeedLivewireServiceProvider","requires":{"php":"^8.5","laravel":"^13.0","packages":{"liberusoftware/module-social-network-feed":"^0.1","liberusoftware/module-social-network-profiles":"^0.1"}},"presentation":{"livewire":["social-feed-timeline"]},"capabilities":["social-network.feed.livewire"],"default_enabled":true,"features":["Timeline rendering","Cursor loading"]}
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "social-network-feed-livewire",
+  "display_name": "Social Network Feed Livewire",
+  "description": "Livewire feed timeline.",
+  "version": "0.1.2",
+  "category": "presentation",
+  "provider": "Liberu\\SocialNetwork\\Feed\\Livewire\\FeedLivewireServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {
+      "liberusoftware/module-social-network-feed": "^0.1",
+      "liberusoftware/module-social-network-profiles": "^0.1"
+    }
+  },
+  "presentation": {
+    "livewire": [
+      "social-feed-timeline"
+    ]
+  },
+  "capabilities": [
+    "social-network.feed.livewire"
+  ],
+  "default_enabled": true,
+  "features": [
+    "Timeline rendering",
+    "Cursor loading"
+  ]
+}

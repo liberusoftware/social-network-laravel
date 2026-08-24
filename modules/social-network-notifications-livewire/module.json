@@ -1,1 +1,30 @@
-{"$schema":"https://schemas.liberu.dev/module/v1.json","name":"social-network-notifications-livewire","display_name":"Social Network Notifications Livewire","description":"Livewire notification list and read interaction.","version":"0.1.0","category":"presentation","provider":"Liberu\\SocialNetwork\\Notifications\\Livewire\\NotificationsLivewireServiceProvider","requires":{"php":"^8.5","laravel":"^13.0","packages":{"liberusoftware/module-social-network-notifications":"^0.1","liberusoftware/module-social-network-profiles":"^0.1"}},"presentation":{"livewire":["social-notifications-list"]},"capabilities":["social-network.notifications.livewire"],"default_enabled":true,"features":["Notification list","Read state"]}
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "social-network-notifications-livewire",
+  "display_name": "Social Network Notifications Livewire",
+  "description": "Livewire notification list and read interaction.",
+  "version": "0.1.2",
+  "category": "presentation",
+  "provider": "Liberu\\SocialNetwork\\Notifications\\Livewire\\NotificationsLivewireServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {
+      "liberusoftware/module-social-network-notifications": "^0.1",
+      "liberusoftware/module-social-network-profiles": "^0.1"
+    }
+  },
+  "presentation": {
+    "livewire": [
+      "social-notifications-list"
+    ]
+  },
+  "capabilities": [
+    "social-network.notifications.livewire"
+  ],
+  "default_enabled": true,
+  "features": [
+    "Notification list",
+    "Read state"
+  ]
+}

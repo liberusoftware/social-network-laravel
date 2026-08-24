@@ -1,1 +1,30 @@
-{"$schema":"https://schemas.liberu.dev/module/v1.json","name":"social-network-moderation","display_name":"Social Network Moderation","description":"Report intake, evidence, decisions, appeals, and sanctions.","version":"0.1.0","category":"product","provider":"Liberu\\SocialNetwork\\Moderation\\ModerationServiceProvider","requires":{"php":"^8.5","laravel":"^13.0","packages":{"liberusoftware/module-social-network-profiles":"^0.1"}},"capabilities":["social-network.moderation"],"features":["Reports","Queues","Policy and rules","Evidence","Actions","Appeals","Sanctions","Transparency"],"default_enabled":true}
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "social-network-moderation",
+  "display_name": "Social Network Moderation",
+  "description": "Report intake, evidence, decisions, appeals, and sanctions.",
+  "version": "0.1.2",
+  "category": "product",
+  "provider": "Liberu\\SocialNetwork\\Moderation\\ModerationServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {
+      "liberusoftware/module-social-network-profiles": "^0.1"
+    }
+  },
+  "capabilities": [
+    "social-network.moderation"
+  ],
+  "features": [
+    "Reports",
+    "Queues",
+    "Policy and rules",
+    "Evidence",
+    "Actions",
+    "Appeals",
+    "Sanctions",
+    "Transparency"
+  ],
+  "default_enabled": true
+}

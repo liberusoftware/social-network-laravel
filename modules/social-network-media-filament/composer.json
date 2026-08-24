@@ -3,7 +3,7 @@
   "description": "Filament adapter for Media.",
   "type": "liberu-module",
   "license": "MIT",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "require": {
     "php": "^8.5",
     "filament/filament": "^5.1",

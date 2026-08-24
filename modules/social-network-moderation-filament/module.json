@@ -1,1 +1,32 @@
-{"$schema":"https://schemas.liberu.dev/module/v1.json","name":"social-network-moderation-filament","display_name":"Social Network Moderation Filament","description":"Filament moderation queue.","version":"0.1.0","category":"presentation","provider":"Liberu\\SocialNetwork\\Moderation\\Filament\\ModerationFilamentServiceProvider","requires":{"php":"^8.5","laravel":"^13.0","packages":{"liberusoftware/module-social-network-moderation":"^0.1","liberusoftware/module-social-network-profiles":"^0.1"}},"presentation":{"filament":{"app":["Liberu\\SocialNetwork\\Moderation\\Filament\\ModerationFilamentPlugin"]}},"capabilities":["social-network.moderation.filament"],"default_enabled":true,"features":["Report queue","Decision review"]}
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "social-network-moderation-filament",
+  "display_name": "Social Network Moderation Filament",
+  "description": "Filament moderation queue.",
+  "version": "0.1.2",
+  "category": "presentation",
+  "provider": "Liberu\\SocialNetwork\\Moderation\\Filament\\ModerationFilamentServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {
+      "liberusoftware/module-social-network-moderation": "^0.1",
+      "liberusoftware/module-social-network-profiles": "^0.1"
+    }
+  },
+  "presentation": {
+    "filament": {
+      "app": [
+        "Liberu\\SocialNetwork\\Moderation\\Filament\\ModerationFilamentPlugin"
+      ]
+    }
+  },
+  "capabilities": [
+    "social-network.moderation.filament"
+  ],
+  "default_enabled": true,
+  "features": [
+    "Report queue",
+    "Decision review"
+  ]
+}

@@ -3,11 +3,23 @@
   "name": "social-network-social-core-api",
   "display_name": "Social Network Social Core API",
   "description": "Authenticated versioned HTTP adapter for Social Core.",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "category": "presentation",
   "provider": "Liberu\\SocialNetwork\\SocialCore\\Api\\SocialCoreApiServiceProvider",
-  "requires": {"php": "^8.5", "laravel": "^13.0", "packages": {"liberusoftware/module-social-network-social-core": "^0.1"}},
-  "capabilities": ["social-network.social-core.api"],
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {
+      "liberusoftware/module-social-network-social-core": "^0.1"
+    }
+  },
+  "capabilities": [
+    "social-network.social-core.api"
+  ],
   "default_enabled": true,
-  "features": ["Versioned Social Core endpoints", "Sanctum authentication", "Problem details compatible validation"]
+  "features": [
+    "Versioned Social Core endpoints",
+    "Sanctum authentication",
+    "Problem details compatible validation"
+  ]
 }

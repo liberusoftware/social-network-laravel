@@ -1,1 +1,32 @@
-{"$schema":"https://schemas.liberu.dev/module/v1.json","name":"social-network-media-filament","display_name":"Social Network Media Filament","description":"Filament media administration.","version":"0.1.0","category":"presentation","provider":"Liberu\\SocialNetwork\\Media\\Filament\\MediaFilamentServiceProvider","requires":{"php":"^8.5","laravel":"^13.0","packages":{"liberusoftware/module-social-network-media":"^0.1","liberusoftware/module-social-network-profiles":"^0.1"}},"presentation":{"filament":{"app":["Liberu\\SocialNetwork\\Media\\Filament\\MediaFilamentPlugin"]}},"capabilities":["social-network.media.filament"],"default_enabled":true,"features":["Asset review","Processing state"]}
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "social-network-media-filament",
+  "display_name": "Social Network Media Filament",
+  "description": "Filament media administration.",
+  "version": "0.1.2",
+  "category": "presentation",
+  "provider": "Liberu\\SocialNetwork\\Media\\Filament\\MediaFilamentServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {
+      "liberusoftware/module-social-network-media": "^0.1",
+      "liberusoftware/module-social-network-profiles": "^0.1"
+    }
+  },
+  "presentation": {
+    "filament": {
+      "app": [
+        "Liberu\\SocialNetwork\\Media\\Filament\\MediaFilamentPlugin"
+      ]
+    }
+  },
+  "capabilities": [
+    "social-network.media.filament"
+  ],
+  "default_enabled": true,
+  "features": [
+    "Asset review",
+    "Processing state"
+  ]
+}

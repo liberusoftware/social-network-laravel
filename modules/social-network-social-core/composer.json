@@ -20,7 +20,7 @@
       "name": "social-network-social-core"
     }
   },
-  "version": "0.1.1",
+  "version": "0.1.2",
   "autoload-dev": {
     "psr-4": {
       "Liberu\\SocialNetwork\\SocialCore\\Tests\\": "tests/",

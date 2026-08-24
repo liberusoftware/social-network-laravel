@@ -1,1 +1,32 @@
-{"$schema":"https://schemas.liberu.dev/module/v1.json","name":"social-network-notifications-filament","display_name":"Social Network Notifications Filament","description":"Filament notification operations.","version":"0.1.0","category":"presentation","provider":"Liberu\\SocialNetwork\\Notifications\\Filament\\NotificationsFilamentServiceProvider","requires":{"php":"^8.5","laravel":"^13.0","packages":{"liberusoftware/module-social-network-notifications":"^0.1","liberusoftware/module-social-network-profiles":"^0.1"}},"presentation":{"filament":{"app":["Liberu\\SocialNetwork\\Notifications\\Filament\\NotificationsFilamentPlugin"]}},"capabilities":["social-network.notifications.filament"],"default_enabled":true,"features":["Notification review","Delivery state"]}
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "social-network-notifications-filament",
+  "display_name": "Social Network Notifications Filament",
+  "description": "Filament notification operations.",
+  "version": "0.1.2",
+  "category": "presentation",
+  "provider": "Liberu\\SocialNetwork\\Notifications\\Filament\\NotificationsFilamentServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {
+      "liberusoftware/module-social-network-notifications": "^0.1",
+      "liberusoftware/module-social-network-profiles": "^0.1"
+    }
+  },
+  "presentation": {
+    "filament": {
+      "app": [
+        "Liberu\\SocialNetwork\\Notifications\\Filament\\NotificationsFilamentPlugin"
+      ]
+    }
+  },
+  "capabilities": [
+    "social-network.notifications.filament"
+  ],
+  "default_enabled": true,
+  "features": [
+    "Notification review",
+    "Delivery state"
+  ]
+}

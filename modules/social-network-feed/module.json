@@ -1,1 +1,27 @@
-{"$schema":"https://schemas.liberu.dev/module/v1.json","name":"social-network-feed","display_name":"Social Network Feed","description":"Timeline assembly and visibility-aware feed reads.","version":"0.1.0","category":"product","provider":"Liberu\\SocialNetwork\\Feed\\FeedServiceProvider","requires":{"php":"^8.5","laravel":"^13.0","packages":{"liberusoftware/module-social-network-profiles":"^0.1"}},"capabilities":["social-network.feed"],"features":["Home timeline","Following timeline","Ranking","Cursors","Visibility filters"],"default_enabled":true}
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "social-network-feed",
+  "display_name": "Social Network Feed",
+  "description": "Timeline assembly and visibility-aware feed reads.",
+  "version": "0.1.2",
+  "category": "product",
+  "provider": "Liberu\\SocialNetwork\\Feed\\FeedServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {
+      "liberusoftware/module-social-network-profiles": "^0.1"
+    }
+  },
+  "capabilities": [
+    "social-network.feed"
+  ],
+  "features": [
+    "Home timeline",
+    "Following timeline",
+    "Ranking",
+    "Cursors",
+    "Visibility filters"
+  ],
+  "default_enabled": true
+}

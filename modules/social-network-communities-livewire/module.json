@@ -1,1 +1,30 @@
-{"$schema":"https://schemas.liberu.dev/module/v1.json","name":"social-network-communities-livewire","display_name":"Social Network Communities Livewire","description":"Livewire community creation and membership interaction.","version":"0.1.0","category":"presentation","provider":"Liberu\\SocialNetwork\\Communities\\Livewire\\CommunitiesLivewireServiceProvider","requires":{"php":"^8.5","laravel":"^13.0","packages":{"liberusoftware/module-social-network-communities":"^0.1","liberusoftware/module-social-network-profiles":"^0.1"}},"presentation":{"livewire":["social-community-creator"]},"capabilities":["social-network.communities.livewire"],"default_enabled":true,"features":["Community creation","Validation feedback"]}
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "social-network-communities-livewire",
+  "display_name": "Social Network Communities Livewire",
+  "description": "Livewire community creation and membership interaction.",
+  "version": "0.1.2",
+  "category": "presentation",
+  "provider": "Liberu\\SocialNetwork\\Communities\\Livewire\\CommunitiesLivewireServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {
+      "liberusoftware/module-social-network-communities": "^0.1",
+      "liberusoftware/module-social-network-profiles": "^0.1"
+    }
+  },
+  "presentation": {
+    "livewire": [
+      "social-community-creator"
+    ]
+  },
+  "capabilities": [
+    "social-network.communities.livewire"
+  ],
+  "default_enabled": true,
+  "features": [
+    "Community creation",
+    "Validation feedback"
+  ]
+}

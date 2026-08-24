@@ -3,11 +3,28 @@
   "name": "social-network-profiles",
   "display_name": "Social Network Profiles",
   "description": "Handles, bios, attributes, avatars, verification, visibility, blocking, and profile lifecycle.",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "category": "product",
   "provider": "Liberu\\SocialNetwork\\Profiles\\ProfilesServiceProvider",
-  "requires": {"php": "^8.5", "laravel": "^13.0", "packages": {"liberusoftware/module-manager": "^1.0"}},
-  "capabilities": ["social-network.profiles"],
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {
+      "liberusoftware/module-manager": "^1.0"
+    }
+  },
+  "capabilities": [
+    "social-network.profiles"
+  ],
   "default_enabled": true,
-  "features": ["Handles", "Bios", "Attributes", "Avatars", "Verification", "Visibility", "Blocking", "Profile lifecycle"]
+  "features": [
+    "Handles",
+    "Bios",
+    "Attributes",
+    "Avatars",
+    "Verification",
+    "Visibility",
+    "Blocking",
+    "Profile lifecycle"
+  ]
 }

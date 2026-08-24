@@ -3,12 +3,28 @@
   "name": "social-network-profiles-livewire",
   "display_name": "Social Network Profiles Livewire",
   "description": "Livewire 4 profile editing interaction.",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "category": "presentation",
   "provider": "Liberu\\SocialNetwork\\Profiles\\Livewire\\ProfilesLivewireServiceProvider",
-  "requires": {"php": "^8.5", "laravel": "^13.0", "packages": {"liberusoftware/module-social-network-profiles": "^0.1"}},
-  "presentation": {"livewire": ["profiles-editor"]},
-  "capabilities": ["social-network.profiles.livewire"],
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {
+      "liberusoftware/module-social-network-profiles": "^0.1"
+    }
+  },
+  "presentation": {
+    "livewire": [
+      "profiles-editor"
+    ]
+  },
+  "capabilities": [
+    "social-network.profiles.livewire"
+  ],
   "default_enabled": true,
-  "features": ["Interactive profile editing", "Validation feedback", "Visibility controls"]
+  "features": [
+    "Interactive profile editing",
+    "Validation feedback",
+    "Visibility controls"
+  ]
 }

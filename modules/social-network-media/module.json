@@ -1,1 +1,31 @@
-{"$schema":"https://schemas.liberu.dev/module/v1.json","name":"social-network-media","display_name":"Social Network Media","description":"Provider-neutral media metadata and lifecycle.","version":"0.1.0","category":"product","provider":"Liberu\\SocialNetwork\\Media\\MediaServiceProvider","requires":{"php":"^8.5","laravel":"^13.0","packages":{"liberusoftware/module-social-network-profiles":"^0.1"}},"capabilities":["social-network.media"],"features":["Images","Video","Audio","Files","Processing","Alt text","Captions","Rights","Delivery"],"default_enabled":true}
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "social-network-media",
+  "display_name": "Social Network Media",
+  "description": "Provider-neutral media metadata and lifecycle.",
+  "version": "0.1.2",
+  "category": "product",
+  "provider": "Liberu\\SocialNetwork\\Media\\MediaServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {
+      "liberusoftware/module-social-network-profiles": "^0.1"
+    }
+  },
+  "capabilities": [
+    "social-network.media"
+  ],
+  "features": [
+    "Images",
+    "Video",
+    "Audio",
+    "Files",
+    "Processing",
+    "Alt text",
+    "Captions",
+    "Rights",
+    "Delivery"
+  ],
+  "default_enabled": true
+}

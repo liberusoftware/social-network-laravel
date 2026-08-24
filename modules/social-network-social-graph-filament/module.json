@@ -1,1 +1,32 @@
-{"$schema":"https://schemas.liberu.dev/module/v1.json","name":"social-network-social-graph-filament","display_name":"Social Network Social Graph Filament","description":"Filament Social Graph administration surface.","version":"0.1.0","category":"presentation","provider":"Liberu\\SocialNetwork\\SocialGraph\\Filament\\SocialGraphFilamentServiceProvider","requires":{"php":"^8.5","laravel":"^13.0","packages":{"liberusoftware/module-social-network-social-graph":"^0.1","liberusoftware/module-social-network-profiles":"^0.1"}},"presentation":{"filament":{"app":["Liberu\\SocialNetwork\\SocialGraph\\Filament\\SocialGraphFilamentPlugin"]}},"capabilities":["social-network.social-graph.filament"],"default_enabled":true,"features":["Relationship administration","Relationship visibility"]}
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "social-network-social-graph-filament",
+  "display_name": "Social Network Social Graph Filament",
+  "description": "Filament Social Graph administration surface.",
+  "version": "0.1.2",
+  "category": "presentation",
+  "provider": "Liberu\\SocialNetwork\\SocialGraph\\Filament\\SocialGraphFilamentServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {
+      "liberusoftware/module-social-network-social-graph": "^0.1",
+      "liberusoftware/module-social-network-profiles": "^0.1"
+    }
+  },
+  "presentation": {
+    "filament": {
+      "app": [
+        "Liberu\\SocialNetwork\\SocialGraph\\Filament\\SocialGraphFilamentPlugin"
+      ]
+    }
+  },
+  "capabilities": [
+    "social-network.social-graph.filament"
+  ],
+  "default_enabled": true,
+  "features": [
+    "Relationship administration",
+    "Relationship visibility"
+  ]
+}

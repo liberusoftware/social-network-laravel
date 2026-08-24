@@ -1,1 +1,30 @@
-{"$schema":"https://schemas.liberu.dev/module/v1.json","name":"social-network-communities","display_name":"Social Network Communities","description":"Groups, memberships, roles, rules, feeds, and moderation boundaries.","version":"0.1.0","category":"product","provider":"Liberu\\SocialNetwork\\Communities\\CommunitiesServiceProvider","requires":{"php":"^8.5","laravel":"^13.0","packages":{"liberusoftware/module-social-network-profiles":"^0.1"}},"capabilities":["social-network.communities"],"features":["Groups and pages","Memberships","Roles","Rules","Feeds","Files","Questions","Moderation"],"default_enabled":true}
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "social-network-communities",
+  "display_name": "Social Network Communities",
+  "description": "Groups, memberships, roles, rules, feeds, and moderation boundaries.",
+  "version": "0.1.2",
+  "category": "product",
+  "provider": "Liberu\\SocialNetwork\\Communities\\CommunitiesServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {
+      "liberusoftware/module-social-network-profiles": "^0.1"
+    }
+  },
+  "capabilities": [
+    "social-network.communities"
+  ],
+  "features": [
+    "Groups and pages",
+    "Memberships",
+    "Roles",
+    "Rules",
+    "Feeds",
+    "Files",
+    "Questions",
+    "Moderation"
+  ],
+  "default_enabled": true
+}

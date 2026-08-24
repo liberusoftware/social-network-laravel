@@ -1,1 +1,25 @@
-{"$schema":"https://schemas.liberu.dev/module/v1.json","name":"social-network-moderation-api","display_name":"Social Network Moderation API","description":"Authenticated report intake API.","version":"0.1.0","category":"presentation","provider":"Liberu\\SocialNetwork\\Moderation\\Api\\ModerationApiServiceProvider","requires":{"php":"^8.5","laravel":"^13.0","packages":{"liberusoftware/module-social-network-moderation":"^0.1","liberusoftware/module-social-network-profiles":"^0.1"}},"capabilities":["social-network.moderation.api"],"default_enabled":true,"features":["Report creation","Moderation queue"]}
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "social-network-moderation-api",
+  "display_name": "Social Network Moderation API",
+  "description": "Authenticated report intake API.",
+  "version": "0.1.2",
+  "category": "presentation",
+  "provider": "Liberu\\SocialNetwork\\Moderation\\Api\\ModerationApiServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {
+      "liberusoftware/module-social-network-moderation": "^0.1",
+      "liberusoftware/module-social-network-profiles": "^0.1"
+    }
+  },
+  "capabilities": [
+    "social-network.moderation.api"
+  ],
+  "default_enabled": true,
+  "features": [
+    "Report creation",
+    "Moderation queue"
+  ]
+}

@@ -1,1 +1,25 @@
-{"$schema":"https://schemas.liberu.dev/module/v1.json","name":"social-network-communities-api","display_name":"Social Network Communities API","description":"Authenticated communities API.","version":"0.1.0","category":"presentation","provider":"Liberu\\SocialNetwork\\Communities\\Api\\CommunitiesApiServiceProvider","requires":{"php":"^8.5","laravel":"^13.0","packages":{"liberusoftware/module-social-network-communities":"^0.1","liberusoftware/module-social-network-profiles":"^0.1"}},"capabilities":["social-network.communities.api"],"default_enabled":true,"features":["Community creation","Membership endpoint"]}
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "social-network-communities-api",
+  "display_name": "Social Network Communities API",
+  "description": "Authenticated communities API.",
+  "version": "0.1.2",
+  "category": "presentation",
+  "provider": "Liberu\\SocialNetwork\\Communities\\Api\\CommunitiesApiServiceProvider",
+  "requires": {
+    "php": "^8.5",
+    "laravel": "^13.0",
+    "packages": {
+      "liberusoftware/module-social-network-communities": "^0.1",
+      "liberusoftware/module-social-network-profiles": "^0.1"
+    }
+  },
+  "capabilities": [
+    "social-network.communities.api"
+  ],
+  "default_enabled": true,
+  "features": [
+    "Community creation",
+    "Membership endpoint"
+  ]
+}
