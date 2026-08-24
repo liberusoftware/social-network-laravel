@@ -48,6 +48,14 @@ it('persists set_theme to session and the authenticated user', function () {
         ->and($user->fresh()->theme_preference)->toBe('dark');
 });
 
+it('uses a remote profile photo URL without rewriting it', function () {
+    $user = User::factory()->create([
+        'profile_photo_path' => 'https://cdn.example.test/profile.jpg',
+    ]);
+
+    expect($user->profile_photo_url)->toBe('https://cdn.example.test/profile.jpg');
+});
+
 it('set_theme without auth writes session only and does not throw', function () {
     set_theme('dark');
 
