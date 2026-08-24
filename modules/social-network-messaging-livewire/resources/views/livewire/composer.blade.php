@@ -1,0 +1,1 @@
+<div><form wire:submit="send"><input wire:model="conversationId" type="text" aria-label="Conversation ID"><textarea wire:model="body" aria-label="Message"></textarea><button type="submit">Send message</button></form></div>

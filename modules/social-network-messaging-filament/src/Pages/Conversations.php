@@ -1,0 +1,22 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Liberu\SocialNetwork\Messaging\Filament\Pages;
+
+use Filament\Pages\Page;
+use Liberu\SocialNetwork\Messaging\Models\Conversation;
+
+final class Conversations extends Page
+{
+    protected string $view = 'social-network-messaging-filament::pages.conversations';
+
+    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-chat-bubble-left-right';
+
+    protected static string|\UnitEnum|null $navigationGroup = 'Social Network';
+
+    public function conversations(): mixed
+    {
+        return Conversation::query()->latest()->limit(50)->get();
+    }
+}

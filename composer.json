@@ -361,6 +361,26 @@
             "type": "path",
             "url": "modules/social-network-communities-livewire",
             "options": {"symlink": false}
+        },
+        {
+            "type": "path",
+            "url": "modules/social-network-messaging",
+            "options": {"symlink": false}
+        },
+        {
+            "type": "path",
+            "url": "modules/social-network-messaging-api",
+            "options": {"symlink": false}
+        },
+        {
+            "type": "path",
+            "url": "modules/social-network-messaging-filament",
+            "options": {"symlink": false}
+        },
+        {
+            "type": "path",
+            "url": "modules/social-network-messaging-livewire",
+            "options": {"symlink": false}
         }
     ],
     "require": {
@@ -435,6 +455,10 @@
         "liberusoftware/module-social-network-communities-api": "^0.1",
         "liberusoftware/module-social-network-communities-filament": "^0.1",
         "liberusoftware/module-social-network-communities-livewire": "^0.1",
+        "liberusoftware/module-social-network-messaging": "^0.1",
+        "liberusoftware/module-social-network-messaging-api": "^0.1",
+        "liberusoftware/module-social-network-messaging-filament": "^0.1",
+        "liberusoftware/module-social-network-messaging-livewire": "^0.1",
         "liberusoftware/notifications": "^1.0",
         "liberusoftware/observability": "^1.0",
         "liberusoftware/organizations-teams": "^1.0",

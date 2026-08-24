@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "285cd2b6f3a0e78cec4404f526c997aa",
+    "content-hash": "fc61e9c9de289a4634283ccd82fa46bf",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -6957,6 +6957,145 @@
                 "MIT"
             ],
             "description": "Livewire adapter for Media.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-social-network-messaging",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/social-network-messaging",
+                "reference": "b9b714fa9e05003a91eeb8bbd57bce12af2a982b"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/events": "^13.0",
+                "illuminate/support": "^13.0",
+                "liberusoftware/module-social-network-profiles": "^0.1",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "social-network-messaging"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\SocialNetwork\\Messaging\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Conversations, membership, message delivery, read state, requests, safety, attachments, and retention.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-social-network-messaging-api",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/social-network-messaging-api",
+                "reference": "460a0be82270604bd29e51bacd68a81036caf7dc"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "laravel/sanctum": "^4.0",
+                "liberusoftware/module-social-network-messaging": "^0.1",
+                "liberusoftware/module-social-network-profiles": "^0.1",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "social-network-messaging-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\SocialNetwork\\Messaging\\Api\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Versioned API adapter for Messaging.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-social-network-messaging-filament",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/social-network-messaging-filament",
+                "reference": "9595bf48675388c015f518eef2502c9f750f2a62"
+            },
+            "require": {
+                "filament/filament": "^5.1",
+                "liberusoftware/module-social-network-messaging": "^0.1",
+                "liberusoftware/module-social-network-profiles": "^0.1",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "social-network-messaging-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\SocialNetwork\\Messaging\\Filament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament adapter for Messaging.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-social-network-messaging-livewire",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/social-network-messaging-livewire",
+                "reference": "aa2b0af83bf6af19c1b3b91ac356abdf18e5f862"
+            },
+            "require": {
+                "liberusoftware/module-social-network-messaging": "^0.1",
+                "liberusoftware/module-social-network-profiles": "^0.1",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "social-network-messaging-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\SocialNetwork\\Messaging\\Livewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Livewire adapter for Messaging.",
             "transport-options": {
                 "symlink": false,
                 "relative": true
