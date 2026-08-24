@@ -23,7 +23,9 @@ final readonly class SendMessage
         $body = trim($body);
         if ($body === '' || mb_strlen($body) > (int) config('social-network-messaging.max_body_length')) {
             throw new InvalidArgumentException('Message body is invalid.');
-        }abort_unless(DB::table('social_conversation_members')->where(['conversation_id' => $conversationId, 'profile_id' => $sender->getKey()])->exists(), 403);
+        }
+        abort_unless(DB::table('social_conversation_members')->where(['conversation_id' => $conversationId, 'profile_id' => $sender->getKey()])->exists(), 403);
+        if (count($attachments) > 20) throw new InvalidArgumentException('Too many message attachments.');
         $message = DB::transaction(fn (): Message => Message::query()->create(['id' => (string) Str::uuid(), 'conversation_id' => $conversationId, 'sender_profile_id' => $sender->getKey(), 'body' => $body, 'state' => 'sent', 'attachments' => $attachments]));
         $this->events->dispatch(new MessageSent($message));
 

@@ -8,4 +8,5 @@ Route::prefix('api/v1/social-network/notifications')->middleware(['auth:sanctum'
     Route::get('/', [NotificationsController::class, 'index'])->name('index');
     Route::patch('/preferences', [NotificationsController::class, 'preferences'])->name('preferences');
     Route::post('/{notification}/read', [NotificationsController::class, 'read'])->name('read');
+    Route::post('/{notification}/dismiss', [NotificationsController::class, 'dismiss'])->name('dismiss');
 });

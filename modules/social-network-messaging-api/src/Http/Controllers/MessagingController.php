@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Liberu\SocialNetwork\Messaging\Actions\CreateConversation;
 use Liberu\SocialNetwork\Messaging\Actions\MarkConversationRead;
+use Liberu\SocialNetwork\Messaging\Actions\ListConversations;
 use Liberu\SocialNetwork\Messaging\Actions\SendMessage;
 use Liberu\SocialNetwork\Profiles\Actions\GetProfile;
 
@@ -20,6 +21,13 @@ final class MessagingController extends Controller
         $c = $create->handle($get->forUser($request->user()->getAuthIdentifier()), $data['title'] ?? null);
 
         return response()->json(['data' => ['id' => $c->getKey(), 'type' => 'social-network-conversations', 'state' => $c->state, 'title' => $c->title]], 201);
+    }
+
+    public function index(Request $request, GetProfile $get, ListConversations $list): JsonResponse
+    {
+        $data = $request->validate(['limit' => ['sometimes', 'integer', 'min:1', 'max:100']]);
+        $items = $list->handle($get->forUser($request->user()->getAuthIdentifier()), $data['limit'] ?? 25);
+        return response()->json(['data' => $items->map(fn ($c): array => ['id' => $c->getKey(), 'type' => 'social-network-conversations', 'state' => $c->state, 'title' => $c->title])->values()]);
     }
 
     public function message(string $conversation, Request $request, GetProfile $get, SendMessage $send): JsonResponse

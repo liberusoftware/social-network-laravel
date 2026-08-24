@@ -7,6 +7,7 @@ namespace Liberu\SocialNetwork\Profiles\Filament\Pages;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\KeyValue;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Pages\Page;
@@ -34,7 +35,7 @@ final class EditProfile extends Page implements HasForms
     {
         $userId = auth()->id();
         abort_unless($userId !== null, 404);
-        $this->data = $get->forUser($userId)->only(['handle', 'bio', 'avatar_path', 'visibility']);
+        $this->data = $get->forUser($userId)->only(['handle', 'bio', 'attributes', 'avatar_path', 'visibility', 'lifecycle_state', 'verification_status']);
     }
 
     public function form(Schema $schema): Schema
@@ -43,8 +44,11 @@ final class EditProfile extends Page implements HasForms
             Section::make('Profile')->schema([
                 TextInput::make('handle')->required()->minLength(3)->maxLength(32),
                 Textarea::make('bio')->maxLength(5000),
+                KeyValue::make('attributes')->helperText('Additional profile attributes.'),
                 TextInput::make('avatar_path')->maxLength(2048),
-                Select::make('visibility')->options(['public' => 'Public', 'followers' => 'Followers', 'private' => 'Private'])->required(),
+                Select::make('visibility')->options(array_combine((array) config('social-network-profiles.visibilities'), array_map('ucfirst', (array) config('social-network-profiles.visibilities'))))->required(),
+                Select::make('lifecycle_state')->options(array_combine((array) config('social-network-profiles.lifecycle_states'), array_map('ucfirst', (array) config('social-network-profiles.lifecycle_states'))))->required(),
+                Select::make('verification_status')->options(array_combine((array) config('social-network-profiles.verification_statuses'), array_map('ucfirst', (array) config('social-network-profiles.verification_statuses'))))->disabled(),
             ]),
         ]);
     }

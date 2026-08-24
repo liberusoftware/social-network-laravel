@@ -21,28 +21,58 @@ final readonly class UpdateSocialNetworkSettings
         private Dispatcher $events,
     ) {}
 
-    /** @param array<string, mixed> $attributes */
-    public function handle(int|string $teamId, array $attributes): SocialNetworkSettings
+    /**
+     * @param array<string, mixed> $attributes
+     */
+    public function handle(int|string $teamId, array $attributes, int|string|null $actorId = null): SocialNetworkSettings
     {
         $this->authorizer->authorize($teamId);
 
-        $mode = $attributes['deployment_mode'] ?? null;
-        if ($mode !== null && ! in_array($mode, (array) config('social-network-social-core.allowed_deployment_modes'), true)) {
-            throw new InvalidArgumentException('The selected deployment mode is not supported.');
-        }
+        $this->validateAttributes($attributes);
 
-        $settings = DB::transaction(function () use ($teamId, $attributes): SocialNetworkSettings {
+        [$settings, $before, $after] = DB::transaction(function () use ($teamId, $attributes): array {
             $settings = $this->settings->forTeam($teamId);
+            $before = $settings->only([
+                'deployment_mode', 'network_settings', 'terminology', 'feature_policy', 'shared_ids',
+            ]);
             $settings->fill(Arr::only($attributes, [
                 'deployment_mode', 'network_settings', 'terminology', 'feature_policy', 'shared_ids',
             ]));
             $settings->save();
 
-            return $settings->refresh();
+            $settings = $settings->refresh();
+
+            return [$settings, $before, $settings->only(array_keys($before))];
         });
 
-        $this->events->dispatch(new SocialNetworkSettingsUpdated($settings));
+        $this->events->dispatch(new SocialNetworkSettingsUpdated($settings, $before, $after, $actorId));
 
         return $settings;
+    }
+
+    /** @param array<string, mixed> $attributes */
+    private function validateAttributes(array $attributes): void
+    {
+        $allowed = ['deployment_mode', 'network_settings', 'terminology', 'feature_policy', 'shared_ids'];
+        $unknown = array_diff(array_keys($attributes), $allowed);
+
+        if ($unknown !== []) {
+            throw new InvalidArgumentException('Unsupported Social Core setting: '.implode(', ', $unknown));
+        }
+
+        $mode = $attributes['deployment_mode'] ?? null;
+        if ($mode !== null && (! is_string($mode) || ! in_array($mode, (array) config('social-network-social-core.allowed_deployment_modes'), true))) {
+            throw new InvalidArgumentException('The selected deployment mode is not supported.');
+        }
+
+        foreach (['network_settings', 'terminology', 'feature_policy', 'shared_ids'] as $field) {
+            if (array_key_exists($field, $attributes) && ! is_array($attributes[$field])) {
+                throw new InvalidArgumentException("The {$field} value must be an array.");
+            }
+
+            if (is_array($attributes[$field] ?? null) && count($attributes[$field]) > (int) config('social-network-social-core.maximum_payload_keys', 64)) {
+                throw new InvalidArgumentException("The {$field} value contains too many entries.");
+            }
+        }
     }
 }

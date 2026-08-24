@@ -25,6 +25,24 @@ paths:
       security: [{ sanctum: [] }]
       parameters: [{name: id, in: path, required: true, schema: {type: string}}]
       responses: {'204': {description: Profile blocked}, '422': {description: Invalid block}}
+    delete:
+      operationId: social.network.profiles.unblock
+      security: [{ sanctum: [] }]
+      parameters: [{name: id, in: path, required: true, schema: {type: string}}]
+      responses: {'204': {description: Profile unblocked}}
+  /api/v1/social-network/profiles/me/lifecycle:
+    patch:
+      operationId: social.network.profiles.lifecycle
+      security: [{ sanctum: [] }]
+      requestBody: {required: true, content: {application/json: {schema: {type: object, required: [lifecycle_state], properties: {lifecycle_state: {type: string, enum: [active, suspended, deleted]}}}}}}
+      responses: {'200': {description: Lifecycle-updated profile, content: {application/json: {schema: {$ref: '#/components/schemas/Resource'}}}}}
+  /api/v1/social-network/profiles/{id}/verification:
+    patch:
+      operationId: social.network.profiles.verify
+      security: [{ sanctum: [] }]
+      parameters: [{name: id, in: path, required: true, schema: {type: string}}]
+      requestBody: {required: true, content: {application/json: {schema: {type: object, required: [verification_status], properties: {verification_status: {type: string, enum: [unverified, pending, verified, rejected]}}}}}}
+      responses: {'200': {description: Verification-updated profile, content: {application/json: {schema: {$ref: '#/components/schemas/Resource'}}}}}
 components:
   securitySchemes: {sanctum: {type: http, scheme: bearer, bearerFormat: Sanctum}}
   schemas:

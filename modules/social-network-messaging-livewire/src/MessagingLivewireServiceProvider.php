@@ -13,5 +13,7 @@ final class MessagingLivewireServiceProvider extends ServiceProvider
     {
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'social-network-messaging-livewire');
         Livewire::component('module-social-network-messaging::composer', Components\Composer::class);
+        Livewire::component('module-social-network-messaging::conversations', Components\Composer::class);
+        Livewire::component('module-social-network-messaging::messages', Components\Composer::class);
     }
 }

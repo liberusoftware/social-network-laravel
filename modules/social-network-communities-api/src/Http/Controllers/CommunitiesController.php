@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Liberu\SocialNetwork\Communities\Actions\CreateCommunity;
 use Liberu\SocialNetwork\Communities\Actions\JoinCommunity;
+use Liberu\SocialNetwork\Communities\Actions\LeaveCommunity;
+use Liberu\SocialNetwork\Communities\Actions\ListCommunities;
 use Liberu\SocialNetwork\Communities\Models\Community;
 use Liberu\SocialNetwork\Profiles\Actions\GetProfile;
 
@@ -22,12 +24,24 @@ final class CommunitiesController extends Controller
         return response()->json(['data' => $this->resource($c)], 201);
     }
 
+    public function index(Request $request, GetProfile $get, ListCommunities $list): JsonResponse
+    {
+        $data = $request->validate(['limit' => ['sometimes', 'integer', 'min:1', 'max:100']]);
+        return response()->json(['data' => $list->handle($get->forUser($request->user()->getAuthIdentifier()), $data['limit'] ?? 25)->map(fn (Community $c): array => $this->resource($c))->values()]);
+    }
+
     public function join(string $community, Request $request, GetProfile $get, JoinCommunity $join): JsonResponse
     {
         $c = Community::query()->findOrFail($community);
         $membership = $join->handle($get->forUser($request->user()->getAuthIdentifier()), $c);
 
         return response()->json(['data' => ['community_id' => $membership->community_id, 'profile_id' => $membership->profile_id, 'role' => $membership->role, 'status' => $membership->status]], 202);
+    }
+
+    public function leave(string $community, Request $request, GetProfile $get, LeaveCommunity $leave): JsonResponse
+    {
+        $leave->handle($get->forUser($request->user()->getAuthIdentifier()), Community::query()->findOrFail($community));
+        return response()->json(status: 204);
     }
 
     private function resource(Community $c): array

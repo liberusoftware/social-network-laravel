@@ -19,6 +19,13 @@ final class FollowProfile extends Component
         $this->dispatch('social-graph-followed');
     }
 
+    public function friend(GetProfile $get, CreateRelationship $create): void
+    {
+        $this->validate(['profileId' => ['required', 'uuid']]);
+        $create->friend($get->forUser($this->userId()), $get->byId($this->profileId));
+        $this->dispatch('social-graph-friend-requested');
+    }
+
     public function render(): mixed
     {
         return view('social-network-social-graph-livewire::livewire.follow-profile');

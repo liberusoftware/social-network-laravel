@@ -1,0 +1,1 @@
+<div><form wire:submit="search"><label for="discovery-query">Search</label><input id="discovery-query" wire:model="query"><button type="submit" wire:loading.attr="disabled">Search</button></form><ul aria-live="polite">@foreach($results as $result)<li>{{ $result['body'] }}</li>@endforeach</ul></div>

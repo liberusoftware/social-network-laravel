@@ -32,5 +32,7 @@ final class ProfilesServiceProvider extends ServiceProvider
         Gate::define('social-network.profiles.update', fn (object $user, Models\Profile $profile): bool => (string) $profile->user_id === (string) $user->getAuthIdentifier());
 
         Gate::define('social-network.profiles.block', fn (object $user, Models\Profile $profile): bool => (string) $profile->user_id === (string) $user->getAuthIdentifier());
+        Gate::define('social-network.profiles.verify', fn (object $user, Models\Profile $profile): bool => (bool) ($user->is_admin ?? false));
+        Gate::define('social-network.profiles.lifecycle', fn (object $user, Models\Profile $profile): bool => (string) $profile->user_id === (string) $user->getAuthIdentifier());
     }
 }

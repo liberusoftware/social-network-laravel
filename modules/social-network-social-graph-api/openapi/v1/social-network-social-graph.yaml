@@ -9,4 +9,21 @@ paths:
     get: {operationId: social.network.socialGraph.list, security: [{sanctum: []}], responses: {'200': {description: Relationships}}}
   /api/v1/social-network/social-graph/me/suggestions:
     get: {operationId: social.network.socialGraph.suggestions, security: [{sanctum: []}], responses: {'200': {description: Suggested profiles}}}
+  /api/v1/social-network/social-graph/me/blocks/{profile}:
+    put: {operationId: social.network.socialGraph.block, security: [{sanctum: []}], parameters: [{name: profile, in: path, required: true, schema: {type: string}}], responses: {'201': {description: Block created}}}
+    delete: {operationId: social.network.socialGraph.unblock, security: [{sanctum: []}], parameters: [{name: profile, in: path, required: true, schema: {type: string}}], responses: {'204': {description: Block removed}}}
+  /api/v1/social-network/social-graph/me/relationships/{relationship}/accept:
+    post: {operationId: social.network.socialGraph.acceptFriendRequest, security: [{sanctum: []}], parameters: [{name: relationship, in: path, required: true, schema: {type: string}}], responses: {'200': {description: Friendship accepted}}}
+  /api/v1/social-network/social-graph/me/relationships/{relationship}/reject:
+    post: {operationId: social.network.socialGraph.rejectFriendRequest, security: [{sanctum: []}], parameters: [{name: relationship, in: path, required: true, schema: {type: string}}], responses: {'200': {description: Friendship rejected}}}
+  /api/v1/social-network/social-graph/me/relationships/{relationship}/cancel:
+    post: {operationId: social.network.socialGraph.cancelFriendRequest, security: [{sanctum: []}], parameters: [{name: relationship, in: path, required: true, schema: {type: string}}], responses: {'200': {description: Friendship cancelled}}}
+  /api/v1/social-network/social-graph/me/relationships/{relationship}/visibility:
+    patch: {operationId: social.network.socialGraph.updateRelationshipVisibility, security: [{sanctum: []}], parameters: [{name: relationship, in: path, required: true, schema: {type: string}}], requestBody: {required: true, content: {application/json: {schema: {type: object, required: [visibility], properties: {visibility: {type: string, enum: [public, followers, private]}}}}}}, responses: {'200': {description: Relationship visibility updated}, '422': {description: Validation problem}}}
+  /api/v1/social-network/social-graph/me/lists:
+    get: {operationId: social.network.socialGraph.listLists, security: [{sanctum: []}], responses: {'200': {description: Owned profile lists}}}
+    post: {operationId: social.network.socialGraph.createList, security: [{sanctum: []}], requestBody: {required: true, content: {application/json: {schema: {type: object, required: [name], properties: {name: {type: string, minLength: 1, maxLength: 80}, visibility: {type: string, enum: [public, followers, private]}}}}}}, responses: {'201': {description: Profile list created}, '422': {description: Validation problem}}}
+  /api/v1/social-network/social-graph/me/lists/{list}/profiles/{profile}:
+    put: {operationId: social.network.socialGraph.addListProfile, security: [{sanctum: []}], parameters: [{name: list, in: path, required: true, schema: {type: string}}, {name: profile, in: path, required: true, schema: {type: string}}], responses: {'200': {description: Profile added to list}}}
+    delete: {operationId: social.network.socialGraph.removeListProfile, security: [{sanctum: []}], parameters: [{name: list, in: path, required: true, schema: {type: string}}, {name: profile, in: path, required: true, schema: {type: string}}], responses: {'200': {description: Profile removed from list}}}
 components: {securitySchemes: {sanctum: {type: http, scheme: bearer, bearerFormat: Sanctum}}}

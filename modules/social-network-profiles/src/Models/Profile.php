@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use LogicException;
 
 final class Profile extends Model
 {
@@ -31,7 +32,12 @@ final class Profile extends Model
     /** @return BelongsTo<Model, $this> */
     public function user(): BelongsTo
     {
-        return $this->belongsTo(config('social-network-profiles.user_model'));
+        $userModel = config('social-network-profiles.user_model');
+        if (! is_string($userModel) || $userModel === '') {
+            throw new LogicException('Configure social-network-profiles.user_model before using the profile user relation.');
+        }
+
+        return $this->belongsTo($userModel);
     }
 
     /** @return BelongsToMany<Profile, $this> */

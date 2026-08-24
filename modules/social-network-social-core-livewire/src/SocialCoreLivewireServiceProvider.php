@@ -12,6 +12,17 @@ final class SocialCoreLivewireServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'social-network-social-core-livewire');
-        Livewire::component('module-social-network-social-core::settings', Components\SocialCoreSettings::class);
+
+        foreach ([
+            'settings',
+            'network-settings',
+            'deployment-mode',
+            'terminology',
+            'feature-policy',
+            'shared-ids',
+            'events',
+        ] as $component) {
+            Livewire::component("module-social-network-social-core::{$component}", Components\SocialCoreSettings::class);
+        }
     }
 }
