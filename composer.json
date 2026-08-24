@@ -453,7 +453,8 @@
         {"type":"path","url":"modules/social-network-analytics","options":{"symlink":false}},
         {"type":"path","url":"modules/social-network-analytics-api","options":{"symlink":false}},
         {"type":"path","url":"modules/social-network-analytics-filament","options":{"symlink":false}},
-        {"type":"path","url":"modules/social-network-analytics-livewire","options":{"symlink":false}}
+        {"type":"path","url":"modules/social-network-analytics-livewire","options":{"symlink":false}},
+        {"type":"path","url":"modules/webhooks-api","options":{"symlink":false}}
     ],
     "require": {
         "php": "^8.5",
@@ -555,6 +556,7 @@
         "liberusoftware/module-social-network-analytics-api": "^0.1",
         "liberusoftware/module-social-network-analytics-filament": "^0.1",
         "liberusoftware/module-social-network-analytics-livewire": "^0.1",
+        "liberusoftware/module-webhooks-api": "^0.1",
         "liberusoftware/notifications": "^1.0",
         "liberusoftware/observability": "^1.0",
         "liberusoftware/organizations-teams": "^1.0",

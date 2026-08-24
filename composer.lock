@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bb495509a6ddc74dba65e8f5322e5df9",
+    "content-hash": "b9c17cba532e9e3399c35bd4f430a4f6",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -9597,6 +9597,40 @@
             }
         },
         {
+            "name": "liberusoftware/module-webhooks-api",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/webhooks-api",
+                "reference": "e9560f28ac92cb027bb064c2f4b6c7764edce0c0"
+            },
+            "require": {
+                "laravel/framework": "^13.0",
+                "laravel/sanctum": "^4.0",
+                "liberusoftware/webhooks": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "webhooks-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Webhooks\\Api\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Authenticated API adapter for webhook registration and delivery recovery.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
             "name": "liberusoftware/notifications",
             "version": "1.4.1",
             "source": {
@@ -10806,10 +10840,6 @@
                 "MIT"
             ],
             "description": "Signed filtered webhook endpoints, durable delivery attempts, retry, replay, and secret rotation.",
-            "support": {
-                "source": "https://github.com/liberusoftware/module-webhooks/tree/1.4.1",
-                "issues": "https://github.com/liberusoftware/module-webhooks/issues"
-            },
             "time": "2026-08-07T14:25:58+00:00"
         },
         {
