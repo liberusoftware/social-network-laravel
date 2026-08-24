@@ -2424,24 +2424,24 @@
         },
         {
             "name": "graham-campbell/result-type",
-            "version": "v1.1.4",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Result-Type.git",
-                "reference": "e01f4a821471308ba86aa202fed6698b6b695e3b"
+                "reference": "adccca3324eece92ca35463648c12b9e6293c05b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Result-Type/zipball/e01f4a821471308ba86aa202fed6698b6b695e3b",
-                "reference": "e01f4a821471308ba86aa202fed6698b6b695e3b",
+                "url": "https://api.github.com/repos/GrahamCampbell/Result-Type/zipball/adccca3324eece92ca35463648c12b9e6293c05b",
+                "reference": "adccca3324eece92ca35463648c12b9e6293c05b",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.2.5 || ^8.0",
-                "phpoption/phpoption": "^1.9.5"
+                "phpoption/phpoption": "^1.10"
             },
             "require-dev": {
-                "phpunit/phpunit": "^8.5.41 || ^9.6.22 || ^10.5.45 || ^11.5.7"
+                "phpunit/phpunit": "^8.5.52 || ^9.6.34 || ^10.5.63 || ^11.5.55 || ^12.5.14"
             },
             "type": "library",
             "autoload": {
@@ -2470,7 +2470,7 @@
             ],
             "support": {
                 "issues": "https://github.com/GrahamCampbell/Result-Type/issues",
-                "source": "https://github.com/GrahamCampbell/Result-Type/tree/v1.1.4"
+                "source": "https://github.com/GrahamCampbell/Result-Type/tree/v1.2.0"
             },
             "funding": [
                 {
@@ -2482,26 +2482,26 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-12-27T19:43:20+00:00"
+            "time": "2026-08-24T09:06:52+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "7.15.3",
+            "version": "7.15.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "ae311b8f045ea93ce7b1c9cdb7cec06c53f944bc"
+                "reference": "ee80339fd9177ba44c49cdb653ff02a4d1106b9a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/ae311b8f045ea93ce7b1c9cdb7cec06c53f944bc",
-                "reference": "ae311b8f045ea93ce7b1c9cdb7cec06c53f944bc",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/ee80339fd9177ba44c49cdb653ff02a4d1106b9a",
+                "reference": "ee80339fd9177ba44c49cdb653ff02a4d1106b9a",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "guzzlehttp/promises": "^2.5.2",
-                "guzzlehttp/psr7": "^2.13",
+                "guzzlehttp/promises": "^2.5.3",
+                "guzzlehttp/psr7": "^2.13.1",
                 "php": "^7.2.5 || ^8.0",
                 "psr/http-client": "^1.0",
                 "symfony/deprecation-contracts": "^2.5 || ^3.0",
@@ -2594,7 +2594,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/guzzle/issues",
-                "source": "https://github.com/guzzle/guzzle/tree/7.15.3"
+                "source": "https://github.com/guzzle/guzzle/tree/7.15.5"
             },
             "funding": [
                 {
@@ -2610,20 +2610,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-08-05T19:48:21+00:00"
+            "time": "2026-08-24T09:21:06+00:00"
         },
         {
             "name": "guzzlehttp/promises",
-            "version": "2.5.2",
+            "version": "2.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/promises.git",
-                "reference": "2823687acff28b2dbe67b2508a6b300e2c3fa4ce"
+                "reference": "cde49999552d185d64715fe9c1f77a2aadd2f9f1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/promises/zipball/2823687acff28b2dbe67b2508a6b300e2c3fa4ce",
-                "reference": "2823687acff28b2dbe67b2508a6b300e2c3fa4ce",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/cde49999552d185d64715fe9c1f77a2aadd2f9f1",
+                "reference": "cde49999552d185d64715fe9c1f77a2aadd2f9f1",
                 "shasum": ""
             },
             "require": {
@@ -2678,7 +2678,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/promises/issues",
-                "source": "https://github.com/guzzle/promises/tree/2.5.2"
+                "source": "https://github.com/guzzle/promises/tree/2.5.3"
             },
             "funding": [
                 {
@@ -2694,20 +2694,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-08-05T19:30:54+00:00"
+            "time": "2026-08-24T09:11:28+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "2.13.0",
+            "version": "2.13.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "dad89620b7a6edb60c15858442eb2e408b45d8f4"
+                "reference": "95e7828100de18b4e269fb1703be530082d5166d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/dad89620b7a6edb60c15858442eb2e408b45d8f4",
-                "reference": "dad89620b7a6edb60c15858442eb2e408b45d8f4",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/95e7828100de18b4e269fb1703be530082d5166d",
+                "reference": "95e7828100de18b4e269fb1703be530082d5166d",
                 "shasum": ""
             },
             "require": {
@@ -2797,7 +2797,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/psr7/issues",
-                "source": "https://github.com/guzzle/psr7/tree/2.13.0"
+                "source": "https://github.com/guzzle/psr7/tree/2.13.1"
             },
             "funding": [
                 {
@@ -2813,30 +2813,30 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-07-16T22:23:49+00:00"
+            "time": "2026-08-24T09:13:11+00:00"
         },
         {
             "name": "guzzlehttp/uri-template",
-            "version": "v1.0.10",
+            "version": "v2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/uri-template.git",
-                "reference": "f6c24c21f42b990e9a58912b332d0874df6ba839"
+                "reference": "7a466ad606491eb6528c717482f7cca77f1851f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/uri-template/zipball/f6c24c21f42b990e9a58912b332d0874df6ba839",
-                "reference": "f6c24c21f42b990e9a58912b332d0874df6ba839",
+                "url": "https://api.github.com/repos/guzzle/uri-template/zipball/7a466ad606491eb6528c717482f7cca77f1851f3",
+                "reference": "7a466ad606491eb6528c717482f7cca77f1851f3",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.2.5 || ^8.0",
+                "php": "^7.4 || ^8.0",
                 "symfony/polyfill-php80": "^1.25"
             },
             "require-dev": {
                 "bamarni/composer-bin-plugin": "^1.8.2",
-                "phpunit/phpunit": "^8.5.52 || ^9.6.34",
-                "uri-template/tests": "1.0.0"
+                "phpunit/phpunit": "^9.6.34",
+                "uri-template/tests": "1.0.2"
             },
             "type": "library",
             "extra": {
@@ -2883,7 +2883,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/uri-template/issues",
-                "source": "https://github.com/guzzle/uri-template/tree/v1.0.10"
+                "source": "https://github.com/guzzle/uri-template/tree/v2.0.1"
             },
             "funding": [
                 {
@@ -2899,7 +2899,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-07-17T13:53:03+00:00"
+            "time": "2026-08-24T17:13:02+00:00"
         },
         {
             "name": "kirschbaum-development/eloquent-power-joins",
@@ -3118,20 +3118,20 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v13.24.0",
+            "version": "v13.26.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "6d481710375d2aa67656922ef760cdd2b18bcfe0"
+                "reference": "e4a1bc52ef551d52e60244bb004256d6861da7ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/6d481710375d2aa67656922ef760cdd2b18bcfe0",
-                "reference": "6d481710375d2aa67656922ef760cdd2b18bcfe0",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/e4a1bc52ef551d52e60244bb004256d6861da7ab",
+                "reference": "e4a1bc52ef551d52e60244bb004256d6861da7ab",
                 "shasum": ""
             },
             "require": {
-                "brick/math": "^0.14.2 || ^0.15 || ^0.16 || ^0.17 || ^0.18",
+                "brick/math": "^0.14.2 || ^0.15 || ^0.16 || ^0.17 || ^0.18 || ^0.19",
                 "composer-runtime-api": "^2.2",
                 "doctrine/inflector": "^2.0.5",
                 "dragonmantank/cron-expression": "^3.4",
@@ -3144,9 +3144,10 @@
                 "ext-session": "*",
                 "ext-tokenizer": "*",
                 "fruitcake/php-cors": "^1.3",
-                "guzzlehttp/guzzle": "^7.8.2",
-                "guzzlehttp/promises": "^2.0.3",
-                "guzzlehttp/uri-template": "^1.0",
+                "guzzlehttp/guzzle": "^7.8.2 || ^8.0",
+                "guzzlehttp/promises": "^2.0.3 || ^3.0",
+                "guzzlehttp/psr7": "^2.9 || ^3.0",
+                "guzzlehttp/uri-template": "^1.0 || ^2.0",
                 "laravel/prompts": "^0.3.11",
                 "laravel/serializable-closure": "^2.0.10",
                 "league/commonmark": "^2.8.1",
@@ -3158,6 +3159,7 @@
                 "nunomaduro/termwind": "^2.0",
                 "php": "^8.3",
                 "psr/container": "^1.1.1 || ^2.0.1",
+                "psr/http-message": "^1.0 || ^2.0",
                 "psr/log": "^1.0 || ^2.0 || ^3.0",
                 "psr/simple-cache": "^1.0 || ^2.0 || ^3.0",
                 "ramsey/uuid": "^4.7",
@@ -3232,7 +3234,6 @@
                 "aws/aws-sdk-php": "^3.322.9",
                 "ext-gmp": "*",
                 "fakerphp/faker": "^1.24",
-                "guzzlehttp/psr7": "^2.9",
                 "intervention/image": "^4.0",
                 "laravel/pint": "^1.18",
                 "league/flysystem-aws-s3-v3": "^3.25.1",
@@ -3282,7 +3283,6 @@
                 "php-http/discovery": "Required to use PSR-7 bridging features (^1.15).",
                 "phpunit/phpunit": "Required to use assertions and run tests (^11.5.50 || ^12.5.8 || ^13.0.3).",
                 "predis/predis": "Required to use the predis connector (^2.3 || ^3.0).",
-                "psr/http-message": "Required to allow Storage::put to accept a StreamInterface (^1.0).",
                 "pusher/pusher-php-server": "Required to use the Pusher broadcast driver (^6.0 || ^7.0).",
                 "resend/resend-php": "Required to enable support for the Resend mail transport (^0.10.0 || ^1.0).",
                 "spatie/fork": "Required to use the 'fork' concurrency driver (^1.2).",
@@ -3341,7 +3341,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2026-08-04T15:54:59+00:00"
+            "time": "2026-08-18T20:31:28+00:00"
         },
         {
             "name": "laravel/horizon",
@@ -3648,16 +3648,16 @@
         },
         {
             "name": "laravel/prompts",
-            "version": "v0.3.22",
+            "version": "v0.3.23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/prompts.git",
-                "reference": "02b89b39e8972a998db4d5d4ad4719239dd4aee4"
+                "reference": "b7b4c35e5bc47450f6b6238c6cc9c47ba19b2221"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/prompts/zipball/02b89b39e8972a998db4d5d4ad4719239dd4aee4",
-                "reference": "02b89b39e8972a998db4d5d4ad4719239dd4aee4",
+                "url": "https://api.github.com/repos/laravel/prompts/zipball/b7b4c35e5bc47450f6b6238c6cc9c47ba19b2221",
+                "reference": "b7b4c35e5bc47450f6b6238c6cc9c47ba19b2221",
                 "shasum": ""
             },
             "require": {
@@ -3701,9 +3701,9 @@
             "description": "Add beautiful and user-friendly forms to your command-line applications.",
             "support": {
                 "issues": "https://github.com/laravel/prompts/issues",
-                "source": "https://github.com/laravel/prompts/tree/v0.3.22"
+                "source": "https://github.com/laravel/prompts/tree/v0.3.23"
             },
-            "time": "2026-08-04T14:50:50+00:00"
+            "time": "2026-08-11T18:58:24+00:00"
         },
         {
             "name": "laravel/pulse",
@@ -4265,16 +4265,16 @@
         },
         {
             "name": "league/commonmark",
-            "version": "2.9.0",
+            "version": "2.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "5703d83ba3da3b2e356a5fedc848ed6d8ffb6529"
+                "reference": "d2d1aa8b35e072966c89bc0c66cf926e56767dc4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/5703d83ba3da3b2e356a5fedc848ed6d8ffb6529",
-                "reference": "5703d83ba3da3b2e356a5fedc848ed6d8ffb6529",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/d2d1aa8b35e072966c89bc0c66cf926e56767dc4",
+                "reference": "d2d1aa8b35e072966c89bc0c66cf926e56767dc4",
                 "shasum": ""
             },
             "require": {
@@ -4311,7 +4311,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "2.10-dev"
+                    "dev-main": "2.11-dev"
                 }
             },
             "autoload": {
@@ -4368,7 +4368,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-08-03T13:42:31+00:00"
+            "time": "2026-08-11T16:06:25+00:00"
         },
         {
             "name": "league/config",
@@ -4545,16 +4545,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "3.35.2",
+            "version": "3.35.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "b277b5dc3d56650b68904117124e79c851e12376"
+                "reference": "5fc8404762179ae514678487b23494fd69b2309c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/b277b5dc3d56650b68904117124e79c851e12376",
-                "reference": "b277b5dc3d56650b68904117124e79c851e12376",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/5fc8404762179ae514678487b23494fd69b2309c",
+                "reference": "5fc8404762179ae514678487b23494fd69b2309c",
                 "shasum": ""
             },
             "require": {
@@ -4622,22 +4622,22 @@
             ],
             "support": {
                 "issues": "https://github.com/thephpleague/flysystem/issues",
-                "source": "https://github.com/thephpleague/flysystem/tree/3.35.2"
+                "source": "https://github.com/thephpleague/flysystem/tree/3.35.3"
             },
-            "time": "2026-07-06T14:42:07+00:00"
+            "time": "2026-08-22T12:55:54+00:00"
         },
         {
             "name": "league/flysystem-local",
-            "version": "3.31.0",
+            "version": "3.35.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem-local.git",
-                "reference": "2f669db18a4c20c755c2bb7d3a7b0b2340488079"
+                "reference": "a099b24dce160f3b2239043d13d47c4a1a214ea4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem-local/zipball/2f669db18a4c20c755c2bb7d3a7b0b2340488079",
-                "reference": "2f669db18a4c20c755c2bb7d3a7b0b2340488079",
+                "url": "https://api.github.com/repos/thephpleague/flysystem-local/zipball/a099b24dce160f3b2239043d13d47c4a1a214ea4",
+                "reference": "a099b24dce160f3b2239043d13d47c4a1a214ea4",
                 "shasum": ""
             },
             "require": {
@@ -4671,9 +4671,9 @@
                 "local"
             ],
             "support": {
-                "source": "https://github.com/thephpleague/flysystem-local/tree/3.31.0"
+                "source": "https://github.com/thephpleague/flysystem-local/tree/3.35.3"
             },
-            "time": "2026-01-23T15:30:45+00:00"
+            "time": "2026-08-12T13:29:21+00:00"
         },
         {
             "name": "league/mime-type-detection",
@@ -6345,10 +6345,6 @@
                 "MIT"
             ],
             "description": "Deterministic manifest discovery and runtime enablement for Liberu modules.",
-            "support": {
-                "source": "https://github.com/liberusoftware/module-module-manager/tree/1.4.2",
-                "issues": "https://github.com/liberusoftware/module-module-manager/issues"
-            },
             "time": "2026-08-07T14:25:25+00:00"
         },
         {
@@ -6408,11 +6404,11 @@
         },
         {
             "name": "liberusoftware/module-social-network-communities",
-            "version": "0.1.0",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
                 "url": "modules/social-network-communities",
-                "reference": "f8fdbb44801d9ff743eb13471e5b36434def34f6"
+                "reference": "a63bc7d0821c189d563e7c618b17148dccaa9ca1"
             },
             "require": {
                 "illuminate/database": "^13.0",
@@ -6420,6 +6416,10 @@
                 "illuminate/support": "^13.0",
                 "liberusoftware/module-social-network-profiles": "^0.1",
                 "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.7",
+                "pestphp/pest": "^5.0"
             },
             "type": "liberu-module",
             "extra": {
@@ -6432,6 +6432,28 @@
                     "Liberu\\SocialNetwork\\Communities\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ],
+                "test:unit": [
+                    "pest tests/Unit"
+                ],
+                "test:feature": [
+                    "pest tests/Feature"
+                ],
+                "test:coverage": [
+                    "pest --coverage --min=100 --coverage-clover=coverage.xml"
+                ],
+                "test:parallel": [
+                    "pest --parallel"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -6443,11 +6465,11 @@
         },
         {
             "name": "liberusoftware/module-social-network-communities-api",
-            "version": "0.1.0",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
                 "url": "modules/social-network-communities-api",
-                "reference": "c7e4e34b41a54a4cd764e9dfce66a957b2f40344"
+                "reference": "e613dedf6157d95191bf20cc26a1ba49fc2c1203"
             },
             "require": {
                 "illuminate/http": "^13.0",
@@ -6456,6 +6478,10 @@
                 "liberusoftware/module-social-network-communities": "^0.1",
                 "liberusoftware/module-social-network-profiles": "^0.1",
                 "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.7",
+                "pestphp/pest": "^5.0"
             },
             "type": "liberu-module",
             "extra": {
@@ -6468,6 +6494,28 @@
                     "Liberu\\SocialNetwork\\Communities\\Api\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ],
+                "test:unit": [
+                    "pest tests/Unit"
+                ],
+                "test:feature": [
+                    "pest tests/Feature"
+                ],
+                "test:coverage": [
+                    "pest --coverage --min=100 --coverage-clover=coverage.xml"
+                ],
+                "test:parallel": [
+                    "pest --parallel"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -6479,17 +6527,21 @@
         },
         {
             "name": "liberusoftware/module-social-network-communities-filament",
-            "version": "0.1.0",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
                 "url": "modules/social-network-communities-filament",
-                "reference": "66a1ce7805e8c5c6cea105580087587238658e8e"
+                "reference": "d774c9981a3fefcceefe2c25ce435110f14302df"
             },
             "require": {
                 "filament/filament": "^5.1",
                 "liberusoftware/module-social-network-communities": "^0.1",
                 "liberusoftware/module-social-network-profiles": "^0.1",
                 "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.7",
+                "pestphp/pest": "^5.0"
             },
             "type": "liberu-module",
             "extra": {
@@ -6502,6 +6554,28 @@
                     "Liberu\\SocialNetwork\\Communities\\Filament\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ],
+                "test:unit": [
+                    "pest tests/Unit"
+                ],
+                "test:feature": [
+                    "pest tests/Feature"
+                ],
+                "test:coverage": [
+                    "pest --coverage --min=100 --coverage-clover=coverage.xml"
+                ],
+                "test:parallel": [
+                    "pest --parallel"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -6513,17 +6587,21 @@
         },
         {
             "name": "liberusoftware/module-social-network-communities-livewire",
-            "version": "0.1.0",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
                 "url": "modules/social-network-communities-livewire",
-                "reference": "81b5b4b2fdb981bb1da6e8d710c5ebb0dcc6de9b"
+                "reference": "87d0f19db058689c7fa767adc47f949e581c15ca"
             },
             "require": {
                 "liberusoftware/module-social-network-communities": "^0.1",
                 "liberusoftware/module-social-network-profiles": "^0.1",
                 "livewire/livewire": "^4.0",
                 "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.7",
+                "pestphp/pest": "^5.0"
             },
             "type": "liberu-module",
             "extra": {
@@ -6536,6 +6614,28 @@
                     "Liberu\\SocialNetwork\\Communities\\Livewire\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ],
+                "test:unit": [
+                    "pest tests/Unit"
+                ],
+                "test:feature": [
+                    "pest tests/Feature"
+                ],
+                "test:coverage": [
+                    "pest --coverage --min=100 --coverage-clover=coverage.xml"
+                ],
+                "test:parallel": [
+                    "pest --parallel"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -6547,11 +6647,11 @@
         },
         {
             "name": "liberusoftware/module-social-network-engagement",
-            "version": "0.1.0",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
                 "url": "modules/social-network-engagement",
-                "reference": "b44270b6233b5f09459d95ac944c470ca9b32627"
+                "reference": "c0b67863329f114ca1b7651617add036d29ad11e"
             },
             "require": {
                 "illuminate/database": "^13.0",
@@ -6559,6 +6659,10 @@
                 "illuminate/support": "^13.0",
                 "liberusoftware/module-social-network-profiles": "^0.1",
                 "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.7",
+                "pestphp/pest": "^5.0"
             },
             "type": "liberu-module",
             "extra": {
@@ -6571,6 +6675,28 @@
                     "Liberu\\SocialNetwork\\Engagement\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ],
+                "test:unit": [
+                    "pest tests/Unit"
+                ],
+                "test:feature": [
+                    "pest tests/Feature"
+                ],
+                "test:coverage": [
+                    "pest --coverage --min=100 --coverage-clover=coverage.xml"
+                ],
+                "test:parallel": [
+                    "pest --parallel"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -6582,11 +6708,11 @@
         },
         {
             "name": "liberusoftware/module-social-network-engagement-api",
-            "version": "0.1.0",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
                 "url": "modules/social-network-engagement-api",
-                "reference": "fc06ef3842fcc98241c047db01860ea6012b67be"
+                "reference": "3eda89c2a05e7e5a67b548f5a0e705be98cf1b86"
             },
             "require": {
                 "illuminate/http": "^13.0",
@@ -6595,6 +6721,10 @@
                 "liberusoftware/module-social-network-engagement": "^0.1",
                 "liberusoftware/module-social-network-profiles": "^0.1",
                 "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.7",
+                "pestphp/pest": "^5.0"
             },
             "type": "liberu-module",
             "extra": {
@@ -6607,6 +6737,28 @@
                     "Liberu\\SocialNetwork\\Engagement\\Api\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ],
+                "test:unit": [
+                    "pest tests/Unit"
+                ],
+                "test:feature": [
+                    "pest tests/Feature"
+                ],
+                "test:coverage": [
+                    "pest --coverage --min=100 --coverage-clover=coverage.xml"
+                ],
+                "test:parallel": [
+                    "pest --parallel"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -6618,17 +6770,21 @@
         },
         {
             "name": "liberusoftware/module-social-network-engagement-filament",
-            "version": "0.1.0",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
                 "url": "modules/social-network-engagement-filament",
-                "reference": "b681edc37bd801524eedf1793eca745ba815f9e0"
+                "reference": "e256904dc686396ccc02abc76ad52e34ca5b7781"
             },
             "require": {
                 "filament/filament": "^5.1",
                 "liberusoftware/module-social-network-engagement": "^0.1",
                 "liberusoftware/module-social-network-profiles": "^0.1",
                 "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.7",
+                "pestphp/pest": "^5.0"
             },
             "type": "liberu-module",
             "extra": {
@@ -6641,6 +6797,28 @@
                     "Liberu\\SocialNetwork\\Engagement\\Filament\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ],
+                "test:unit": [
+                    "pest tests/Unit"
+                ],
+                "test:feature": [
+                    "pest tests/Feature"
+                ],
+                "test:coverage": [
+                    "pest --coverage --min=100 --coverage-clover=coverage.xml"
+                ],
+                "test:parallel": [
+                    "pest --parallel"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -6652,17 +6830,21 @@
         },
         {
             "name": "liberusoftware/module-social-network-engagement-livewire",
-            "version": "0.1.0",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
                 "url": "modules/social-network-engagement-livewire",
-                "reference": "b63d892998f942c87aac1e939a5b319f18f62623"
+                "reference": "8f5368cc68c130737e9fa7309f72c147a61edc2e"
             },
             "require": {
                 "liberusoftware/module-social-network-engagement": "^0.1",
                 "liberusoftware/module-social-network-profiles": "^0.1",
                 "livewire/livewire": "^4.0",
                 "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.7",
+                "pestphp/pest": "^5.0"
             },
             "type": "liberu-module",
             "extra": {
@@ -6675,6 +6857,28 @@
                     "Liberu\\SocialNetwork\\Engagement\\Livewire\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ],
+                "test:unit": [
+                    "pest tests/Unit"
+                ],
+                "test:feature": [
+                    "pest tests/Feature"
+                ],
+                "test:coverage": [
+                    "pest --coverage --min=100 --coverage-clover=coverage.xml"
+                ],
+                "test:parallel": [
+                    "pest --parallel"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -6686,11 +6890,11 @@
         },
         {
             "name": "liberusoftware/module-social-network-feed",
-            "version": "0.1.0",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
                 "url": "modules/social-network-feed",
-                "reference": "c17803459e20df6a9065b28f5ccfbd2fa77b9717"
+                "reference": "6beb232f2465978248f6ffde9b79132e5348b520"
             },
             "require": {
                 "illuminate/database": "^13.0",
@@ -6698,6 +6902,10 @@
                 "illuminate/support": "^13.0",
                 "liberusoftware/module-social-network-profiles": "^0.1",
                 "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.7",
+                "pestphp/pest": "^5.0"
             },
             "type": "liberu-module",
             "extra": {
@@ -6710,6 +6918,28 @@
                     "Liberu\\SocialNetwork\\Feed\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ],
+                "test:unit": [
+                    "pest tests/Unit"
+                ],
+                "test:feature": [
+                    "pest tests/Feature"
+                ],
+                "test:coverage": [
+                    "pest --coverage --min=100 --coverage-clover=coverage.xml"
+                ],
+                "test:parallel": [
+                    "pest --parallel"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -6721,11 +6951,11 @@
         },
         {
             "name": "liberusoftware/module-social-network-feed-api",
-            "version": "0.1.0",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
                 "url": "modules/social-network-feed-api",
-                "reference": "a697ad8c5286d2a6e8c8fc71597fcb012ebfbd46"
+                "reference": "96fc9efc01d7dd1a3abc8c848ca7065a9b53c7c2"
             },
             "require": {
                 "illuminate/http": "^13.0",
@@ -6734,6 +6964,10 @@
                 "liberusoftware/module-social-network-feed": "^0.1",
                 "liberusoftware/module-social-network-profiles": "^0.1",
                 "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.7",
+                "pestphp/pest": "^5.0"
             },
             "type": "liberu-module",
             "extra": {
@@ -6746,6 +6980,28 @@
                     "Liberu\\SocialNetwork\\Feed\\Api\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ],
+                "test:unit": [
+                    "pest tests/Unit"
+                ],
+                "test:feature": [
+                    "pest tests/Feature"
+                ],
+                "test:coverage": [
+                    "pest --coverage --min=100 --coverage-clover=coverage.xml"
+                ],
+                "test:parallel": [
+                    "pest --parallel"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -6757,17 +7013,21 @@
         },
         {
             "name": "liberusoftware/module-social-network-feed-filament",
-            "version": "0.1.0",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
                 "url": "modules/social-network-feed-filament",
-                "reference": "bc21a0c66f3928f1bc2303913a32f79535a7b5ea"
+                "reference": "378367cd4ba78fc2b8c000f385ba206a959689f6"
             },
             "require": {
                 "filament/filament": "^5.1",
                 "liberusoftware/module-social-network-feed": "^0.1",
                 "liberusoftware/module-social-network-profiles": "^0.1",
                 "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.7",
+                "pestphp/pest": "^5.0"
             },
             "type": "liberu-module",
             "extra": {
@@ -6780,6 +7040,28 @@
                     "Liberu\\SocialNetwork\\Feed\\Filament\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ],
+                "test:unit": [
+                    "pest tests/Unit"
+                ],
+                "test:feature": [
+                    "pest tests/Feature"
+                ],
+                "test:coverage": [
+                    "pest --coverage --min=100 --coverage-clover=coverage.xml"
+                ],
+                "test:parallel": [
+                    "pest --parallel"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -6791,17 +7073,21 @@
         },
         {
             "name": "liberusoftware/module-social-network-feed-livewire",
-            "version": "0.1.0",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
                 "url": "modules/social-network-feed-livewire",
-                "reference": "a822e892c5b308effc804025c62d3956fb934d40"
+                "reference": "a9068155bb0ba0f057b02909a549184466fae1ef"
             },
             "require": {
                 "liberusoftware/module-social-network-feed": "^0.1",
                 "liberusoftware/module-social-network-profiles": "^0.1",
                 "livewire/livewire": "^4.0",
                 "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.7",
+                "pestphp/pest": "^5.0"
             },
             "type": "liberu-module",
             "extra": {
@@ -6814,6 +7100,28 @@
                     "Liberu\\SocialNetwork\\Feed\\Livewire\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ],
+                "test:unit": [
+                    "pest tests/Unit"
+                ],
+                "test:feature": [
+                    "pest tests/Feature"
+                ],
+                "test:coverage": [
+                    "pest --coverage --min=100 --coverage-clover=coverage.xml"
+                ],
+                "test:parallel": [
+                    "pest --parallel"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -6825,11 +7133,11 @@
         },
         {
             "name": "liberusoftware/module-social-network-media",
-            "version": "0.1.0",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
                 "url": "modules/social-network-media",
-                "reference": "4a37d4a30f160b609334fc22b6167d21d544fe0a"
+                "reference": "1f8dbe05590bdd8f6b9e3cd6f54ccf7ee8159eb2"
             },
             "require": {
                 "illuminate/database": "^13.0",
@@ -6837,6 +7145,10 @@
                 "illuminate/support": "^13.0",
                 "liberusoftware/module-social-network-profiles": "^0.1",
                 "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.7",
+                "pestphp/pest": "^5.0"
             },
             "type": "liberu-module",
             "extra": {
@@ -6849,6 +7161,28 @@
                     "Liberu\\SocialNetwork\\Media\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ],
+                "test:unit": [
+                    "pest tests/Unit"
+                ],
+                "test:feature": [
+                    "pest tests/Feature"
+                ],
+                "test:coverage": [
+                    "pest --coverage --min=100 --coverage-clover=coverage.xml"
+                ],
+                "test:parallel": [
+                    "pest --parallel"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -6860,11 +7194,11 @@
         },
         {
             "name": "liberusoftware/module-social-network-media-api",
-            "version": "0.1.0",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
                 "url": "modules/social-network-media-api",
-                "reference": "2d08b205c6dee0085a5acf91f91c47227e9a8a13"
+                "reference": "82106c8e156daf6e8ce8f2b3b4f978eef1f422eb"
             },
             "require": {
                 "illuminate/http": "^13.0",
@@ -6873,6 +7207,10 @@
                 "liberusoftware/module-social-network-media": "^0.1",
                 "liberusoftware/module-social-network-profiles": "^0.1",
                 "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.7",
+                "pestphp/pest": "^5.0"
             },
             "type": "liberu-module",
             "extra": {
@@ -6885,6 +7223,28 @@
                     "Liberu\\SocialNetwork\\Media\\Api\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ],
+                "test:unit": [
+                    "pest tests/Unit"
+                ],
+                "test:feature": [
+                    "pest tests/Feature"
+                ],
+                "test:coverage": [
+                    "pest --coverage --min=100 --coverage-clover=coverage.xml"
+                ],
+                "test:parallel": [
+                    "pest --parallel"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -6896,17 +7256,21 @@
         },
         {
             "name": "liberusoftware/module-social-network-media-filament",
-            "version": "0.1.0",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
                 "url": "modules/social-network-media-filament",
-                "reference": "a41c9986fc12f8336190b05ab09f0ae6b335d985"
+                "reference": "a7cea9991885d26988ad55284f01b5c17eb68d3d"
             },
             "require": {
                 "filament/filament": "^5.1",
                 "liberusoftware/module-social-network-media": "^0.1",
                 "liberusoftware/module-social-network-profiles": "^0.1",
                 "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.7",
+                "pestphp/pest": "^5.0"
             },
             "type": "liberu-module",
             "extra": {
@@ -6919,6 +7283,28 @@
                     "Liberu\\SocialNetwork\\Media\\Filament\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ],
+                "test:unit": [
+                    "pest tests/Unit"
+                ],
+                "test:feature": [
+                    "pest tests/Feature"
+                ],
+                "test:coverage": [
+                    "pest --coverage --min=100 --coverage-clover=coverage.xml"
+                ],
+                "test:parallel": [
+                    "pest --parallel"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -6930,17 +7316,21 @@
         },
         {
             "name": "liberusoftware/module-social-network-media-livewire",
-            "version": "0.1.0",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
                 "url": "modules/social-network-media-livewire",
-                "reference": "6ca0e60b22d1bb6c7453d8c8ee378315fafd2217"
+                "reference": "47a0e435876444b0855507d3f616911b84b827bf"
             },
             "require": {
                 "liberusoftware/module-social-network-media": "^0.1",
                 "liberusoftware/module-social-network-profiles": "^0.1",
                 "livewire/livewire": "^4.0",
                 "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.7",
+                "pestphp/pest": "^5.0"
             },
             "type": "liberu-module",
             "extra": {
@@ -6953,6 +7343,28 @@
                     "Liberu\\SocialNetwork\\Media\\Livewire\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ],
+                "test:unit": [
+                    "pest tests/Unit"
+                ],
+                "test:feature": [
+                    "pest tests/Feature"
+                ],
+                "test:coverage": [
+                    "pest --coverage --min=100 --coverage-clover=coverage.xml"
+                ],
+                "test:parallel": [
+                    "pest --parallel"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -6964,11 +7376,11 @@
         },
         {
             "name": "liberusoftware/module-social-network-messaging",
-            "version": "0.1.0",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
                 "url": "modules/social-network-messaging",
-                "reference": "b9b714fa9e05003a91eeb8bbd57bce12af2a982b"
+                "reference": "5c07f433f34d6d33eb4eaf79bab709967f5331c5"
             },
             "require": {
                 "illuminate/database": "^13.0",
@@ -6976,6 +7388,10 @@
                 "illuminate/support": "^13.0",
                 "liberusoftware/module-social-network-profiles": "^0.1",
                 "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.7",
+                "pestphp/pest": "^5.0"
             },
             "type": "liberu-module",
             "extra": {
@@ -6988,6 +7404,28 @@
                     "Liberu\\SocialNetwork\\Messaging\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ],
+                "test:unit": [
+                    "pest tests/Unit"
+                ],
+                "test:feature": [
+                    "pest tests/Feature"
+                ],
+                "test:coverage": [
+                    "pest --coverage --min=100 --coverage-clover=coverage.xml"
+                ],
+                "test:parallel": [
+                    "pest --parallel"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -6999,11 +7437,11 @@
         },
         {
             "name": "liberusoftware/module-social-network-messaging-api",
-            "version": "0.1.0",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
                 "url": "modules/social-network-messaging-api",
-                "reference": "460a0be82270604bd29e51bacd68a81036caf7dc"
+                "reference": "5a058ad1faa4238a74376e9114bad94c2013a5ba"
             },
             "require": {
                 "illuminate/http": "^13.0",
@@ -7012,6 +7450,10 @@
                 "liberusoftware/module-social-network-messaging": "^0.1",
                 "liberusoftware/module-social-network-profiles": "^0.1",
                 "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.7",
+                "pestphp/pest": "^5.0"
             },
             "type": "liberu-module",
             "extra": {
@@ -7024,6 +7466,28 @@
                     "Liberu\\SocialNetwork\\Messaging\\Api\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ],
+                "test:unit": [
+                    "pest tests/Unit"
+                ],
+                "test:feature": [
+                    "pest tests/Feature"
+                ],
+                "test:coverage": [
+                    "pest --coverage --min=100 --coverage-clover=coverage.xml"
+                ],
+                "test:parallel": [
+                    "pest --parallel"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -7035,17 +7499,21 @@
         },
         {
             "name": "liberusoftware/module-social-network-messaging-filament",
-            "version": "0.1.0",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
                 "url": "modules/social-network-messaging-filament",
-                "reference": "9595bf48675388c015f518eef2502c9f750f2a62"
+                "reference": "d0d4f8fa4b56fa1c59b9592fe2e190bb201b66ca"
             },
             "require": {
                 "filament/filament": "^5.1",
                 "liberusoftware/module-social-network-messaging": "^0.1",
                 "liberusoftware/module-social-network-profiles": "^0.1",
                 "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.7",
+                "pestphp/pest": "^5.0"
             },
             "type": "liberu-module",
             "extra": {
@@ -7058,6 +7526,28 @@
                     "Liberu\\SocialNetwork\\Messaging\\Filament\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ],
+                "test:unit": [
+                    "pest tests/Unit"
+                ],
+                "test:feature": [
+                    "pest tests/Feature"
+                ],
+                "test:coverage": [
+                    "pest --coverage --min=100 --coverage-clover=coverage.xml"
+                ],
+                "test:parallel": [
+                    "pest --parallel"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -7069,17 +7559,21 @@
         },
         {
             "name": "liberusoftware/module-social-network-messaging-livewire",
-            "version": "0.1.0",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
                 "url": "modules/social-network-messaging-livewire",
-                "reference": "aa2b0af83bf6af19c1b3b91ac356abdf18e5f862"
+                "reference": "75c20dd5ae4c3bbbeb657bc65c68a636b26059cd"
             },
             "require": {
                 "liberusoftware/module-social-network-messaging": "^0.1",
                 "liberusoftware/module-social-network-profiles": "^0.1",
                 "livewire/livewire": "^4.0",
                 "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.7",
+                "pestphp/pest": "^5.0"
             },
             "type": "liberu-module",
             "extra": {
@@ -7092,6 +7586,28 @@
                     "Liberu\\SocialNetwork\\Messaging\\Livewire\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ],
+                "test:unit": [
+                    "pest tests/Unit"
+                ],
+                "test:feature": [
+                    "pest tests/Feature"
+                ],
+                "test:coverage": [
+                    "pest --coverage --min=100 --coverage-clover=coverage.xml"
+                ],
+                "test:parallel": [
+                    "pest --parallel"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -7103,11 +7619,11 @@
         },
         {
             "name": "liberusoftware/module-social-network-moderation",
-            "version": "0.1.0",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
                 "url": "modules/social-network-moderation",
-                "reference": "f664bc27ec17b321a6d1ec8e9bde92b0f7262786"
+                "reference": "18266dc24efcd6867bfdcb09fa709f58946afcdf"
             },
             "require": {
                 "illuminate/database": "^13.0",
@@ -7115,6 +7631,10 @@
                 "illuminate/support": "^13.0",
                 "liberusoftware/module-social-network-profiles": "^0.1",
                 "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.7",
+                "pestphp/pest": "^5.0"
             },
             "type": "liberu-module",
             "extra": {
@@ -7127,6 +7647,28 @@
                     "Liberu\\SocialNetwork\\Moderation\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ],
+                "test:unit": [
+                    "pest tests/Unit"
+                ],
+                "test:feature": [
+                    "pest tests/Feature"
+                ],
+                "test:coverage": [
+                    "pest --coverage --min=100 --coverage-clover=coverage.xml"
+                ],
+                "test:parallel": [
+                    "pest --parallel"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -7138,11 +7680,11 @@
         },
         {
             "name": "liberusoftware/module-social-network-moderation-api",
-            "version": "0.1.0",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
                 "url": "modules/social-network-moderation-api",
-                "reference": "35e9d1269e732165b964865bda8bda3993d52b12"
+                "reference": "f2588577681188f446f849943582c941d74e019f"
             },
             "require": {
                 "illuminate/http": "^13.0",
@@ -7151,6 +7693,10 @@
                 "liberusoftware/module-social-network-moderation": "^0.1",
                 "liberusoftware/module-social-network-profiles": "^0.1",
                 "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.7",
+                "pestphp/pest": "^5.0"
             },
             "type": "liberu-module",
             "extra": {
@@ -7163,6 +7709,28 @@
                     "Liberu\\SocialNetwork\\Moderation\\Api\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ],
+                "test:unit": [
+                    "pest tests/Unit"
+                ],
+                "test:feature": [
+                    "pest tests/Feature"
+                ],
+                "test:coverage": [
+                    "pest --coverage --min=100 --coverage-clover=coverage.xml"
+                ],
+                "test:parallel": [
+                    "pest --parallel"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -7174,17 +7742,21 @@
         },
         {
             "name": "liberusoftware/module-social-network-moderation-filament",
-            "version": "0.1.0",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
                 "url": "modules/social-network-moderation-filament",
-                "reference": "60510fd1088f5a3cd09c8a1ab99d60db813acedc"
+                "reference": "ce19ba04eacf106357626ce203fff00f0a96fac4"
             },
             "require": {
                 "filament/filament": "^5.1",
                 "liberusoftware/module-social-network-moderation": "^0.1",
                 "liberusoftware/module-social-network-profiles": "^0.1",
                 "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.7",
+                "pestphp/pest": "^5.0"
             },
             "type": "liberu-module",
             "extra": {
@@ -7197,6 +7769,28 @@
                     "Liberu\\SocialNetwork\\Moderation\\Filament\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ],
+                "test:unit": [
+                    "pest tests/Unit"
+                ],
+                "test:feature": [
+                    "pest tests/Feature"
+                ],
+                "test:coverage": [
+                    "pest --coverage --min=100 --coverage-clover=coverage.xml"
+                ],
+                "test:parallel": [
+                    "pest --parallel"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -7208,17 +7802,21 @@
         },
         {
             "name": "liberusoftware/module-social-network-moderation-livewire",
-            "version": "0.1.0",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
                 "url": "modules/social-network-moderation-livewire",
-                "reference": "bd9e76fee49028b647cdb975da1800bb55fd97fc"
+                "reference": "18004a5b89142448659b540b73600c5a7c6ca193"
             },
             "require": {
                 "liberusoftware/module-social-network-moderation": "^0.1",
                 "liberusoftware/module-social-network-profiles": "^0.1",
                 "livewire/livewire": "^4.0",
                 "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.7",
+                "pestphp/pest": "^5.0"
             },
             "type": "liberu-module",
             "extra": {
@@ -7231,6 +7829,28 @@
                     "Liberu\\SocialNetwork\\Moderation\\Livewire\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ],
+                "test:unit": [
+                    "pest tests/Unit"
+                ],
+                "test:feature": [
+                    "pest tests/Feature"
+                ],
+                "test:coverage": [
+                    "pest --coverage --min=100 --coverage-clover=coverage.xml"
+                ],
+                "test:parallel": [
+                    "pest --parallel"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -7242,11 +7862,11 @@
         },
         {
             "name": "liberusoftware/module-social-network-notifications",
-            "version": "0.1.0",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
                 "url": "modules/social-network-notifications",
-                "reference": "dc2202734e4434a0e1bdf27d2a56a139814b7b47"
+                "reference": "c7cc5068a8b106f04f4df1090eb8ae0e35468581"
             },
             "require": {
                 "illuminate/database": "^13.0",
@@ -7254,6 +7874,10 @@
                 "illuminate/support": "^13.0",
                 "liberusoftware/module-social-network-profiles": "^0.1",
                 "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.7",
+                "pestphp/pest": "^5.0"
             },
             "type": "liberu-module",
             "extra": {
@@ -7266,6 +7890,28 @@
                     "Liberu\\SocialNetwork\\Notifications\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ],
+                "test:unit": [
+                    "pest tests/Unit"
+                ],
+                "test:feature": [
+                    "pest tests/Feature"
+                ],
+                "test:coverage": [
+                    "pest --coverage --min=100 --coverage-clover=coverage.xml"
+                ],
+                "test:parallel": [
+                    "pest --parallel"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -7277,11 +7923,11 @@
         },
         {
             "name": "liberusoftware/module-social-network-notifications-api",
-            "version": "0.1.0",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
                 "url": "modules/social-network-notifications-api",
-                "reference": "3ee3da8c428fe1ce6e39e81eda0835f28fab9ec0"
+                "reference": "a875ab71df6c83bc52455d5334e9454f91385b05"
             },
             "require": {
                 "illuminate/http": "^13.0",
@@ -7290,6 +7936,10 @@
                 "liberusoftware/module-social-network-notifications": "^0.1",
                 "liberusoftware/module-social-network-profiles": "^0.1",
                 "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.7",
+                "pestphp/pest": "^5.0"
             },
             "type": "liberu-module",
             "extra": {
@@ -7302,6 +7952,28 @@
                     "Liberu\\SocialNetwork\\Notifications\\Api\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ],
+                "test:unit": [
+                    "pest tests/Unit"
+                ],
+                "test:feature": [
+                    "pest tests/Feature"
+                ],
+                "test:coverage": [
+                    "pest --coverage --min=100 --coverage-clover=coverage.xml"
+                ],
+                "test:parallel": [
+                    "pest --parallel"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -7313,17 +7985,21 @@
         },
         {
             "name": "liberusoftware/module-social-network-notifications-filament",
-            "version": "0.1.0",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
                 "url": "modules/social-network-notifications-filament",
-                "reference": "178bf4d3a3d0391753bd364fc9ff8f24d3a63056"
+                "reference": "f9b98145b767158cfa8cb999cef3559aaf1399d2"
             },
             "require": {
                 "filament/filament": "^5.1",
                 "liberusoftware/module-social-network-notifications": "^0.1",
                 "liberusoftware/module-social-network-profiles": "^0.1",
                 "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.7",
+                "pestphp/pest": "^5.0"
             },
             "type": "liberu-module",
             "extra": {
@@ -7336,6 +8012,28 @@
                     "Liberu\\SocialNetwork\\Notifications\\Filament\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ],
+                "test:unit": [
+                    "pest tests/Unit"
+                ],
+                "test:feature": [
+                    "pest tests/Feature"
+                ],
+                "test:coverage": [
+                    "pest --coverage --min=100 --coverage-clover=coverage.xml"
+                ],
+                "test:parallel": [
+                    "pest --parallel"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -7347,17 +8045,21 @@
         },
         {
             "name": "liberusoftware/module-social-network-notifications-livewire",
-            "version": "0.1.0",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
                 "url": "modules/social-network-notifications-livewire",
-                "reference": "3b6c65f7cf6efaaf3ca8205564c85fabb00ca37a"
+                "reference": "949897b86604690eb2e03547d1a1a6d2cedcbdcf"
             },
             "require": {
                 "liberusoftware/module-social-network-notifications": "^0.1",
                 "liberusoftware/module-social-network-profiles": "^0.1",
                 "livewire/livewire": "^4.0",
                 "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.7",
+                "pestphp/pest": "^5.0"
             },
             "type": "liberu-module",
             "extra": {
@@ -7370,6 +8072,28 @@
                     "Liberu\\SocialNetwork\\Notifications\\Livewire\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ],
+                "test:unit": [
+                    "pest tests/Unit"
+                ],
+                "test:feature": [
+                    "pest tests/Feature"
+                ],
+                "test:coverage": [
+                    "pest --coverage --min=100 --coverage-clover=coverage.xml"
+                ],
+                "test:parallel": [
+                    "pest --parallel"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -7381,11 +8105,11 @@
         },
         {
             "name": "liberusoftware/module-social-network-profiles",
-            "version": "0.1.0",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
                 "url": "modules/social-network-profiles",
-                "reference": "dd82324700332f4a6924ba5148351d0202fc98b4"
+                "reference": "dc6a0e16e46c9f5cf5e16246804dd76f891e4a87"
             },
             "require": {
                 "illuminate/database": "^13.0",
@@ -7393,6 +8117,10 @@
                 "illuminate/support": "^13.0",
                 "liberusoftware/module-manager": "^1.0",
                 "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.7",
+                "pestphp/pest": "^5.0"
             },
             "type": "liberu-module",
             "extra": {
@@ -7405,6 +8133,28 @@
                     "Liberu\\SocialNetwork\\Profiles\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ],
+                "test:unit": [
+                    "pest tests/Unit"
+                ],
+                "test:feature": [
+                    "pest tests/Feature"
+                ],
+                "test:coverage": [
+                    "pest --coverage --min=100 --coverage-clover=coverage.xml"
+                ],
+                "test:parallel": [
+                    "pest --parallel"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -7416,11 +8166,11 @@
         },
         {
             "name": "liberusoftware/module-social-network-profiles-api",
-            "version": "0.1.0",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
                 "url": "modules/social-network-profiles-api",
-                "reference": "b65ee1cda03f8ff251562c358c1d720e23b9d756"
+                "reference": "db339d668a47583977b69c7a06aad63cc03911f0"
             },
             "require": {
                 "illuminate/http": "^13.0",
@@ -7428,6 +8178,10 @@
                 "laravel/sanctum": "^4.0",
                 "liberusoftware/module-social-network-profiles": "^0.1",
                 "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.7",
+                "pestphp/pest": "^5.0"
             },
             "type": "liberu-module",
             "extra": {
@@ -7440,6 +8194,28 @@
                     "Liberu\\SocialNetwork\\Profiles\\Api\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ],
+                "test:unit": [
+                    "pest tests/Unit"
+                ],
+                "test:feature": [
+                    "pest tests/Feature"
+                ],
+                "test:coverage": [
+                    "pest --coverage --min=100 --coverage-clover=coverage.xml"
+                ],
+                "test:parallel": [
+                    "pest --parallel"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -7451,16 +8227,20 @@
         },
         {
             "name": "liberusoftware/module-social-network-profiles-filament",
-            "version": "0.1.0",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
                 "url": "modules/social-network-profiles-filament",
-                "reference": "7c0c7f9a6ee1f97b09d72b24a88505168e6e3dc2"
+                "reference": "1439f176c29d2a7201137f0c46b745c0fa7242ad"
             },
             "require": {
                 "filament/filament": "^5.1",
                 "liberusoftware/module-social-network-profiles": "^0.1",
                 "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.7",
+                "pestphp/pest": "^5.0"
             },
             "type": "liberu-module",
             "extra": {
@@ -7473,6 +8253,28 @@
                     "Liberu\\SocialNetwork\\Profiles\\Filament\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ],
+                "test:unit": [
+                    "pest tests/Unit"
+                ],
+                "test:feature": [
+                    "pest tests/Feature"
+                ],
+                "test:coverage": [
+                    "pest --coverage --min=100 --coverage-clover=coverage.xml"
+                ],
+                "test:parallel": [
+                    "pest --parallel"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -7484,16 +8286,20 @@
         },
         {
             "name": "liberusoftware/module-social-network-profiles-livewire",
-            "version": "0.1.0",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
                 "url": "modules/social-network-profiles-livewire",
-                "reference": "c5c1567fe4596a083aaae22c236c31bb16b517e9"
+                "reference": "ed68d858c81c9c56802f8c9779b562011692b957"
             },
             "require": {
                 "liberusoftware/module-social-network-profiles": "^0.1",
                 "livewire/livewire": "^4.0",
                 "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.7",
+                "pestphp/pest": "^5.0"
             },
             "type": "liberu-module",
             "extra": {
@@ -7506,6 +8312,28 @@
                     "Liberu\\SocialNetwork\\Profiles\\Livewire\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ],
+                "test:unit": [
+                    "pest tests/Unit"
+                ],
+                "test:feature": [
+                    "pest tests/Feature"
+                ],
+                "test:coverage": [
+                    "pest --coverage --min=100 --coverage-clover=coverage.xml"
+                ],
+                "test:parallel": [
+                    "pest --parallel"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -7517,11 +8345,11 @@
         },
         {
             "name": "liberusoftware/module-social-network-publishing",
-            "version": "0.1.0",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
                 "url": "modules/social-network-publishing",
-                "reference": "00c2fb8b6e7e1788eb05bd4a87106b8ca627d376"
+                "reference": "a39aeb326bfd8f1c0d475c110175f876fcec365a"
             },
             "require": {
                 "illuminate/database": "^13.0",
@@ -7529,6 +8357,10 @@
                 "illuminate/support": "^13.0",
                 "liberusoftware/module-social-network-profiles": "^0.1",
                 "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.7",
+                "pestphp/pest": "^5.0"
             },
             "type": "liberu-module",
             "extra": {
@@ -7541,6 +8373,28 @@
                     "Liberu\\SocialNetwork\\Publishing\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ],
+                "test:unit": [
+                    "pest tests/Unit"
+                ],
+                "test:feature": [
+                    "pest tests/Feature"
+                ],
+                "test:coverage": [
+                    "pest --coverage --min=100 --coverage-clover=coverage.xml"
+                ],
+                "test:parallel": [
+                    "pest --parallel"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -7552,11 +8406,11 @@
         },
         {
             "name": "liberusoftware/module-social-network-publishing-api",
-            "version": "0.1.0",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
                 "url": "modules/social-network-publishing-api",
-                "reference": "8da34cadd7e7e9ffca3fe29c425c58a7d355dfc7"
+                "reference": "c8be7b400e77035ca9a630c9d8791a71df02d56a"
             },
             "require": {
                 "illuminate/http": "^13.0",
@@ -7565,6 +8419,10 @@
                 "liberusoftware/module-social-network-profiles": "^0.1",
                 "liberusoftware/module-social-network-publishing": "^0.1",
                 "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.7",
+                "pestphp/pest": "^5.0"
             },
             "type": "liberu-module",
             "extra": {
@@ -7577,6 +8435,28 @@
                     "Liberu\\SocialNetwork\\Publishing\\Api\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ],
+                "test:unit": [
+                    "pest tests/Unit"
+                ],
+                "test:feature": [
+                    "pest tests/Feature"
+                ],
+                "test:coverage": [
+                    "pest --coverage --min=100 --coverage-clover=coverage.xml"
+                ],
+                "test:parallel": [
+                    "pest --parallel"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -7588,17 +8468,21 @@
         },
         {
             "name": "liberusoftware/module-social-network-publishing-filament",
-            "version": "0.1.0",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
                 "url": "modules/social-network-publishing-filament",
-                "reference": "8304c6f4c6bbba3f186270a452afcf15ed1af7b0"
+                "reference": "25998722edaa15ef056193351ef3ce0484ec5659"
             },
             "require": {
                 "filament/filament": "^5.1",
                 "liberusoftware/module-social-network-profiles": "^0.1",
                 "liberusoftware/module-social-network-publishing": "^0.1",
                 "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.7",
+                "pestphp/pest": "^5.0"
             },
             "type": "liberu-module",
             "extra": {
@@ -7611,6 +8495,28 @@
                     "Liberu\\SocialNetwork\\Publishing\\Filament\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ],
+                "test:unit": [
+                    "pest tests/Unit"
+                ],
+                "test:feature": [
+                    "pest tests/Feature"
+                ],
+                "test:coverage": [
+                    "pest --coverage --min=100 --coverage-clover=coverage.xml"
+                ],
+                "test:parallel": [
+                    "pest --parallel"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -7622,17 +8528,21 @@
         },
         {
             "name": "liberusoftware/module-social-network-publishing-livewire",
-            "version": "0.1.0",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
                 "url": "modules/social-network-publishing-livewire",
-                "reference": "4f1092277970736ec71c4270fbaf9994b573a48d"
+                "reference": "a318b88f2abed117381832edda9642d389d1a160"
             },
             "require": {
                 "liberusoftware/module-social-network-profiles": "^0.1",
                 "liberusoftware/module-social-network-publishing": "^0.1",
                 "livewire/livewire": "^4.0",
                 "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.7",
+                "pestphp/pest": "^5.0"
             },
             "type": "liberu-module",
             "extra": {
@@ -7645,6 +8555,28 @@
                     "Liberu\\SocialNetwork\\Publishing\\Livewire\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ],
+                "test:unit": [
+                    "pest tests/Unit"
+                ],
+                "test:feature": [
+                    "pest tests/Feature"
+                ],
+                "test:coverage": [
+                    "pest --coverage --min=100 --coverage-clover=coverage.xml"
+                ],
+                "test:parallel": [
+                    "pest --parallel"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -7656,11 +8588,11 @@
         },
         {
             "name": "liberusoftware/module-social-network-social-core",
-            "version": "0.1.0",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
                 "url": "modules/social-network-social-core",
-                "reference": "44893d2886e80513d5d9f0ff82e67ee17184d247"
+                "reference": "2632492200fc9e0c962707990c96efc0d88f5e53"
             },
             "require": {
                 "illuminate/database": "^13.0",
@@ -7670,6 +8602,7 @@
                 "php": "^8.5"
             },
             "require-dev": {
+                "liberusoftware/package-testbench": "^1.7",
                 "pestphp/pest": "^5.0"
             },
             "type": "liberu-module",
@@ -7685,12 +8618,25 @@
             },
             "autoload-dev": {
                 "psr-4": {
-                    "Liberu\\SocialNetwork\\SocialCore\\Tests\\": "tests/"
+                    "Liberu\\SocialNetwork\\SocialCore\\Tests\\": "tests/",
+                    "Tests\\": "tests/"
                 }
             },
             "scripts": {
                 "test": [
                     "pest"
+                ],
+                "test:unit": [
+                    "pest tests/Unit"
+                ],
+                "test:feature": [
+                    "pest tests/Feature"
+                ],
+                "test:coverage": [
+                    "pest --coverage --min=100 --coverage-clover=coverage.xml"
+                ],
+                "test:parallel": [
+                    "pest --parallel"
                 ]
             },
             "license": [
@@ -7704,11 +8650,11 @@
         },
         {
             "name": "liberusoftware/module-social-network-social-core-api",
-            "version": "0.1.0",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
                 "url": "modules/social-network-social-core-api",
-                "reference": "addaa4a9fc3ca3fe5893de76161120202e369dbe"
+                "reference": "0c6a18f9c1cbeae029bc727e56035b9153efbfbe"
             },
             "require": {
                 "illuminate/http": "^13.0",
@@ -7717,6 +8663,10 @@
                 "laravel/sanctum": "^4.0",
                 "liberusoftware/module-social-network-social-core": "^0.1",
                 "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.7",
+                "pestphp/pest": "^5.0"
             },
             "type": "liberu-module",
             "extra": {
@@ -7729,6 +8679,28 @@
                     "Liberu\\SocialNetwork\\SocialCore\\Api\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ],
+                "test:unit": [
+                    "pest tests/Unit"
+                ],
+                "test:feature": [
+                    "pest tests/Feature"
+                ],
+                "test:coverage": [
+                    "pest --coverage --min=100 --coverage-clover=coverage.xml"
+                ],
+                "test:parallel": [
+                    "pest --parallel"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -7740,16 +8712,20 @@
         },
         {
             "name": "liberusoftware/module-social-network-social-core-filament",
-            "version": "0.1.0",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
                 "url": "modules/social-network-social-core-filament",
-                "reference": "e298054d8f0564e53d04261ee042754d04f8306e"
+                "reference": "b0cacfcfce7b675c5b07c9ece1be64eabd9eb431"
             },
             "require": {
                 "filament/filament": "^5.1",
                 "liberusoftware/module-social-network-social-core": "^0.1",
                 "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.7",
+                "pestphp/pest": "^5.0"
             },
             "type": "liberu-module",
             "extra": {
@@ -7762,6 +8738,28 @@
                     "Liberu\\SocialNetwork\\SocialCore\\Filament\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ],
+                "test:unit": [
+                    "pest tests/Unit"
+                ],
+                "test:feature": [
+                    "pest tests/Feature"
+                ],
+                "test:coverage": [
+                    "pest --coverage --min=100 --coverage-clover=coverage.xml"
+                ],
+                "test:parallel": [
+                    "pest --parallel"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -7773,16 +8771,20 @@
         },
         {
             "name": "liberusoftware/module-social-network-social-core-livewire",
-            "version": "0.1.0",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
                 "url": "modules/social-network-social-core-livewire",
-                "reference": "0cefa1deb1cef2006891c8ffea79dcaaf1cd0ea8"
+                "reference": "ee81cc53cf37ccb44ab5c9bbcd05cef93e2b4a58"
             },
             "require": {
                 "liberusoftware/module-social-network-social-core": "^0.1",
                 "livewire/livewire": "^4.0",
                 "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.7",
+                "pestphp/pest": "^5.0"
             },
             "type": "liberu-module",
             "extra": {
@@ -7795,6 +8797,28 @@
                     "Liberu\\SocialNetwork\\SocialCore\\Livewire\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ],
+                "test:unit": [
+                    "pest tests/Unit"
+                ],
+                "test:feature": [
+                    "pest tests/Feature"
+                ],
+                "test:coverage": [
+                    "pest --coverage --min=100 --coverage-clover=coverage.xml"
+                ],
+                "test:parallel": [
+                    "pest --parallel"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -7806,11 +8830,11 @@
         },
         {
             "name": "liberusoftware/module-social-network-social-graph",
-            "version": "0.1.0",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
                 "url": "modules/social-network-social-graph",
-                "reference": "e535b35ed17e8b2048fd8ea904dc0651ea1bdb78"
+                "reference": "02c155057fb15391ecfefba1491a1a0ae358ba88"
             },
             "require": {
                 "illuminate/database": "^13.0",
@@ -7818,6 +8842,10 @@
                 "illuminate/support": "^13.0",
                 "liberusoftware/module-social-network-profiles": "^0.1",
                 "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.7",
+                "pestphp/pest": "^5.0"
             },
             "type": "liberu-module",
             "extra": {
@@ -7830,6 +8858,28 @@
                     "Liberu\\SocialNetwork\\SocialGraph\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ],
+                "test:unit": [
+                    "pest tests/Unit"
+                ],
+                "test:feature": [
+                    "pest tests/Feature"
+                ],
+                "test:coverage": [
+                    "pest --coverage --min=100 --coverage-clover=coverage.xml"
+                ],
+                "test:parallel": [
+                    "pest --parallel"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -7841,11 +8891,11 @@
         },
         {
             "name": "liberusoftware/module-social-network-social-graph-api",
-            "version": "0.1.0",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
                 "url": "modules/social-network-social-graph-api",
-                "reference": "eaa9191a695086c84b8e2efe77d7f6684b91c087"
+                "reference": "3c0560c56e2c84ca87e7b171b69f5cf1f065b81d"
             },
             "require": {
                 "illuminate/http": "^13.0",
@@ -7854,6 +8904,10 @@
                 "liberusoftware/module-social-network-profiles": "^0.1",
                 "liberusoftware/module-social-network-social-graph": "^0.1",
                 "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.7",
+                "pestphp/pest": "^5.0"
             },
             "type": "liberu-module",
             "extra": {
@@ -7866,6 +8920,28 @@
                     "Liberu\\SocialNetwork\\SocialGraph\\Api\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ],
+                "test:unit": [
+                    "pest tests/Unit"
+                ],
+                "test:feature": [
+                    "pest tests/Feature"
+                ],
+                "test:coverage": [
+                    "pest --coverage --min=100 --coverage-clover=coverage.xml"
+                ],
+                "test:parallel": [
+                    "pest --parallel"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -7877,17 +8953,21 @@
         },
         {
             "name": "liberusoftware/module-social-network-social-graph-filament",
-            "version": "0.1.0",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
                 "url": "modules/social-network-social-graph-filament",
-                "reference": "6badd063536c50d42f91f28f301397cce01e36a1"
+                "reference": "8cbf74ba706cc75313587641abe0da8994cc3ba6"
             },
             "require": {
                 "filament/filament": "^5.1",
                 "liberusoftware/module-social-network-profiles": "^0.1",
                 "liberusoftware/module-social-network-social-graph": "^0.1",
                 "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.7",
+                "pestphp/pest": "^5.0"
             },
             "type": "liberu-module",
             "extra": {
@@ -7900,6 +8980,28 @@
                     "Liberu\\SocialNetwork\\SocialGraph\\Filament\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ],
+                "test:unit": [
+                    "pest tests/Unit"
+                ],
+                "test:feature": [
+                    "pest tests/Feature"
+                ],
+                "test:coverage": [
+                    "pest --coverage --min=100 --coverage-clover=coverage.xml"
+                ],
+                "test:parallel": [
+                    "pest --parallel"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -7911,17 +9013,21 @@
         },
         {
             "name": "liberusoftware/module-social-network-social-graph-livewire",
-            "version": "0.1.0",
+            "version": "0.1.2",
             "dist": {
                 "type": "path",
                 "url": "modules/social-network-social-graph-livewire",
-                "reference": "f016fcfbe31432b273b5efd5b8bb1001af4e92f8"
+                "reference": "e8b6a32ad7878cd5fa60e6000c2cc2eb3760ecbf"
             },
             "require": {
                 "liberusoftware/module-social-network-profiles": "^0.1",
                 "liberusoftware/module-social-network-social-graph": "^0.1",
                 "livewire/livewire": "^4.0",
                 "php": "^8.5"
+            },
+            "require-dev": {
+                "liberusoftware/package-testbench": "^1.7",
+                "pestphp/pest": "^5.0"
             },
             "type": "liberu-module",
             "extra": {
@@ -7933,6 +9039,28 @@
                 "psr-4": {
                     "Liberu\\SocialNetwork\\SocialGraph\\Livewire\\": "src/"
                 }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "pest"
+                ],
+                "test:unit": [
+                    "pest tests/Unit"
+                ],
+                "test:feature": [
+                    "pest tests/Feature"
+                ],
+                "test:coverage": [
+                    "pest --coverage --min=100 --coverage-clover=coverage.xml"
+                ],
+                "test:parallel": [
+                    "pest --parallel"
+                ]
             },
             "license": [
                 "MIT"
@@ -9161,16 +10289,16 @@
         },
         {
             "name": "livewire/livewire",
-            "version": "v4.3.5",
+            "version": "v4.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/livewire/livewire.git",
-                "reference": "7ef4b2a876c71744e86463079dd506b26eeab624"
+                "reference": "4a030935e6c255c89a114b00ece66326f78157c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/livewire/livewire/zipball/7ef4b2a876c71744e86463079dd506b26eeab624",
-                "reference": "7ef4b2a876c71744e86463079dd506b26eeab624",
+                "url": "https://api.github.com/repos/livewire/livewire/zipball/4a030935e6c255c89a114b00ece66326f78157c0",
+                "reference": "4a030935e6c255c89a114b00ece66326f78157c0",
                 "shasum": ""
             },
             "require": {
@@ -9225,7 +10353,7 @@
             "description": "A front-end framework for Laravel.",
             "support": {
                 "issues": "https://github.com/livewire/livewire/issues",
-                "source": "https://github.com/livewire/livewire/tree/v4.3.5"
+                "source": "https://github.com/livewire/livewire/tree/v4.4.2"
             },
             "funding": [
                 {
@@ -9233,7 +10361,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-08-03T04:09:44+00:00"
+            "time": "2026-08-24T15:02:06+00:00"
         },
         {
             "name": "mobiledetect/mobiledetectlib",
@@ -9404,16 +10532,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "3.13.1",
+            "version": "3.13.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/CarbonPHP/carbon.git",
-                "reference": "2937ad3d1d2c506fd2bc97d571438a95641f44e2"
+                "reference": "a1c54919f5fff9800cd03c32bd01defd5a4061cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CarbonPHP/carbon/zipball/2937ad3d1d2c506fd2bc97d571438a95641f44e2",
-                "reference": "2937ad3d1d2c506fd2bc97d571438a95641f44e2",
+                "url": "https://api.github.com/repos/CarbonPHP/carbon/zipball/a1c54919f5fff9800cd03c32bd01defd5a4061cb",
+                "reference": "a1c54919f5fff9800cd03c32bd01defd5a4061cb",
                 "shasum": ""
             },
             "require": {
@@ -9505,7 +10633,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-07-09T18:23:49+00:00"
+            "time": "2026-08-08T11:40:35+00:00"
         },
         {
             "name": "nette/php-generator",
@@ -9583,16 +10711,16 @@
         },
         {
             "name": "nette/schema",
-            "version": "v1.3.5",
+            "version": "v1.3.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/schema.git",
-                "reference": "f0ab1a3cda782dbc5da270d28545236aa80c4002"
+                "reference": "c54350438cd6914616f790a49cb424605f421562"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/schema/zipball/f0ab1a3cda782dbc5da270d28545236aa80c4002",
-                "reference": "f0ab1a3cda782dbc5da270d28545236aa80c4002",
+                "url": "https://api.github.com/repos/nette/schema/zipball/c54350438cd6914616f790a49cb424605f421562",
+                "reference": "c54350438cd6914616f790a49cb424605f421562",
                 "shasum": ""
             },
             "require": {
@@ -9644,9 +10772,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nette/schema/issues",
-                "source": "https://github.com/nette/schema/tree/v1.3.5"
+                "source": "https://github.com/nette/schema/tree/v1.3.6"
             },
-            "time": "2026-02-23T03:47:12+00:00"
+            "time": "2026-08-16T21:58:41+00:00"
         },
         {
             "name": "nette/utils",
@@ -10273,16 +11401,16 @@
         },
         {
             "name": "phpoption/phpoption",
-            "version": "1.9.5",
+            "version": "1.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/php-option.git",
-                "reference": "75365b91986c2405cf5e1e012c5595cd487a98be"
+                "reference": "67b192b6a42ec03944b972d6e633ddec78ad2c6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/75365b91986c2405cf5e1e012c5595cd487a98be",
-                "reference": "75365b91986c2405cf5e1e012c5595cd487a98be",
+                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/67b192b6a42ec03944b972d6e633ddec78ad2c6d",
+                "reference": "67b192b6a42ec03944b972d6e633ddec78ad2c6d",
                 "shasum": ""
             },
             "require": {
@@ -10290,7 +11418,7 @@
             },
             "require-dev": {
                 "bamarni/composer-bin-plugin": "^1.8.2",
-                "phpunit/phpunit": "^8.5.44 || ^9.6.25 || ^10.5.53 || ^11.5.34"
+                "phpunit/phpunit": "^8.5.54 || ^9.6.36 || ^10.5.64 || ^11.5.56 || ^12.5.33"
             },
             "type": "library",
             "extra": {
@@ -10332,7 +11460,7 @@
             ],
             "support": {
                 "issues": "https://github.com/schmittjoh/php-option/issues",
-                "source": "https://github.com/schmittjoh/php-option/tree/1.9.5"
+                "source": "https://github.com/schmittjoh/php-option/tree/1.10.0"
             },
             "funding": [
                 {
@@ -10344,7 +11472,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-12-27T19:41:33+00:00"
+            "time": "2026-08-24T00:54:40+00:00"
         },
         {
             "name": "phpseclib/phpseclib",
@@ -10505,16 +11633,16 @@
         },
         {
             "name": "pragmarx/google2fa",
-            "version": "v9.0.0",
+            "version": "v9.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/antonioribeiro/google2fa.git",
-                "reference": "e6bc62dd6ae83acc475f57912e27466019a1f2cf"
+                "reference": "f00bc788c555adfb6765c437ff3538e59cd88af1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/antonioribeiro/google2fa/zipball/e6bc62dd6ae83acc475f57912e27466019a1f2cf",
-                "reference": "e6bc62dd6ae83acc475f57912e27466019a1f2cf",
+                "url": "https://api.github.com/repos/antonioribeiro/google2fa/zipball/f00bc788c555adfb6765c437ff3538e59cd88af1",
+                "reference": "f00bc788c555adfb6765c437ff3538e59cd88af1",
                 "shasum": ""
             },
             "require": {
@@ -10522,8 +11650,11 @@
                 "php": "^7.1|^8.0"
             },
             "require-dev": {
-                "phpstan/phpstan": "^1.9",
-                "phpunit/phpunit": "^7.5.15|^8.5|^9.0"
+                "phpstan/phpstan": "^1.0|^2.0",
+                "phpstan/phpstan-phpunit": "^1.0|^2.0",
+                "phpunit/phpunit": "~9|~10|~11|~12|~13",
+                "psalm/plugin-phpunit": "^0.19|^0.20",
+                "vimeo/psalm": "^5.26|^6.13"
             },
             "type": "library",
             "autoload": {
@@ -10546,14 +11677,23 @@
             "keywords": [
                 "2fa",
                 "Authentication",
+                "MFA",
                 "Two Factor Authentication",
-                "google2fa"
+                "google-authenticator",
+                "google2fa",
+                "hotp",
+                "otp",
+                "rfc4226",
+                "rfc6238",
+                "totp"
             ],
             "support": {
+                "docs": "https://github.com/antonioribeiro/google2fa#readme",
                 "issues": "https://github.com/antonioribeiro/google2fa/issues",
-                "source": "https://github.com/antonioribeiro/google2fa/tree/v9.0.0"
+                "security": "https://github.com/antonioribeiro/google2fa/security/policy",
+                "source": "https://github.com/antonioribeiro/google2fa"
             },
-            "time": "2025-09-19T22:51:08+00:00"
+            "time": "2026-08-15T13:22:01+00:00"
         },
         {
             "name": "pragmarx/google2fa-qrcode",
@@ -12253,16 +13393,16 @@
         },
         {
             "name": "spatie/invade",
-            "version": "2.1.0",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/invade.git",
-                "reference": "b920f6411d21df4e8610a138e2e87ae4957d7f63"
+                "reference": "f929c7b6e75fceeefa7b41a491e91274bafb17af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/invade/zipball/b920f6411d21df4e8610a138e2e87ae4957d7f63",
-                "reference": "b920f6411d21df4e8610a138e2e87ae4957d7f63",
+                "url": "https://api.github.com/repos/spatie/invade/zipball/f929c7b6e75fceeefa7b41a491e91274bafb17af",
+                "reference": "f929c7b6e75fceeefa7b41a491e91274bafb17af",
                 "shasum": ""
             },
             "require": {
@@ -12300,7 +13440,7 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/invade/tree/2.1.0"
+                "source": "https://github.com/spatie/invade/tree/2.1.1"
             },
             "funding": [
                 {
@@ -12308,7 +13448,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-05-17T09:06:10+00:00"
+            "time": "2026-08-24T12:39:05+00:00"
         },
         {
             "name": "spatie/laravel-activitylog",
@@ -14099,16 +15239,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v8.1.2",
+            "version": "v8.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "535e18a1b8925f6c01a55b171d157ab66c2ace15"
+                "reference": "d07c06839e33047e2c894a6793248f3fb66c8129"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/535e18a1b8925f6c01a55b171d157ab66c2ace15",
-                "reference": "535e18a1b8925f6c01a55b171d157ab66c2ace15",
+                "url": "https://api.github.com/repos/symfony/console/zipball/d07c06839e33047e2c894a6793248f3fb66c8129",
+                "reference": "d07c06839e33047e2c894a6793248f3fb66c8129",
                 "shasum": ""
             },
             "require": {
@@ -14175,7 +15315,7 @@
                 "terminal"
             ],
             "support": {
-                "source": "https://github.com/symfony/console/tree/v8.1.2"
+                "source": "https://github.com/symfony/console/tree/v8.1.5"
             },
             "funding": [
                 {
@@ -14195,20 +15335,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-07-27T13:58:19+00:00"
+            "time": "2026-08-21T14:29:57+00:00"
         },
         {
             "name": "symfony/css-selector",
-            "version": "v8.1.0",
+            "version": "v8.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/css-selector.git",
-                "reference": "dc0e2be45c9b5588c82414f02ac574b4b986abcd"
+                "reference": "a291fb5adb65f52a4bb315db2d803698315dc64d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/css-selector/zipball/dc0e2be45c9b5588c82414f02ac574b4b986abcd",
-                "reference": "dc0e2be45c9b5588c82414f02ac574b4b986abcd",
+                "url": "https://api.github.com/repos/symfony/css-selector/zipball/a291fb5adb65f52a4bb315db2d803698315dc64d",
+                "reference": "a291fb5adb65f52a4bb315db2d803698315dc64d",
                 "shasum": ""
             },
             "require": {
@@ -14244,7 +15384,7 @@
             "description": "Converts CSS selectors to XPath expressions",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/css-selector/tree/v8.1.0"
+                "source": "https://github.com/symfony/css-selector/tree/v8.1.5"
             },
             "funding": [
                 {
@@ -14264,7 +15404,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-05-29T05:06:50+00:00"
+            "time": "2026-08-21T17:47:34+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -14339,16 +15479,16 @@
         },
         {
             "name": "symfony/error-handler",
-            "version": "v8.1.2",
+            "version": "v8.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/error-handler.git",
-                "reference": "dc98404be5e8c949815e23fee1928f5de4f3f5d3"
+                "reference": "8b2a4289ffe5e2dc8fcf645b8e7870e1fa0325ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/error-handler/zipball/dc98404be5e8c949815e23fee1928f5de4f3f5d3",
-                "reference": "dc98404be5e8c949815e23fee1928f5de4f3f5d3",
+                "url": "https://api.github.com/repos/symfony/error-handler/zipball/8b2a4289ffe5e2dc8fcf645b8e7870e1fa0325ce",
+                "reference": "8b2a4289ffe5e2dc8fcf645b8e7870e1fa0325ce",
                 "shasum": ""
             },
             "require": {
@@ -14396,7 +15536,7 @@
             "description": "Provides tools to manage errors and ease debugging PHP code",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/error-handler/tree/v8.1.2"
+                "source": "https://github.com/symfony/error-handler/tree/v8.1.5"
             },
             "funding": [
                 {
@@ -14416,20 +15556,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-07-22T15:42:13+00:00"
+            "time": "2026-08-21T17:47:34+00:00"
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v8.1.2",
+            "version": "v8.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
-                "reference": "c14c05a9e6da7f5e375e6efc28952c7e7dbddffb"
+                "reference": "7458da64220376b2e0dc2d8451bf43382c1ad297"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/c14c05a9e6da7f5e375e6efc28952c7e7dbddffb",
-                "reference": "c14c05a9e6da7f5e375e6efc28952c7e7dbddffb",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/7458da64220376b2e0dc2d8451bf43382c1ad297",
+                "reference": "7458da64220376b2e0dc2d8451bf43382c1ad297",
                 "shasum": ""
             },
             "require": {
@@ -14482,7 +15622,7 @@
             "description": "Provides tools that allow your application components to communicate with each other by dispatching events and listening to them",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/event-dispatcher/tree/v8.1.2"
+                "source": "https://github.com/symfony/event-dispatcher/tree/v8.1.5"
             },
             "funding": [
                 {
@@ -14502,7 +15642,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-07-22T15:42:13+00:00"
+            "time": "2026-08-21T17:47:34+00:00"
         },
         {
             "name": "symfony/event-dispatcher-contracts",
@@ -14586,16 +15726,16 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v8.1.1",
+            "version": "v8.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "e2989e762c70f9490fa3a00a0ac0fae5aa97a531"
+                "reference": "8d7acede2b2ae07605783d1c43e49b5767036474"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/e2989e762c70f9490fa3a00a0ac0fae5aa97a531",
-                "reference": "e2989e762c70f9490fa3a00a0ac0fae5aa97a531",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/8d7acede2b2ae07605783d1c43e49b5767036474",
+                "reference": "8d7acede2b2ae07605783d1c43e49b5767036474",
                 "shasum": ""
             },
             "require": {
@@ -14630,7 +15770,7 @@
             "description": "Finds files and directories via an intuitive fluent interface",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/finder/tree/v8.1.1"
+                "source": "https://github.com/symfony/finder/tree/v8.1.5"
             },
             "funding": [
                 {
@@ -14650,7 +15790,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-06-27T09:05:56+00:00"
+            "time": "2026-08-21T12:16:08+00:00"
         },
         {
             "name": "symfony/html-sanitizer",
@@ -14905,16 +16045,16 @@
         },
         {
             "name": "symfony/http-foundation",
-            "version": "v8.1.2",
+            "version": "v8.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
-                "reference": "9943adbf5a64e2951a8d9eb0485310d55624f0e8"
+                "reference": "ee16f97e95cfa011a742714d7c8c8f70fe7423f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/9943adbf5a64e2951a8d9eb0485310d55624f0e8",
-                "reference": "9943adbf5a64e2951a8d9eb0485310d55624f0e8",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/ee16f97e95cfa011a742714d7c8c8f70fe7423f4",
+                "reference": "ee16f97e95cfa011a742714d7c8c8f70fe7423f4",
                 "shasum": ""
             },
             "require": {
@@ -14962,7 +16102,7 @@
             "description": "Defines an object-oriented layer for the HTTP specification",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/http-foundation/tree/v8.1.2"
+                "source": "https://github.com/symfony/http-foundation/tree/v8.1.5"
             },
             "funding": [
                 {
@@ -14982,20 +16122,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-07-29T07:22:54+00:00"
+            "time": "2026-08-20T09:59:12+00:00"
         },
         {
             "name": "symfony/http-kernel",
-            "version": "v8.1.2",
+            "version": "v8.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-kernel.git",
-                "reference": "c7bb08dc26a7a7da68fb7ac1ce9de925e6464dbc"
+                "reference": "0306e1e65b90023fe40de6c6be95d06396bcb2e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/c7bb08dc26a7a7da68fb7ac1ce9de925e6464dbc",
-                "reference": "c7bb08dc26a7a7da68fb7ac1ce9de925e6464dbc",
+                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/0306e1e65b90023fe40de6c6be95d06396bcb2e6",
+                "reference": "0306e1e65b90023fe40de6c6be95d06396bcb2e6",
                 "shasum": ""
             },
             "require": {
@@ -15072,7 +16212,7 @@
             "description": "Provides a structured process for converting a Request into a Response",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/http-kernel/tree/v8.1.2"
+                "source": "https://github.com/symfony/http-kernel/tree/v8.1.5"
             },
             "funding": [
                 {
@@ -15092,20 +16232,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-07-29T11:54:54+00:00"
+            "time": "2026-08-22T13:45:00+00:00"
         },
         {
             "name": "symfony/mailer",
-            "version": "v8.1.2",
+            "version": "v8.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/mailer.git",
-                "reference": "221c7f326ace1ac2baee8331d829d5b7f04f4d53"
+                "reference": "89f43137da74b8f1aab37c99926482b7084f51b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/mailer/zipball/221c7f326ace1ac2baee8331d829d5b7f04f4d53",
-                "reference": "221c7f326ace1ac2baee8331d829d5b7f04f4d53",
+                "url": "https://api.github.com/repos/symfony/mailer/zipball/89f43137da74b8f1aab37c99926482b7084f51b9",
+                "reference": "89f43137da74b8f1aab37c99926482b7084f51b9",
                 "shasum": ""
             },
             "require": {
@@ -15152,7 +16292,7 @@
             "description": "Helps sending emails",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/mailer/tree/v8.1.2"
+                "source": "https://github.com/symfony/mailer/tree/v8.1.5"
             },
             "funding": [
                 {
@@ -15172,20 +16312,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-07-28T07:35:25+00:00"
+            "time": "2026-08-21T17:47:34+00:00"
         },
         {
             "name": "symfony/mime",
-            "version": "v8.1.2",
+            "version": "v8.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/mime.git",
-                "reference": "75f4779d4ec2e13f24a3a7e5d0347c340c7ca627"
+                "reference": "1b36ccfd7ccb9ad1d6eafb9024b3dd3d9606b15f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/mime/zipball/75f4779d4ec2e13f24a3a7e5d0347c340c7ca627",
-                "reference": "75f4779d4ec2e13f24a3a7e5d0347c340c7ca627",
+                "url": "https://api.github.com/repos/symfony/mime/zipball/1b36ccfd7ccb9ad1d6eafb9024b3dd3d9606b15f",
+                "reference": "1b36ccfd7ccb9ad1d6eafb9024b3dd3d9606b15f",
                 "shasum": ""
             },
             "require": {
@@ -15206,7 +16346,7 @@
                 "symfony/process": "^7.4|^8.0",
                 "symfony/property-access": "^7.4|^8.0",
                 "symfony/property-info": "^7.4|^8.0",
-                "symfony/serializer": "^7.4|^8.0"
+                "symfony/serializer": "^7.4.17|^8.1.5"
             },
             "type": "library",
             "autoload": {
@@ -15238,7 +16378,7 @@
                 "mime-type"
             ],
             "support": {
-                "source": "https://github.com/symfony/mime/tree/v8.1.2"
+                "source": "https://github.com/symfony/mime/tree/v8.1.5"
             },
             "funding": [
                 {
@@ -15258,7 +16398,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-07-29T08:00:47+00:00"
+            "time": "2026-08-22T09:06:25+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -15427,16 +16567,16 @@
         },
         {
             "name": "symfony/polyfill-intl-idn",
-            "version": "v1.38.1",
+            "version": "v1.42.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-idn.git",
-                "reference": "dc21118016c039a66235cf93d96b435ffb282412"
+                "reference": "51b5ff5ba85452b31ec6f55490b08148612339d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-intl-idn/zipball/dc21118016c039a66235cf93d96b435ffb282412",
-                "reference": "dc21118016c039a66235cf93d96b435ffb282412",
+                "url": "https://api.github.com/repos/symfony/polyfill-intl-idn/zipball/51b5ff5ba85452b31ec6f55490b08148612339d9",
+                "reference": "51b5ff5ba85452b31ec6f55490b08148612339d9",
                 "shasum": ""
             },
             "require": {
@@ -15490,7 +16630,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-intl-idn/tree/v1.38.1"
+                "source": "https://github.com/symfony/polyfill-intl-idn/tree/v1.42.0"
             },
             "funding": [
                 {
@@ -15510,20 +16650,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-05-25T15:22:23+00:00"
+            "time": "2026-08-24T10:51:20+00:00"
         },
         {
             "name": "symfony/polyfill-intl-normalizer",
-            "version": "v1.38.0",
+            "version": "v1.42.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-normalizer.git",
-                "reference": "2d446c214bdbe5b71bde5011b060a05fece3ae6b"
+                "reference": "aa20edea75bd9c48cfecc8360922e5a6e5c44502"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-intl-normalizer/zipball/2d446c214bdbe5b71bde5011b060a05fece3ae6b",
-                "reference": "2d446c214bdbe5b71bde5011b060a05fece3ae6b",
+                "url": "https://api.github.com/repos/symfony/polyfill-intl-normalizer/zipball/aa20edea75bd9c48cfecc8360922e5a6e5c44502",
+                "reference": "aa20edea75bd9c48cfecc8360922e5a6e5c44502",
                 "shasum": ""
             },
             "require": {
@@ -15575,7 +16715,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-intl-normalizer/tree/v1.38.0"
+                "source": "https://github.com/symfony/polyfill-intl-normalizer/tree/v1.42.0"
             },
             "funding": [
                 {
@@ -15595,7 +16735,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-05-25T13:48:31+00:00"
+            "time": "2026-08-07T06:33:24+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -16171,16 +17311,16 @@
         },
         {
             "name": "symfony/process",
-            "version": "v8.1.0",
+            "version": "v8.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "c4a9e58f235a6bf7f97ffbfedae2687353ac79e5"
+                "reference": "d863f5e70d7c87abb906ac11b61f83036093000b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/c4a9e58f235a6bf7f97ffbfedae2687353ac79e5",
-                "reference": "c4a9e58f235a6bf7f97ffbfedae2687353ac79e5",
+                "url": "https://api.github.com/repos/symfony/process/zipball/d863f5e70d7c87abb906ac11b61f83036093000b",
+                "reference": "d863f5e70d7c87abb906ac11b61f83036093000b",
                 "shasum": ""
             },
             "require": {
@@ -16212,7 +17352,7 @@
             "description": "Executes commands in sub-processes",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/process/tree/v8.1.0"
+                "source": "https://github.com/symfony/process/tree/v8.1.5"
             },
             "funding": [
                 {
@@ -16232,20 +17372,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-05-29T05:06:50+00:00"
+            "time": "2026-08-21T17:47:34+00:00"
         },
         {
             "name": "symfony/property-access",
-            "version": "v8.1.0",
+            "version": "v8.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/property-access.git",
-                "reference": "9261ef060f26cc7b728f67f141ba19b98a6209a9"
+                "reference": "1a41232c678972b93ce499a504e19ea09dfcd0b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/property-access/zipball/9261ef060f26cc7b728f67f141ba19b98a6209a9",
-                "reference": "9261ef060f26cc7b728f67f141ba19b98a6209a9",
+                "url": "https://api.github.com/repos/symfony/property-access/zipball/1a41232c678972b93ce499a504e19ea09dfcd0b2",
+                "reference": "1a41232c678972b93ce499a504e19ea09dfcd0b2",
                 "shasum": ""
             },
             "require": {
@@ -16293,7 +17433,7 @@
                 "reflection"
             ],
             "support": {
-                "source": "https://github.com/symfony/property-access/tree/v8.1.0"
+                "source": "https://github.com/symfony/property-access/tree/v8.1.4"
             },
             "funding": [
                 {
@@ -16313,20 +17453,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-05-29T05:06:50+00:00"
+            "time": "2026-07-30T12:40:56+00:00"
         },
         {
             "name": "symfony/property-info",
-            "version": "v8.1.2",
+            "version": "v8.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/property-info.git",
-                "reference": "289ef0d4f2b9bd5245ac2604564289a8673837b9"
+                "reference": "b335f8e7fb1440ed3448fb33340efc6127678e53"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/property-info/zipball/289ef0d4f2b9bd5245ac2604564289a8673837b9",
-                "reference": "289ef0d4f2b9bd5245ac2604564289a8673837b9",
+                "url": "https://api.github.com/repos/symfony/property-info/zipball/b335f8e7fb1440ed3448fb33340efc6127678e53",
+                "reference": "b335f8e7fb1440ed3448fb33340efc6127678e53",
                 "shasum": ""
             },
             "require": {
@@ -16379,7 +17519,7 @@
                 "validator"
             ],
             "support": {
-                "source": "https://github.com/symfony/property-info/tree/v8.1.2"
+                "source": "https://github.com/symfony/property-info/tree/v8.1.5"
             },
             "funding": [
                 {
@@ -16399,7 +17539,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-07-22T15:42:13+00:00"
+            "time": "2026-08-21T17:47:34+00:00"
         },
         {
             "name": "symfony/psr-http-message-bridge",
@@ -16490,16 +17630,16 @@
         },
         {
             "name": "symfony/routing",
-            "version": "v8.1.2",
+            "version": "v8.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/routing.git",
-                "reference": "1058d4e13bb81dd9a6f7565686df7e13b880cdbd"
+                "reference": "3c188091b6b4fa2e4bc83a135caede12deb8576c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/routing/zipball/1058d4e13bb81dd9a6f7565686df7e13b880cdbd",
-                "reference": "1058d4e13bb81dd9a6f7565686df7e13b880cdbd",
+                "url": "https://api.github.com/repos/symfony/routing/zipball/3c188091b6b4fa2e4bc83a135caede12deb8576c",
+                "reference": "3c188091b6b4fa2e4bc83a135caede12deb8576c",
                 "shasum": ""
             },
             "require": {
@@ -16546,7 +17686,7 @@
                 "url"
             ],
             "support": {
-                "source": "https://github.com/symfony/routing/tree/v8.1.2"
+                "source": "https://github.com/symfony/routing/tree/v8.1.5"
             },
             "funding": [
                 {
@@ -16566,20 +17706,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-07-22T15:42:13+00:00"
+            "time": "2026-08-17T13:18:34+00:00"
         },
         {
             "name": "symfony/serializer",
-            "version": "v8.1.3",
+            "version": "v8.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/serializer.git",
-                "reference": "6bd396438ba6c36800224e2beaf3f8f2d7439343"
+                "reference": "9c064d505c661e3e17aa8999870f4fb0ed05e024"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/serializer/zipball/6bd396438ba6c36800224e2beaf3f8f2d7439343",
-                "reference": "6bd396438ba6c36800224e2beaf3f8f2d7439343",
+                "url": "https://api.github.com/repos/symfony/serializer/zipball/9c064d505c661e3e17aa8999870f4fb0ed05e024",
+                "reference": "9c064d505c661e3e17aa8999870f4fb0ed05e024",
                 "shasum": ""
             },
             "require": {
@@ -16645,7 +17785,7 @@
             "description": "Handles serializing and deserializing data structures, including object graphs, into array structures or other formats like XML and JSON.",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/serializer/tree/v8.1.3"
+                "source": "https://github.com/symfony/serializer/tree/v8.1.5"
             },
             "funding": [
                 {
@@ -16665,7 +17805,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-07-29T14:11:26+00:00"
+            "time": "2026-08-22T09:06:25+00:00"
         },
         {
             "name": "symfony/service-contracts",
@@ -16846,16 +17986,16 @@
         },
         {
             "name": "symfony/translation",
-            "version": "v8.1.1",
+            "version": "v8.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
-                "reference": "342b4218630dc2cf284cedcb2080c80b13404014"
+                "reference": "d9e1caba0d6b6f9a26710af8a2f88d37f001215a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/342b4218630dc2cf284cedcb2080c80b13404014",
-                "reference": "342b4218630dc2cf284cedcb2080c80b13404014",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/d9e1caba0d6b6f9a26710af8a2f88d37f001215a",
+                "reference": "d9e1caba0d6b6f9a26710af8a2f88d37f001215a",
                 "shasum": ""
             },
             "require": {
@@ -16915,7 +18055,7 @@
             "description": "Provides tools to internationalize your application",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/translation/tree/v8.1.1"
+                "source": "https://github.com/symfony/translation/tree/v8.1.5"
             },
             "funding": [
                 {
@@ -16935,7 +18075,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-06-06T11:11:44+00:00"
+            "time": "2026-08-21T17:47:34+00:00"
         },
         {
             "name": "symfony/translation-contracts",
@@ -17021,16 +18161,16 @@
         },
         {
             "name": "symfony/type-info",
-            "version": "v8.1.0",
+            "version": "v8.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/type-info.git",
-                "reference": "9f24df8a79781b9b9f030fea7dfd2f3bd1e7e7e7"
+                "reference": "ceb48db5b38d6a48640c414be0c69d53980ae5c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/type-info/zipball/9f24df8a79781b9b9f030fea7dfd2f3bd1e7e7e7",
-                "reference": "9f24df8a79781b9b9f030fea7dfd2f3bd1e7e7e7",
+                "url": "https://api.github.com/repos/symfony/type-info/zipball/ceb48db5b38d6a48640c414be0c69d53980ae5c5",
+                "reference": "ceb48db5b38d6a48640c414be0c69d53980ae5c5",
                 "shasum": ""
             },
             "require": {
@@ -17079,7 +18219,7 @@
                 "type"
             ],
             "support": {
-                "source": "https://github.com/symfony/type-info/tree/v8.1.0"
+                "source": "https://github.com/symfony/type-info/tree/v8.1.5"
             },
             "funding": [
                 {
@@ -17099,20 +18239,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-05-29T05:06:50+00:00"
+            "time": "2026-08-21T17:47:34+00:00"
         },
         {
             "name": "symfony/uid",
-            "version": "v8.1.0",
+            "version": "v8.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/uid.git",
-                "reference": "7393f157a55f7e70a4de0334435c55a5a8fe749a"
+                "reference": "a08aef47989093f32fe50fd11859be1b427df389"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/uid/zipball/7393f157a55f7e70a4de0334435c55a5a8fe749a",
-                "reference": "7393f157a55f7e70a4de0334435c55a5a8fe749a",
+                "url": "https://api.github.com/repos/symfony/uid/zipball/a08aef47989093f32fe50fd11859be1b427df389",
+                "reference": "a08aef47989093f32fe50fd11859be1b427df389",
                 "shasum": ""
             },
             "require": {
@@ -17157,7 +18297,7 @@
                 "uuid"
             ],
             "support": {
-                "source": "https://github.com/symfony/uid/tree/v8.1.0"
+                "source": "https://github.com/symfony/uid/tree/v8.1.5"
             },
             "funding": [
                 {
@@ -17177,20 +18317,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-05-29T05:06:50+00:00"
+            "time": "2026-08-11T13:39:01+00:00"
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v8.1.2",
+            "version": "v8.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "865103cf742a039f34645b971fc3ace308d6c167"
+                "reference": "61743d9bc7ab23b194527ca1be2fafd7dc93b74a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/865103cf742a039f34645b971fc3ace308d6c167",
-                "reference": "865103cf742a039f34645b971fc3ace308d6c167",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/61743d9bc7ab23b194527ca1be2fafd7dc93b74a",
+                "reference": "61743d9bc7ab23b194527ca1be2fafd7dc93b74a",
                 "shasum": ""
             },
             "require": {
@@ -17244,7 +18384,7 @@
                 "dump"
             ],
             "support": {
-                "source": "https://github.com/symfony/var-dumper/tree/v8.1.2"
+                "source": "https://github.com/symfony/var-dumper/tree/v8.1.5"
             },
             "funding": [
                 {
@@ -17264,7 +18404,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-07-22T15:42:13+00:00"
+            "time": "2026-08-21T12:16:08+00:00"
         },
         {
             "name": "symfony/yaml",
@@ -17399,16 +18539,16 @@
         },
         {
             "name": "ueberdosis/tiptap-php",
-            "version": "2.1.1",
+            "version": "2.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ueberdosis/tiptap-php.git",
-                "reference": "74bfb7be1c8c6102b240f3879b7f984a6ab87b97"
+                "reference": "0561e2146edbcdc622b5d4008d0ee02582f8642b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ueberdosis/tiptap-php/zipball/74bfb7be1c8c6102b240f3879b7f984a6ab87b97",
-                "reference": "74bfb7be1c8c6102b240f3879b7f984a6ab87b97",
+                "url": "https://api.github.com/repos/ueberdosis/tiptap-php/zipball/0561e2146edbcdc622b5d4008d0ee02582f8642b",
+                "reference": "0561e2146edbcdc622b5d4008d0ee02582f8642b",
                 "shasum": ""
             },
             "require": {
@@ -17448,7 +18588,7 @@
             ],
             "support": {
                 "issues": "https://github.com/ueberdosis/tiptap-php/issues",
-                "source": "https://github.com/ueberdosis/tiptap-php/tree/2.1.1"
+                "source": "https://github.com/ueberdosis/tiptap-php/tree/2.1.2"
             },
             "funding": [
                 {
@@ -17464,7 +18604,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2026-06-12T18:19:46+00:00"
+            "time": "2026-08-11T08:47:45+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -18282,19 +19422,21 @@
         },
         {
             "name": "hamcrest/hamcrest-php",
-            "version": "v2.1.1",
+            "version": "v3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hamcrest/hamcrest-php.git",
-                "reference": "f8b1c0173b22fa6ec77a81fe63e5b01eba7e6487"
+                "reference": "b61cd040da1a4925bc90a51c074f5297e7c0fa52"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hamcrest/hamcrest-php/zipball/f8b1c0173b22fa6ec77a81fe63e5b01eba7e6487",
-                "reference": "f8b1c0173b22fa6ec77a81fe63e5b01eba7e6487",
+                "url": "https://api.github.com/repos/hamcrest/hamcrest-php/zipball/b61cd040da1a4925bc90a51c074f5297e7c0fa52",
+                "reference": "b61cd040da1a4925bc90a51c074f5297e7c0fa52",
                 "shasum": ""
             },
             "require": {
+                "ext-ctype": "*",
+                "ext-dom": "*",
                 "php": "^7.4|^8.0"
             },
             "replace": {
@@ -18303,13 +19445,15 @@
                 "kodova/hamcrest-php": "*"
             },
             "require-dev": {
+                "phpstan/phpstan": "^2.1",
+                "phpstan/phpstan-phpunit": "^2.0",
                 "phpunit/php-file-iterator": "^1.4 || ^2.0 || ^3.0",
                 "phpunit/phpunit": "^4.8.36 || ^5.7 || ^6.5 || ^7.0 || ^8.0 || ^9.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.1-dev"
+                    "dev-master": "3.0-dev"
                 }
             },
             "autoload": {
@@ -18327,9 +19471,9 @@
             ],
             "support": {
                 "issues": "https://github.com/hamcrest/hamcrest-php/issues",
-                "source": "https://github.com/hamcrest/hamcrest-php/tree/v2.1.1"
+                "source": "https://github.com/hamcrest/hamcrest-php/tree/v3.0.0"
             },
-            "time": "2025-04-30T06:54:44+00:00"
+            "time": "2026-03-17T11:56:53+00:00"
         },
         {
             "name": "iamcal/sql-parser",
@@ -18893,29 +20037,28 @@
         },
         {
             "name": "mockery/mockery",
-            "version": "1.6.12",
+            "version": "1.6.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mockery/mockery.git",
-                "reference": "1f4efdd7d3beafe9807b08156dfcb176d18f1699"
+                "reference": "967a801bd188989a5669bd280f252d51c0fdc9ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mockery/mockery/zipball/1f4efdd7d3beafe9807b08156dfcb176d18f1699",
-                "reference": "1f4efdd7d3beafe9807b08156dfcb176d18f1699",
+                "url": "https://api.github.com/repos/mockery/mockery/zipball/967a801bd188989a5669bd280f252d51c0fdc9ee",
+                "reference": "967a801bd188989a5669bd280f252d51c0fdc9ee",
                 "shasum": ""
             },
             "require": {
-                "hamcrest/hamcrest-php": "^2.0.1",
-                "lib-pcre": ">=7.0",
+                "hamcrest/hamcrest-php": "^2.0 || ^3.0",
                 "php": ">=7.3"
             },
             "conflict": {
                 "phpunit/phpunit": "<8.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^8.5 || ^9.6.17",
-                "symplify/easy-coding-standard": "^12.1.14"
+                "phpunit/phpunit": "^9.6.36",
+                "symplify/easy-coding-standard": "^13.2.17"
             },
             "type": "library",
             "autoload": {
@@ -18972,7 +20115,7 @@
                 "security": "https://github.com/mockery/mockery/security/advisories",
                 "source": "https://github.com/mockery/mockery"
             },
-            "time": "2024-05-16T03:13:13+00:00"
+            "time": "2026-08-19T19:37:52+00:00"
         },
         {
             "name": "myclabs/deep-copy",
