@@ -22,7 +22,7 @@ final readonly class DecideReport
             throw new InvalidArgumentException('The moderation action is not supported.');
         }
 
-return DB::transaction(function () use ($actor, $report, $action, $reason, $evidence): ModerationDecision {
+        return DB::transaction(function () use ($actor, $report, $action, $reason, $evidence): ModerationDecision {
             $report->update(['state' => 'resolved']);
 
             return ModerationDecision::query()->create(['report_id' => $report->getKey(), 'actor_profile_id' => $actor->getKey(), 'action' => $action, 'reason' => $reason, 'evidence' => $evidence]);
