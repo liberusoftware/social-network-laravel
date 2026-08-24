@@ -241,6 +241,26 @@
             "type": "path",
             "url": "modules/social-network-profiles-livewire",
             "options": {"symlink": false}
+        },
+        {
+            "type": "path",
+            "url": "modules/social-network-social-graph",
+            "options": {"symlink": false}
+        },
+        {
+            "type": "path",
+            "url": "modules/social-network-social-graph-api",
+            "options": {"symlink": false}
+        },
+        {
+            "type": "path",
+            "url": "modules/social-network-social-graph-filament",
+            "options": {"symlink": false}
+        },
+        {
+            "type": "path",
+            "url": "modules/social-network-social-graph-livewire",
+            "options": {"symlink": false}
         }
     ],
     "require": {
@@ -291,6 +311,10 @@
         "liberusoftware/module-social-network-profiles-api": "^0.1",
         "liberusoftware/module-social-network-profiles-filament": "^0.1",
         "liberusoftware/module-social-network-profiles-livewire": "^0.1",
+        "liberusoftware/module-social-network-social-graph": "^0.1",
+        "liberusoftware/module-social-network-social-graph-api": "^0.1",
+        "liberusoftware/module-social-network-social-graph-filament": "^0.1",
+        "liberusoftware/module-social-network-social-graph-livewire": "^0.1",
         "liberusoftware/notifications": "^1.0",
         "liberusoftware/observability": "^1.0",
         "liberusoftware/organizations-teams": "^1.0",

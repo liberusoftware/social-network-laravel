@@ -1,0 +1,1 @@
+<x-filament-panels::page><div class="space-y-2">@foreach ($this->relationships() as $relationship)<div>{{ $relationship->relationship_type }}: {{ $relationship->target_profile_id }} ({{ $relationship->status }})</div>@endforeach</div></x-filament-panels::page>

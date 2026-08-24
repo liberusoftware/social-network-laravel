@@ -63,9 +63,6 @@ final class ThemeDiscovery
             $composer = json_decode(File::get($composerPath), true, flags: JSON_THROW_ON_ERROR);
             if (! in_array($directory, $trackedPaths, true)
                 && in_array($composer['name'] ?? null, $trackedPackageNames, true)) {
-                // Composer can retain a vendor copy when a previous install ran
-                // without the Liberu installer. The tracked package is authoritative
-                // for the host; do not report this duplicate as a second theme.
                 continue;
             }
             // Only the tracked tree makes the directory name authoritative — the host

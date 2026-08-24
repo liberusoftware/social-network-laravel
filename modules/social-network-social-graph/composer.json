@@ -1,0 +1,9 @@
+{
+  "name": "liberusoftware/module-social-network-social-graph",
+  "description": "Tenant-aware follows, friendship requests, lists, suggestions, and relationship visibility.",
+  "type": "liberu-module", "license": "MIT", "version": "0.1.0",
+  "require": {"php": "^8.5", "illuminate/database": "^13.0", "illuminate/events": "^13.0", "illuminate/support": "^13.0", "liberusoftware/module-social-network-profiles": "^0.1"},
+  "autoload": {"psr-4": {"Liberu\\SocialNetwork\\SocialGraph\\": "src/"}},
+  "extra": {"liberu": {"name": "social-network-social-graph"}},
+  "config": {"allow-plugins": {"pestphp/pest-plugin": true}}
+}

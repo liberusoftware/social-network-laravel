@@ -1,0 +1,12 @@
+openapi: 3.1.0
+info: {title: Social Network Social Graph API, version: 1.0.0}
+paths:
+  /api/v1/social-network/social-graph/me/following/{profile}:
+    post: {operationId: social.network.socialGraph.follow, security: [{sanctum: []}], parameters: [{name: profile, in: path, required: true, schema: {type: string}}], responses: {'201': {description: Follow created}}}
+  /api/v1/social-network/social-graph/me/friend-requests/{profile}:
+    post: {operationId: social.network.socialGraph.friendRequest, security: [{sanctum: []}], parameters: [{name: profile, in: path, required: true, schema: {type: string}}], responses: {'202': {description: Friendship request created}}}
+  /api/v1/social-network/social-graph/me/relationships:
+    get: {operationId: social.network.socialGraph.list, security: [{sanctum: []}], responses: {'200': {description: Relationships}}}
+  /api/v1/social-network/social-graph/me/suggestions:
+    get: {operationId: social.network.socialGraph.suggestions, security: [{sanctum: []}], responses: {'200': {description: Suggested profiles}}}
+components: {securitySchemes: {sanctum: {type: http, scheme: bearer, bearerFormat: Sanctum}}}

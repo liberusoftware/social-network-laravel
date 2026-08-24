@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cc19a1f81342e0c692262657143d136b",
+    "content-hash": "c523fd336093606503e1e6dffe2d0dac",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -6687,6 +6687,145 @@
                 "MIT"
             ],
             "description": "Livewire 4 adapter for Liberu Social Network Social Core.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-social-network-social-graph",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/social-network-social-graph",
+                "reference": "e535b35ed17e8b2048fd8ea904dc0651ea1bdb78"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/events": "^13.0",
+                "illuminate/support": "^13.0",
+                "liberusoftware/module-social-network-profiles": "^0.1",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "social-network-social-graph"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\SocialNetwork\\SocialGraph\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Tenant-aware follows, friendship requests, lists, suggestions, and relationship visibility.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-social-network-social-graph-api",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/social-network-social-graph-api",
+                "reference": "eaa9191a695086c84b8e2efe77d7f6684b91c087"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "laravel/sanctum": "^4.0",
+                "liberusoftware/module-social-network-profiles": "^0.1",
+                "liberusoftware/module-social-network-social-graph": "^0.1",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "social-network-social-graph-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\SocialNetwork\\SocialGraph\\Api\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Versioned API adapter for Social Graph.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-social-network-social-graph-filament",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/social-network-social-graph-filament",
+                "reference": "6badd063536c50d42f91f28f301397cce01e36a1"
+            },
+            "require": {
+                "filament/filament": "^5.1",
+                "liberusoftware/module-social-network-profiles": "^0.1",
+                "liberusoftware/module-social-network-social-graph": "^0.1",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "social-network-social-graph-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\SocialNetwork\\SocialGraph\\Filament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament adapter for Social Graph.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-social-network-social-graph-livewire",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/social-network-social-graph-livewire",
+                "reference": "f016fcfbe31432b273b5efd5b8bb1001af4e92f8"
+            },
+            "require": {
+                "liberusoftware/module-social-network-profiles": "^0.1",
+                "liberusoftware/module-social-network-social-graph": "^0.1",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "social-network-social-graph-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\SocialNetwork\\SocialGraph\\Livewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Livewire adapter for Social Graph.",
             "transport-options": {
                 "symlink": false,
                 "relative": true
