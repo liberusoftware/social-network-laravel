@@ -2,10 +2,12 @@
 
 use App\Providers\Filament\AdminPanelProvider;
 use App\Providers\Filament\AppPanelProvider;
+use App\Providers\SocialNetworkAuthorizationServiceProvider;
 use Liberu\Foundation\ModuleManager\ModuleManagerServiceProvider;
 
 return [
     ModuleManagerServiceProvider::class,
+    SocialNetworkAuthorizationServiceProvider::class,
     AdminPanelProvider::class,
     AppPanelProvider::class,
 ];
