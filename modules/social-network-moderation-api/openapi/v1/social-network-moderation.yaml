@@ -1,0 +1,4 @@
+openapi: 3.1.0
+info: {title: Social Network Moderation API, version: 1.0.0}
+paths: {/api/v1/social-network/moderation/reports: {post: {operationId: social.network.moderation.report, security: [{sanctum: []}], responses: {'201': {description: Report created}}}}}
+components: {securitySchemes: {sanctum: {type: http, scheme: bearer, bearerFormat: Sanctum}}}

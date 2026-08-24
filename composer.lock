@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4e61174d59ffa7a9324283676bf6d4f4",
+    "content-hash": "0bbdb8c9cf1416b5b564df907738099a",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -7096,6 +7096,145 @@
                 "MIT"
             ],
             "description": "Livewire adapter for Messaging.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-social-network-moderation",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/social-network-moderation",
+                "reference": "f664bc27ec17b321a6d1ec8e9bde92b0f7262786"
+            },
+            "require": {
+                "illuminate/database": "^13.0",
+                "illuminate/events": "^13.0",
+                "illuminate/support": "^13.0",
+                "liberusoftware/module-social-network-profiles": "^0.1",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "social-network-moderation"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\SocialNetwork\\Moderation\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Reports, queues, policy rules, evidence, actions, appeals, sanctions, and transparency.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-social-network-moderation-api",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/social-network-moderation-api",
+                "reference": "35e9d1269e732165b964865bda8bda3993d52b12"
+            },
+            "require": {
+                "illuminate/http": "^13.0",
+                "illuminate/routing": "^13.0",
+                "laravel/sanctum": "^4.0",
+                "liberusoftware/module-social-network-moderation": "^0.1",
+                "liberusoftware/module-social-network-profiles": "^0.1",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "social-network-moderation-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\SocialNetwork\\Moderation\\Api\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Versioned API adapter for Moderation.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-social-network-moderation-filament",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/social-network-moderation-filament",
+                "reference": "60510fd1088f5a3cd09c8a1ab99d60db813acedc"
+            },
+            "require": {
+                "filament/filament": "^5.1",
+                "liberusoftware/module-social-network-moderation": "^0.1",
+                "liberusoftware/module-social-network-profiles": "^0.1",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "social-network-moderation-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\SocialNetwork\\Moderation\\Filament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament adapter for Moderation.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-social-network-moderation-livewire",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/social-network-moderation-livewire",
+                "reference": "bd9e76fee49028b647cdb975da1800bb55fd97fc"
+            },
+            "require": {
+                "liberusoftware/module-social-network-moderation": "^0.1",
+                "liberusoftware/module-social-network-profiles": "^0.1",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "social-network-moderation-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\SocialNetwork\\Moderation\\Livewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Livewire adapter for Moderation.",
             "transport-options": {
                 "symlink": false,
                 "relative": true

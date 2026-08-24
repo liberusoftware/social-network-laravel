@@ -1,0 +1,1 @@
+<div><form wire:submit="submit"><input wire:model="targetId" type="text" aria-label="Target ID"><input wire:model="reason" type="text" aria-label="Reason"><textarea wire:model="details" aria-label="Details"></textarea><button type="submit">Report</button></form></div>
