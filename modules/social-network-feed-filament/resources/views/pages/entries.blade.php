@@ -1,0 +1,1 @@
+<x-filament-panels::page><div class="space-y-2">@foreach($this->entries() as $entry)<div>{{ $entry->item_type }}: {{ $entry->item_id }} — {{ $entry->rank }}</div>@endforeach</div></x-filament-panels::page>
