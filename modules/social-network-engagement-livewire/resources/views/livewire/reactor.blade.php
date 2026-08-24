@@ -1,0 +1,1 @@
+<div><form wire:submit="react"><input wire:model="targetId" type="text" aria-label="Target ID"><select wire:model="reactionType"><option>like</option><option>love</option><option>celebrate</option><option>insightful</option></select><button type="submit">React</button></form></div>

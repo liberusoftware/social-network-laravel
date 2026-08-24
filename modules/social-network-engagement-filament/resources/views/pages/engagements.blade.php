@@ -1,0 +1,1 @@
+<x-filament-panels::page><div class="space-y-2">@foreach($this->engagements() as $engagement)<div>{{ $engagement->kind }} — {{ $engagement->target_id }}</div>@endforeach</div></x-filament-panels::page>
