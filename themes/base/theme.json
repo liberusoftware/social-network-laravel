@@ -7,10 +7,10 @@
     "type": "shared",
     "parent": null,
     "optimized_for": [
-        "liberusoftware/social-network-laravel:^1.0"
+        "liberusoftware/boilerplate-laravel:^1.0"
     ],
     "tested_with": [
-        "liberusoftware/social-network-laravel:^1.0"
+        "liberusoftware/boilerplate-laravel:^1.0"
     ],
     "required_capabilities": [],
     "optional_capabilities": [
