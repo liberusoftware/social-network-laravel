@@ -31,17 +31,6 @@ final class ThemeDiscovery
     {
         $tracked = File::isDirectory($path) ? File::directories($path) : [];
         $trackedPaths = array_values(array_filter(array_map(realpath(...), $tracked)));
-        $trackedPackageNames = [];
-        foreach ($tracked as $trackedDirectory) {
-            $trackedComposer = $trackedDirectory.'/composer.json';
-            if (! File::isFile($trackedComposer)) {
-                continue;
-            }
-            $metadata = json_decode(File::get($trackedComposer), true, flags: JSON_THROW_ON_ERROR);
-            if (is_string($metadata['name'] ?? null)) {
-                $trackedPackageNames[] = $metadata['name'];
-            }
-        }
 
         $themes = [];
         $seen = [];
@@ -56,18 +45,6 @@ final class ThemeDiscovery
                 continue;
             }
             $manifest = ThemeManifest::fromFile($manifestPath);
-            $composerPath = $directory.'/composer.json';
-            if (! File::isFile($composerPath)) {
-                throw new InvalidTheme("Theme [{$manifest->name()}] has no composer.json.");
-            }
-            $composer = json_decode(File::get($composerPath), true, flags: JSON_THROW_ON_ERROR);
-            if (! in_array($directory, $trackedPaths, true)
-                && in_array($composer['name'] ?? null, $trackedPackageNames, true)) {
-                // Composer can retain a vendor copy when a previous install ran
-                // without the Liberu installer. The tracked package is authoritative
-                // for the host; do not report this duplicate as a second theme.
-                continue;
-            }
             // Only the tracked tree makes the directory name authoritative — the host
             // derives Vite inputs and public asset URLs from it. A Composer package
             // names itself in `extra.liberu.name` and lands wherever it is installed.
@@ -77,6 +54,11 @@ final class ThemeDiscovery
             if (isset($themes[$manifest->name()])) {
                 throw new InvalidTheme('Theme directory/name collision detected.');
             }
+            $composerPath = $directory.'/composer.json';
+            if (! File::isFile($composerPath)) {
+                throw new InvalidTheme("Theme [{$manifest->name()}] has no composer.json.");
+            }
+            $composer = json_decode(File::get($composerPath), true, flags: JSON_THROW_ON_ERROR);
             if (($composer['type'] ?? null) !== 'liberu-theme' || ($composer['extra']['liberu']['name'] ?? null) !== $manifest->name()) {
                 throw new InvalidTheme("Theme [{$manifest->name()}] Composer metadata is inconsistent.");
             }
