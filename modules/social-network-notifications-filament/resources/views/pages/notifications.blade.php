@@ -1,0 +1,1 @@
+<x-filament-panels::page><div class="space-y-2">@foreach($this->notifications() as $notification)<div>{{ $notification->kind }} — {{ $notification->state }}</div>@endforeach</div></x-filament-panels::page>

@@ -1,0 +1,4 @@
+openapi: 3.1.0
+info: {title: Social Network Notifications API, version: 1.0.0}
+paths: {/api/v1/social-network/notifications: {get: {operationId: social.network.notifications.index, security: [{sanctum: []}], responses: {'200': {description: Notifications}}}}, /api/v1/social-network/notifications/preferences: {patch: {operationId: social.network.notifications.preferences, security: [{sanctum: []}], responses: {'200': {description: Preferences updated}}}}}
+components: {securitySchemes: {sanctum: {type: http, scheme: bearer, bearerFormat: Sanctum}}}
