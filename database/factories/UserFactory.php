@@ -2,16 +2,16 @@
 
 namespace Database\Factories;
 
-use App\Models\ConnectedAccount;
-use App\Models\Team;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 use JoelButcher\Socialstream\Providers;
 use Laravel\Jetstream\Features as JetstreamFeatures;
+use Liberu\Foundation\Identity\Socialstream\Models\ConnectedAccount;
+use Liberu\Foundation\Organizations\Models\Team;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
+ * @extends Factory<User>
  */
 class UserFactory extends Factory
 {
@@ -32,7 +32,6 @@ class UserFactory extends Factory
             'remember_token' => Str::random(10),
             'profile_photo_path' => null,
             'current_team_id' => null,
-            'bio' => fake()->optional()->paragraph(),
         ];
     }
 
@@ -49,7 +48,7 @@ class UserFactory extends Factory
     /**
      * Indicate that the user should have a personal team.
      */
-    public function withPersonalTeam(callable $callback = null): static
+    public function withPersonalTeam(?callable $callback = null): static
     {
         if (! JetstreamFeatures::hasTeamFeatures()) {
             return $this->state([]);
@@ -70,7 +69,7 @@ class UserFactory extends Factory
     /**
      * Indicate that the user should have a connected account for the given provider.
      */
-    public function withConnectedAccount(string $provider, callable $callback = null): static
+    public function withConnectedAccount(string $provider, ?callable $callback = null): static
     {
         if (! Providers::enabled($provider)) {
             return $this->state([]);

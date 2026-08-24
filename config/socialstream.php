@@ -4,59 +4,15 @@ use JoelButcher\Socialstream\Features;
 use JoelButcher\Socialstream\Providers;
 
 return [
-
-    /*
-    |--------------------------------------------------------------------------
-    | Socialstream Guard
-    |--------------------------------------------------------------------------
-    */
-
-    'guard' => 'web',
-
-    /*
-    |--------------------------------------------------------------------------
-    | Socialstream Middleware
-    |--------------------------------------------------------------------------
-    */
-
+    'guard' => 'web', // used if Fortify is not installed
     'middleware' => ['web'],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Socialstream Prompt
-    |--------------------------------------------------------------------------
-    */
-
-    'prompt' => env('SOCIALSTREAM_PROMPT', 'Or Login Via'),
-
-    /*
-    |--------------------------------------------------------------------------
-    | Socialstream Providers
-    |--------------------------------------------------------------------------
-    |
-    | Twitter OAuth 1.0 ("twitter") is intentionally excluded because it
-    | requires live API keys even for the redirect step.
-    |
-    */
-
+    'prompt' => 'Or Login Via',
     'providers' => [
-        Providers::bitbucket(),
-        Providers::facebook(),
         Providers::github(),
-        Providers::gitlab(),
         Providers::google(),
-        Providers::linkedin(),
-        Providers::linkedinOpenId(),
-        Providers::slack(),
+        Providers::facebook(),
         Providers::twitterOAuth2(),
     ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Features
-    |--------------------------------------------------------------------------
-    */
-
     'features' => [
         // Features::generateMissingEmails(),
         // Features::createAccountOnFirstLogin(),
@@ -66,28 +22,13 @@ return [
         Features::providerAvatars(),
         Features::refreshOAuthTokens(),
     ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Home Path
-    |--------------------------------------------------------------------------
-    */
-
-    'home' => '/app',
-
-    /*
-    |--------------------------------------------------------------------------
-    | Redirects
-    |--------------------------------------------------------------------------
-    */
-
+    'home' => '/dashboard',
     'redirects' => [
-        'login'                => '/app',
-        'register'             => '/app',
-        'login-failed'         => '/login',
-        'registration-failed'  => '/register',
-        'provider-linked'      => '/user/profile',
+        'login' => '/dashboard',
+        'register' => '/dashboard',
+        'login-failed' => '/login',
+        'registration-failed' => '/register',
+        'provider-linked' => '/user/profile',
         'provider-link-failed' => '/user/profile',
     ],
-
 ];

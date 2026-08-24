@@ -2,95 +2,119 @@
 
 namespace App\Models;
 
+use Database\Factories\UserFactory;
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Models\Contracts\HasDefaultTenant;
 use Filament\Models\Contracts\HasTenants;
 use Filament\Panel;
 use Illuminate\Database\Eloquent\Casts\Attribute;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Collection;
 use JoelButcher\Socialstream\HasConnectedAccounts;
 use JoelButcher\Socialstream\SetsProfilePhotoFromUrl;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
+use Liberu\Foundation\Identity\Socialstream\Contracts\ConnectedAccountOwner;
+use Liberu\Foundation\Observability\Contracts\ObservabilityActor;
+use Liberu\Foundation\Organizations\Contracts\OrganizationActor;
+use Liberu\Foundation\Organizations\Models\Team;
+use Liberu\Foundation\RolesPermissions\Contracts\PrivilegedActor;
+use Liberu\Foundation\RolesPermissions\Services\AnyTeamRoleLookup;
+use Liberu\Foundation\Search\Concerns\Searchable;
+use Spatie\Activitylog\Models\Concerns\LogsActivity;
+use Spatie\Activitylog\Support\LogOptions;
 use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable implements FilamentUser, HasDefaultTenant, HasTenants
+/**
+ * @property string|null $theme_preference
+ * @property string|null $locale
+ */
+class User extends Authenticatable implements ConnectedAccountOwner, FilamentUser, HasDefaultTenant, HasTenants, ObservabilityActor, OrganizationActor, PrivilegedActor
 {
     use HasApiTokens;
     use HasConnectedAccounts;
+
+    /** @use HasFactory<UserFactory> */
     use HasFactory;
+
     use HasProfilePhoto {
         HasProfilePhoto::profilePhotoUrl as getPhotoUrl;
     }
     use HasRoles, HasTeams {
+        // Both traits define teams(): Jetstream = team membership (used by allTeams()
+        // and Filament tenancy). Spatie's teams() (roles-derived) is excluded — Spatie
+        // scopes via the team_id column + DefaultTeamResolver, not this relation.
         HasTeams::teams insteadof HasRoles;
-        HasRoles::teams as roleTeams;
     }
-
+    use LogsActivity;
     use Notifiable;
-    // use SetsProfilePhotoFromUrl;
+
+    // The scope `SearchService` calls. It used to be declared here, which meant
+    // the package could not be installed anywhere else without reimplementing it.
+    use Searchable;
+    use SetsProfilePhotoFromUrl;
     use TwoFactorAuthenticatable;
 
     /**
      * The attributes that are mass assignable.
      *
-     * @var array<int, string>
+     * @var list<string>
      */
-    #[\Override]
     protected $fillable = [
         'name',
         'email',
         'password',
-        'bio',
+        'theme_preference',
+        'locale',
+        'timezone',
     ];
 
     /**
      * The attributes that should be hidden for arrays.
      *
-     * @var array<int, string>
+     * @var list<string>
      */
-    #[\Override]
     protected $hidden = [
         'password',
         'remember_token',
         'two_factor_recovery_codes',
         'two_factor_secret',
+        // PII: keep email off array/JSON serialization so public search endpoints
+        // (nested post.user / group.owner) can't be used to harvest addresses.
+        'email',
+        'email_verified_at',
+    ];
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array<string, string>
+     */
+    protected $casts = [
+        'email_verified_at' => 'datetime',
     ];
 
     /**
      * The accessors to append to the model's array form.
      *
-     * @var array<int, string>
+     * @var list<string>
      */
-    #[\Override]
     protected $appends = [
         'profile_photo_url',
     ];
 
     /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
-    #[\Override]
-    protected function casts(): array
-    {
-        return [
-            'email_verified_at' => 'datetime',
-        ];
-    }
-
-    /**
      * Get the URL to the user's profile photo.
+     *
+     * @return Attribute<string, never>
      */
-    public function profilePhotoUrl(): Attribute
+    protected function profilePhotoUrl(): Attribute
     {
         return filter_var($this->profile_photo_path, FILTER_VALIDATE_URL)
             ? Attribute::get(fn () => $this->profile_photo_path)
@@ -98,11 +122,14 @@ class User extends Authenticatable implements FilamentUser, HasDefaultTenant, Ha
     }
 
     /**
-     * @return array<Model> | Collection
+     * The teams this user may act within as a Filament tenant — owned + member teams,
+     * consistent with canAccessTenant()/belongsToTeam() so invited members aren't locked out.
+     *
+     * @return array<int, Model>|Collection<int, Model>
      */
     public function getTenants(Panel $panel): array|Collection
     {
-        return $this->ownedTeams;
+        return $this->allTeams();
     }
 
     public function canAccessTenant(Model $tenant): bool
@@ -113,16 +140,56 @@ class User extends Authenticatable implements FilamentUser, HasDefaultTenant, Ha
     public function canAccessPanel(Panel $panel): bool
     {
         if ($panel->getId() === 'admin') {
-            return $this->hasAnyRole(['super_admin', 'admin']);
+            return $this->hasAdminAccess();
         }
 
         return true;
     }
 
-    public function canAccessFilament(): bool
+    /**
+     * True if the user holds an admin role in ANY team. Spatie roles are
+     * team-scoped, and the active team context is not reliably set when
+     * canAccessPanel() runs, so check the pivot directly across all teams.
+     */
+    public function hasAdminAccess(): bool
     {
-        //        return $this->hasVerifiedEmail();
-        return true;
+        return $this->hasRoleInAnyTeam([(string) config('filament-shield.super_admin.name', 'super_admin'), 'admin']);
+    }
+
+    /**
+     * True if the user holds the super_admin role in ANY team. Team-agnostic
+     * (unlike Spatie's team-scoped hasRole), so it drives the policy-bypass gate
+     * reliably even when no team context is set on the request.
+     */
+    public function isSuperAdmin(): bool
+    {
+        return $this->hasRoleInAnyTeam((string) config('filament-shield.super_admin.name', 'super_admin'));
+    }
+
+    /** The pivot columns AnyTeamRoleLookup matches this actor on. */
+    public function authorizationIdentifier(): int|string
+    {
+        return $this->getKey();
+    }
+
+    public function authorizationType(): string
+    {
+        return $this->getMorphClass();
+    }
+
+    /**
+     * Team-agnostic role check. Spatie's hasRole() is bound to the active team
+     * context, which is unset on plain web requests and when canAccessPanel()
+     * runs, so the pivot is queried directly across every team.
+     *
+     * The query itself moved into the authorization package in 1.0.4; the host
+     * delegates rather than keeping its own copy.
+     *
+     * @param  string|list<string>  $roles
+     */
+    public function hasRoleInAnyTeam(string|array $roles): bool
+    {
+        return app(AnyTeamRoleLookup::class)->hasRoleInAnyTeam($this, $roles);
     }
 
     public function getDefaultTenant(Panel $panel): ?Model
@@ -130,276 +197,32 @@ class User extends Authenticatable implements FilamentUser, HasDefaultTenant, Ha
         return $this->latestTeam;
     }
 
+    /**
+     * @return BelongsTo<Team, $this>
+     */
     public function latestTeam(): BelongsTo
     {
         return $this->belongsTo(Team::class, 'current_team_id');
     }
 
-    public function profile()
+    /**
+     * Only track safe profile fields — never password / 2FA / tokens.
+     */
+    public function getActivitylogOptions(): LogOptions
     {
-        return $this->hasOne(Profile::class);
-    }
-
-    public function sentMessages()
-    {
-        return $this->hasMany(Message::class, 'sender_id');
-    }
-
-    public function receivedMessages()
-    {
-        return $this->hasMany(Message::class, 'receiver_id');
-    }
-
-    public function conversations()
-    {
-        return $this->belongsToMany(Conversation::class, 'conversation_participants')
-            ->withPivot('joined_at', 'left_at', 'last_read_at')
-            ->withTimestamps();
-    }
-
-    public function activeConversations()
-    {
-        return $this->belongsToMany(Conversation::class, 'conversation_participants')
-            ->wherePivotNull('left_at')
-            ->withPivot('joined_at', 'last_read_at')
-            ->withTimestamps();
-    }
-
-    // Friend request relationships
-    public function sentFriendRequests()
-    {
-        return $this->hasMany(Friendship::class, 'requester_id');
-    }
-
-    public function receivedFriendRequests()
-    {
-        return $this->hasMany(Friendship::class, 'addressee_id');
-    }
-
-    public function getFriendsAttribute(): Collection
-    {
-        $sentIds = Friendship::where('requester_id', $this->id)
-            ->where('status', 'accepted')
-            ->pluck('addressee_id');
-
-        $receivedIds = Friendship::where('addressee_id', $this->id)
-            ->where('status', 'accepted')
-            ->pluck('requester_id');
-
-        return User::whereIn('id', $sentIds->merge($receivedIds))->get();
-    }
-
-    // Follower relationships
-    public function followers()
-    {
-        return $this->belongsToMany(User::class, 'followers', 'following_id', 'follower_id')
-            ->withTimestamps();
-    }
-
-    public function following()
-    {
-        return $this->belongsToMany(User::class, 'followers', 'follower_id', 'following_id')
-            ->withTimestamps();
-    }
-
-    // Friend request methods
-    public function sendFriendRequest(User $user)
-    {
-        if ($this->id === $user->id) {
-            return false;
-        }
-
-        if ($this->hasFriendRequestPending($user) || $this->isFriendWith($user)) {
-            return false;
-        }
-
-        return Friendship::create([
-            'requester_id' => $this->id,
-            'addressee_id' => $user->id,
-            'status' => 'pending',
-        ]);
-    }
-
-    public function acceptFriendRequest(User $user)
-    {
-        $friendship = Friendship::where('requester_id', $user->id)
-            ->where('addressee_id', $this->id)
-            ->where('status', 'pending')
-            ->first();
-
-        if ($friendship) {
-            $friendship->update(['status' => 'accepted']);
-
-            return $friendship;
-        }
-
-        return false;
-    }
-
-    public function rejectFriendRequest(User $user)
-    {
-        $friendship = Friendship::where('requester_id', $user->id)
-            ->where('addressee_id', $this->id)
-            ->where('status', 'pending')
-            ->first();
-
-        if ($friendship) {
-            $friendship->update(['status' => 'declined']);
-
-            return $friendship;
-        }
-
-        return false;
-    }
-
-    public function hasFriendRequestPending(User $user)
-    {
-        return Friendship::where(function ($query) use ($user) {
-            $query->where('requester_id', $this->id)
-                ->where('addressee_id', $user->id);
-        })->orWhere(function ($query) use ($user) {
-            $query->where('requester_id', $user->id)
-                ->where('addressee_id', $this->id);
-        })->where('status', 'pending')->exists();
-    }
-
-    public function isFriendWith(User $user): bool
-    {
-        return $this->isFriendsWith($user);
-    }
-
-    public function privacySettings()
-    {
-        return $this->hasOne(UserPrivacySetting::class);
-    }
-
-    public function isFriendsWith(User $user): bool
-    {
-        return Friendship::where(function ($query) use ($user) {
-            $query->where('requester_id', $this->id)
-                ->where('addressee_id', $user->id);
-        })->orWhere(function ($query) use ($user) {
-            $query->where('requester_id', $user->id)
-                ->where('addressee_id', $this->id);
-        })->where('status', 'accepted')->exists();
-    }
-
-    // Follower methods
-    public function follow(User $user)
-    {
-        if ($this->id === $user->id) {
-            return false;
-        }
-
-        if ($this->isFollowing($user)) {
-            return false;
-        }
-
-        return Follower::create([
-            'follower_id' => $this->id,
-            'following_id' => $user->id,
-        ]);
-    }
-
-    public function unfollow(User $user)
-    {
-        return Follower::where('follower_id', $this->id)
-            ->where('following_id', $user->id)
-            ->delete();
-    }
-
-    public function isFollowing(User $user)
-    {
-        return Follower::where('follower_id', $this->id)
-            ->where('following_id', $user->id)
-            ->exists();
-    }
-
-    public function isFollowedBy(User $user)
-    {
-        return Follower::where('follower_id', $user->id)
-            ->where('following_id', $this->id)
-            ->exists();
-    }
-
-    // Count methods
-    public function getFriendsCountAttribute()
-    {
-        return Friendship::where(function ($query) {
-            $query->where('requester_id', $this->id)
-                ->orWhere('addressee_id', $this->id);
-        })->where('status', 'accepted')->count();
-    }
-
-    public function getFollowersCountAttribute()
-    {
-        return $this->followers()->count();
-    }
-
-    public function getFollowingCountAttribute()
-    {
-        return $this->following()->count();
-    }
-
-    // Group relationships
-    public function ownedGroups()
-    {
-        return $this->hasMany(Group::class);
-    }
-
-    public function groups()
-    {
-        return $this->belongsToMany(Group::class, 'group_members')
-            ->withPivot('role', 'status')
-            ->withTimestamps()
-            ->wherePivot('status', 'approved');
-    }
-
-    public function isMemberOf(Group $group): bool
-    {
-        return $this->groups()->where('group_id', $group->id)->exists();
-    }
-
-    public function isAdminOf(Group $group): bool
-    {
-        return $this->groups()
-            ->where('group_id', $group->id)
-            ->wherePivot('role', 'admin')
-            ->exists();
+        return LogOptions::defaults()
+            ->logOnly(['name', 'email', 'locale', 'theme_preference'])
+            ->logOnlyDirty()
+            ->dontLogEmptyChanges();
     }
 
     /**
-     * Get or create privacy settings for the user.
+     * Admin = super_admin in any team, or an allowlisted email. Used to gate the
+     * Telescope/Pulse dashboards.
      */
-    public function getPrivacySettings(): UserPrivacySetting
+    public function isAdmin(): bool
     {
-        return $this->privacySettings()->firstOrCreate(
-            ['user_id' => $this->id],
-            [
-                'profile_visibility' => 'public',
-                'show_email' => false,
-                'show_birth_date' => true,
-                'show_location' => true,
-                'allow_friend_requests' => true,
-                'allow_messages_from_non_friends' => true,
-                'show_online_status' => true,
-            ]
-        );
-    }
-
-    /**
-     * Get the user's media.
-     */
-    public function media()
-    {
-        return $this->hasMany(Media::class);
-    }
-
-    /**
-     * Get the user's albums.
-     */
-    public function albums()
-    {
-        return $this->hasMany(Album::class);
+        return in_array($this->email, (array) config('app.admin_emails', []), true)
+            || $this->isSuperAdmin();
     }
 }
