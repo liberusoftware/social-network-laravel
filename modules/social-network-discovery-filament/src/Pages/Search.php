@@ -26,6 +26,6 @@ final class Search extends Page
             return collect();
         }
 
-return $search->handle($get->forUser(auth()->id()), $this->query);
+        return $search->handle($get->forUser(auth()->id()), $this->query);
     }
 }
