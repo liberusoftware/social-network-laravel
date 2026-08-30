@@ -1,3 +1,25 @@
 <?php
+
 declare(strict_types=1);
-namespace Liberu\SocialNetwork\Events\Filament\Pages; use Filament\Pages\Page; use Liberu\SocialNetwork\Events\Actions\ListEvents; use Liberu\SocialNetwork\Profiles\Actions\GetProfile; final class Events extends Page { protected string $view='social-network-events-filament::pages.events'; protected static string|\BackedEnum|null $navigationIcon='heroicon-o-calendar-days'; protected static string|\UnitEnum|null $navigationGroup='Social Network'; public function events(GetProfile $get,ListEvents $list): mixed { abort_unless(auth()->check(),404); return $list->handle($get->forUser(auth()->id()),50); } }
+
+namespace Liberu\SocialNetwork\Events\Filament\Pages;
+
+use Filament\Pages\Page;
+use Liberu\SocialNetwork\Events\Actions\ListEvents;
+use Liberu\SocialNetwork\Profiles\Actions\GetProfile;
+
+final class Events extends Page
+{
+    protected string $view = 'social-network-events-filament::pages.events';
+
+    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-calendar-days';
+
+    protected static string|\UnitEnum|null $navigationGroup = 'Social Network';
+
+    public function events(GetProfile $get, ListEvents $list): mixed
+    {
+        abort_unless(auth()->check(), 404);
+
+        return $list->handle($get->forUser(auth()->id()), 50);
+    }
+}

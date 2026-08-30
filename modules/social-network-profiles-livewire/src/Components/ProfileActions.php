@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace Liberu\SocialNetwork\Profiles\Livewire\Components;
 
 use Illuminate\Validation\Rule;
-use Livewire\Component;
 use Liberu\SocialNetwork\Profiles\Actions\BlockProfile;
 use Liberu\SocialNetwork\Profiles\Actions\GetProfile;
 use Liberu\SocialNetwork\Profiles\Actions\UnblockProfile;
 use Liberu\SocialNetwork\Profiles\Actions\UpdateLifecycleState;
 use Liberu\SocialNetwork\Profiles\Actions\UpdateVerificationStatus;
+use Livewire\Component;
 
 final class ProfileActions extends Component
 {

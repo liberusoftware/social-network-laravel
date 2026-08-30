@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Liberu\SocialNetwork\Notifications\Livewire\Components;
 
-use Livewire\Component;
 use Liberu\SocialNetwork\Notifications\Actions\MarkRead;
 use Liberu\SocialNetwork\Notifications\Models\SocialNotification;
 use Liberu\SocialNetwork\Profiles\Actions\GetProfile;
+use Livewire\Component;
 
 final class ListNotifications extends Component
 {

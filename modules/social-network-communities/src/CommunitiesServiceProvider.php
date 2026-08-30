@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace Liberu\SocialNetwork\Communities;
 
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Gate;
-use Liberu\SocialNetwork\Profiles\Models\Profile;
-use Liberu\SocialNetwork\Communities\Models\Community;
+use Illuminate\Support\ServiceProvider;
 use Liberu\SocialNetwork\Communities\Authorization\GateCommunityAuthorizer;
 use Liberu\SocialNetwork\Communities\Contracts\CommunityAuthorizer;
+use Liberu\SocialNetwork\Communities\Models\Community;
+use Liberu\SocialNetwork\Profiles\Models\Profile;
 
 final class CommunitiesServiceProvider extends ServiceProvider
 {

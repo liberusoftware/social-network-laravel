@@ -25,5 +25,4 @@ final class Blocks extends Page
             'id' => (string) $block->getKey(), 'target' => (string) $block->target_profile_id,
         ])->all();
     }
-
 }

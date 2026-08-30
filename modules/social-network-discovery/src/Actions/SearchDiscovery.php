@@ -17,8 +17,13 @@ final readonly class SearchDiscovery
     {
         $this->authorizer->search($viewer);
         $query = trim($query);
-        if ($query === '') return new Collection();
+        if ($query === '') {
+            return new Collection();
+        }
         $limit = max(1, min($limit, (int) config('social-network-discovery.max_page_size')));
-        return DiscoveryIndex::query()->where('body', 'like', '%'.$query.'%')->where(function ($q) use ($viewer): void { $q->where('visibility', 'public')->orWhere('owner_profile_id', $viewer->getKey()); })->orderByDesc('engagement_score')->latest()->limit($limit)->get();
+
+        return DiscoveryIndex::query()->where('body', 'like', '%'.$query.'%')->where(function ($q) use ($viewer): void {
+            $q->where('visibility', 'public')->orWhere('owner_profile_id', $viewer->getKey());
+        })->orderByDesc('engagement_score')->latest()->limit($limit)->get();
     }
 }

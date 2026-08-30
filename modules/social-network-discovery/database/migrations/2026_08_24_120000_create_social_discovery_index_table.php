@@ -27,5 +27,8 @@ return new class() extends Migration
         });
     }
 
-    public function down(): void { Schema::dropIfExists('social_discovery_index'); }
+    public function down(): void
+    {
+        Schema::dropIfExists('social_discovery_index');
+    }
 };

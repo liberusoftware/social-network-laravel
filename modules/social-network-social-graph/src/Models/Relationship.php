@@ -6,7 +6,6 @@ namespace Liberu\SocialNetwork\SocialGraph\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-use Liberu\SocialNetwork\SocialGraph\Models\Block;
 
 final class Relationship extends Model
 {

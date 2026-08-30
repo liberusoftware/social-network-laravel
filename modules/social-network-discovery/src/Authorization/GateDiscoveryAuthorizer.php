@@ -10,6 +10,13 @@ use Liberu\SocialNetwork\Profiles\Models\Profile;
 
 final class GateDiscoveryAuthorizer implements DiscoveryAuthorizer
 {
-    public function search(Profile $viewer): void { Gate::authorize('social-network.discovery.search', [$viewer]); }
-    public function index(Profile $owner): void { Gate::authorize('social-network.discovery.index', [$owner]); }
+    public function search(Profile $viewer): void
+    {
+        Gate::authorize('social-network.discovery.search', [$viewer]);
+    }
+
+    public function index(Profile $owner): void
+    {
+        Gate::authorize('social-network.discovery.index', [$owner]);
+    }
 }

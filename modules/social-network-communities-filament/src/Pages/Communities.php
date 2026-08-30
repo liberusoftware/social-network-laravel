@@ -7,7 +7,6 @@ namespace Liberu\SocialNetwork\Communities\Filament\Pages;
 use Filament\Pages\Page;
 use Liberu\SocialNetwork\Communities\Actions\ListCommunities;
 use Liberu\SocialNetwork\Profiles\Actions\GetProfile;
-use Liberu\SocialNetwork\Communities\Models\Community;
 
 final class Communities extends Page
 {
@@ -20,6 +19,7 @@ final class Communities extends Page
     public function communities(GetProfile $get, ListCommunities $list): mixed
     {
         abort_unless(auth()->check(), 404);
+
         return $list->handle($get->forUser(auth()->id()), 50);
     }
 }

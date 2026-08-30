@@ -11,7 +11,9 @@ use Liberu\SocialNetwork\SocialGraph\Actions\ListOwnedLists;
 final class Lists extends Page
 {
     protected string $view = 'social-network-social-graph-filament::pages.lists';
+
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-list-bullet';
+
     protected static string|\UnitEnum|null $navigationGroup = 'Social Network';
 
     /** @var array<int, array{id: string, name: string, visibility: string, profile_count: int}> */

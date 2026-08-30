@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Liberu\SocialNetwork\SocialCore;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 use Liberu\SocialNetwork\SocialCore\Authorization\GateSocialNetworkSettingsAuthorizer;
@@ -44,7 +45,7 @@ final class SocialCoreServiceProvider extends ServiceProvider
         }
 
         $teamModel = config('social-network-social-core.team_model');
-        if (! is_string($teamModel) || ! is_a($teamModel, \Illuminate\Database\Eloquent\Model::class, true)) {
+        if (! is_string($teamModel) || ! is_a($teamModel, Model::class, true)) {
             return false;
         }
 

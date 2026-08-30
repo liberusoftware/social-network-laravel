@@ -21,6 +21,7 @@ final readonly class DismissNotification
         $notification->forceFill(['state' => 'dismissed'])->save();
         $notification = $notification->refresh();
         $this->events->dispatch(new NotificationStateChanged($notification));
+
         return $notification;
     }
 }

@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Liberu\SocialNetwork\Profiles\Filament\Pages;
 
+use Filament\Forms\Components\KeyValue;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\KeyValue;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Pages\Page;

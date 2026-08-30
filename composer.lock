@@ -10793,20 +10793,21 @@
         },
         {
             "name": "liberusoftware/webhooks",
-            "version": "1.4.1",
+            "version": "1.4.2",
             "source": {
                 "type": "git",
                 "url": "git@github.com:liberusoftware/module-webhooks.git",
-                "reference": "308f905ee503c708dce8ffbb78a08c7c5b9d72bb"
+                "reference": "77624773448d60d09b73fd2b493f8bf56e0118a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/liberusoftware/module-webhooks/zipball/308f905ee503c708dce8ffbb78a08c7c5b9d72bb",
-                "reference": "308f905ee503c708dce8ffbb78a08c7c5b9d72bb",
+                "url": "https://api.github.com/repos/liberusoftware/module-webhooks/zipball/77624773448d60d09b73fd2b493f8bf56e0118a6",
+                "reference": "77624773448d60d09b73fd2b493f8bf56e0118a6",
                 "shasum": ""
             },
             "require": {
                 "illuminate/database": "^13.0",
+                "illuminate/http": "^13.0",
                 "illuminate/support": "^13.0",
                 "liberusoftware/module-manager": "^1.0",
                 "php": "^8.5"
@@ -10840,7 +10841,7 @@
                 "MIT"
             ],
             "description": "Signed filtered webhook endpoints, durable delivery attempts, retry, replay, and secret rotation.",
-            "time": "2026-08-07T14:25:58+00:00"
+            "time": "2026-08-30T16:25:00+00:00"
         },
         {
             "name": "livewire/livewire",

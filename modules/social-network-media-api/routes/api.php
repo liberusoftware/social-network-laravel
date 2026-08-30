@@ -13,5 +13,7 @@ Route::prefix('api/v1/social-network/media')->middleware(['auth:sanctum', 'throt
     Route::delete('/albums/{album}', [MediaController::class, 'destroyAlbum'])->name('albums.destroy');
     Route::post('/', [MediaController::class, 'store'])->name('store');
     Route::post('/{asset}/ready', [MediaController::class, 'ready'])->name('ready');
+    Route::get('/{asset}', [MediaController::class, 'show'])->name('show');
+    Route::patch('/{asset}', [MediaController::class, 'update'])->name('update');
     Route::delete('/{asset}', [MediaController::class, 'destroy'])->name('destroy');
 });

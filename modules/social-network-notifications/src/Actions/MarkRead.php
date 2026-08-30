@@ -22,6 +22,7 @@ final readonly class MarkRead
 
         $notification = $notification->refresh();
         $this->events->dispatch(new NotificationStateChanged($notification));
+
         return $notification;
     }
 }
