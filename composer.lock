@@ -5163,7 +5163,7 @@
         },
         {
             "name": "liberusoftware/analytics-core",
-            "version": "1.4.2",
+            "version": "1.4.1",
             "source": {
                 "type": "git",
                 "url": "git@github.com:liberusoftware/module-analytics-core.git",
