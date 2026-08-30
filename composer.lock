@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b9c17cba532e9e3399c35bd4f430a4f6",
+    "content-hash": "724fc693e1ece592db4488a335d52be6",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -10794,19 +10794,14 @@
         {
             "name": "liberusoftware/webhooks",
             "version": "1.4.1",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:liberusoftware/module-webhooks.git",
-                "reference": "308f905ee503c708dce8ffbb78a08c7c5b9d72bb"
-            },
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/liberusoftware/module-webhooks/zipball/308f905ee503c708dce8ffbb78a08c7c5b9d72bb",
-                "reference": "308f905ee503c708dce8ffbb78a08c7c5b9d72bb",
-                "shasum": ""
+                "type": "path",
+                "url": "modules/webhooks",
+                "reference": "0bbbe6fbf1c1f78b820dfa8fdebeebebda13077a"
             },
             "require": {
                 "illuminate/database": "^13.0",
+                "illuminate/http": "^13.0",
                 "illuminate/support": "^13.0",
                 "liberusoftware/module-manager": "^1.0",
                 "php": "^8.5"
@@ -10840,7 +10835,10 @@
                 "MIT"
             ],
             "description": "Signed filtered webhook endpoints, durable delivery attempts, retry, replay, and secret rotation.",
-            "time": "2026-08-07T14:25:58+00:00"
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
         },
         {
             "name": "livewire/livewire",
