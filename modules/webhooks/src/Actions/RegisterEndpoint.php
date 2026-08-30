@@ -26,12 +26,6 @@ final readonly class RegisterEndpoint
         }
         $secret ??= Str::random(64);
 
-        return DB::transaction(fn (): WebhookEndpoint => WebhookEndpoint::query()->create([
-            'owner_ref' => $ownerRef,
-            'url' => $url,
-            'signing_secret' => $this->vault->seal($secret),
-            'events' => $events,
-            'active' => true,
-        ]));
+        return DB::transaction(fn (): WebhookEndpoint => WebhookEndpoint::query()->create(['owner_ref' => $ownerRef, 'url' => $url, 'signing_secret' => $this->vault->seal($secret), 'events' => $events, 'active' => true]));
     }
 }
