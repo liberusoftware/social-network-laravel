@@ -15,6 +15,7 @@ use Liberu\SocialNetwork\Media\Actions\DeleteMediaAsset;
 use Liberu\SocialNetwork\Media\Actions\MarkMediaReady;
 use Liberu\SocialNetwork\Media\Actions\RegisterMediaAsset;
 use Liberu\SocialNetwork\Media\Actions\UpdateAlbum;
+use Liberu\SocialNetwork\Media\Actions\UpdateMediaAsset;
 use Liberu\SocialNetwork\Media\Models\Album;
 use Liberu\SocialNetwork\Media\Models\MediaAsset;
 use Liberu\SocialNetwork\Profiles\Actions\GetProfile;
@@ -55,6 +56,22 @@ final class MediaController extends Controller
         $items = MediaAsset::query()->where('owner_profile_id', $get->forUser($request->user()->getAuthIdentifier())->getKey())->latest()->limit($data['limit'] ?? 25)->get();
 
         return response()->json(['data' => $items->map(fn (MediaAsset $asset): array => $this->resource($asset))->values()]);
+    }
+
+    public function show(string $asset, Request $request, GetProfile $get): JsonResponse
+    {
+        $item = MediaAsset::query()->findOrFail($asset);
+        abort_unless((string) $item->owner_profile_id === (string) $get->forUser($request->user()->getAuthIdentifier())->getKey(), 403);
+
+        return response()->json(['data' => $this->resource($item)]);
+    }
+
+    public function update(string $asset, Request $request, GetProfile $get, UpdateMediaAsset $update): JsonResponse
+    {
+        $data = $request->validate(['album_id' => ['nullable', 'uuid'], 'alt_text' => ['nullable', 'string', 'max:1000'], 'captions' => ['nullable', 'string'], 'rights' => ['sometimes', 'array'], 'metadata' => ['sometimes', 'array']]);
+        $item = $update->handle($get->forUser($request->user()->getAuthIdentifier()), MediaAsset::query()->findOrFail($asset), $data);
+
+        return response()->json(['data' => $this->resource($item)]);
     }
 
     public function ready(string $asset, Request $request, GetProfile $get, MarkMediaReady $ready): JsonResponse

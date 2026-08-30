@@ -94,3 +94,18 @@ it('rejects album creation without a name or with unsupported privacy', function
     $this->actingAs($user)->postJson('/api/v1/social-network/media/albums', ['privacy' => 'friends_only'])->assertJsonValidationErrors('name');
     $this->actingAs($user)->postJson('/api/v1/social-network/media/albums', ['name' => 'Album', 'privacy' => 'unknown'])->assertJsonValidationErrors('privacy');
 });
+
+it('allows owners to inspect and update media metadata', function (): void {
+    config()->set('social-network-profiles.user_model', User::class);
+    $owner = User::factory()->create();
+    $viewer = User::factory()->create();
+    $ownerProfile = Profile::query()->create(['id' => (string) Str::uuid(), 'user_id' => $owner->getKey(), 'handle' => 'media-show-'.strtolower(substr((string) $owner->getKey(), 0, 8))]);
+    Profile::query()->create(['id' => (string) Str::uuid(), 'user_id' => $viewer->getKey(), 'handle' => 'media-view-'.strtolower(substr((string) $viewer->getKey(), 0, 8))]);
+    Storage::disk('public')->put('media/metadata.jpg', 'photo');
+    $this->actingAs($owner);
+    $asset = app(RegisterMediaAsset::class)->handle($ownerProfile, ['type' => 'image', 'disk' => 'public', 'path' => 'media/metadata.jpg']);
+
+    $this->actingAs($owner)->getJson('/api/v1/social-network/media/'.$asset->getKey())->assertSuccessful();
+    $this->actingAs($owner)->patchJson('/api/v1/social-network/media/'.$asset->getKey(), ['alt_text' => 'A holiday photo', 'metadata' => ['source' => 'camera']])->assertSuccessful()->assertJsonPath('data.alt_text', 'A holiday photo');
+    $this->actingAs($viewer)->getJson('/api/v1/social-network/media/'.$asset->getKey())->assertForbidden();
+});

@@ -7,6 +7,8 @@ paths:
   /api/v1/social-network/media/{asset}/ready:
     post: {operationId: social.network.media.ready, security: [{sanctum: []}], parameters: [{name: asset, in: path, required: true, schema: {type: string}}], responses: {'200': {description: Media processing completed}}}
   /api/v1/social-network/media/{asset}:
+    get: {operationId: social.network.media.show, security: [{sanctum: []}], parameters: [{name: asset, in: path, required: true, schema: {type: string, format: uuid}}], responses: {'200': {description: Owned media asset}, '403': {description: Asset is not owned by the viewer}}}
+    patch: {operationId: social.network.media.update, security: [{sanctum: []}], parameters: [{name: asset, in: path, required: true, schema: {type: string, format: uuid}}], requestBody: {content: {application/json: {schema: {$ref: '#/components/schemas/MediaUpdate'}}}}, responses: {'200': {description: Media updated}}}
     delete: {operationId: social.network.media.delete, security: [{sanctum: []}], parameters: [{name: asset, in: path, required: true, schema: {type: string}}], responses: {'204': {description: Media deleted}}}
   /api/v1/social-network/media/albums:
     get: {operationId: social.network.media.albums.list, security: [{sanctum: []}], responses: {'200': {description: Visible albums}}}
@@ -27,6 +29,14 @@ components:
         path: {type: string}
         album_id: {type: string, format: uuid}
         alt_text: {type: string, maxLength: 1000}
+    MediaUpdate:
+      type: object
+      properties:
+        album_id: {type: string, format: uuid, nullable: true}
+        alt_text: {type: string, maxLength: 1000}
+        captions: {type: string}
+        rights: {type: object}
+        metadata: {type: object}
     Album:
       type: object
       required: [name]
