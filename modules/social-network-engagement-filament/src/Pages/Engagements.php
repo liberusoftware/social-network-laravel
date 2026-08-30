@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Liberu\SocialNetwork\Engagement\Filament\Pages;
 
 use Filament\Pages\Page;
+use Liberu\SocialNetwork\Profiles\Actions\GetProfile;
 use Liberu\SocialNetwork\Engagement\Models\Engagement;
 
 final class Engagements extends Page
@@ -15,8 +16,9 @@ final class Engagements extends Page
 
     protected static string|\UnitEnum|null $navigationGroup = 'Social Network';
 
-    public function engagements(): mixed
+    public function engagements(GetProfile $get): mixed
     {
-        return Engagement::query()->latest()->limit(50)->get();
+        abort_unless(auth()->check(), 404);
+        return Engagement::query()->where('actor_profile_id', $get->forUser(auth()->id())->getKey())->latest()->limit(50)->get();
     }
 }

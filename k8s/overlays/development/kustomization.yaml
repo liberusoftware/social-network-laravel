@@ -4,7 +4,7 @@ kind: Kustomization
 resources:
 - ../../base
 
-namespace: boilerplate-dev
+namespace: social-network-dev
 
 patches:
 - patch: |-
@@ -13,10 +13,10 @@ patches:
       value: 1
   target:
     kind: Deployment
-    name: boilerplate-laravel
+    name: social-network-laravel
 
 configMapGenerator:
-- name: boilerplate-config
+- name: social-network-config
   behavior: merge
   literals:
   - APP_ENV=development
@@ -24,5 +24,5 @@ configMapGenerator:
   - LOG_LEVEL=debug
 
 images:
-- name: ghcr.io/liberusoftware/boilerplate-laravel
+- name: ghcr.io/liberusoftware/social-network-laravel
   newTag: develop

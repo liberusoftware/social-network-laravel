@@ -1,0 +1,13 @@
+{
+  "name": "social-network-analytics-filament",
+  "display_name": "Social Network Analytics Filament",
+  "description": "Filament administration for privacy-aware analytics.",
+  "version": "0.1.0",
+  "category": "presentation",
+  "provider": "Liberu\\SocialNetwork\\Analytics\\Filament\\AnalyticsFilamentServiceProvider",
+  "requires": {"php":"^8.5","laravel":"^13.0","packages":{"liberusoftware/module-social-network-analytics":"^0.1"}},
+  "presentation": {"filament": {"app":["Liberu\\SocialNetwork\\Analytics\\Filament\\AnalyticsFilamentPlugin"]}},
+  "capabilities": ["social-network.analytics.filament"],
+  "features": ["metric dashboard", "cohort privacy threshold", "authorized panel access"],
+  "default_enabled": true
+}

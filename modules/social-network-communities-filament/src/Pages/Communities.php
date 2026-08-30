@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace Liberu\SocialNetwork\Communities\Filament\Pages;
 
 use Filament\Pages\Page;
+use Liberu\SocialNetwork\Communities\Actions\ListCommunities;
+use Liberu\SocialNetwork\Profiles\Actions\GetProfile;
 use Liberu\SocialNetwork\Communities\Models\Community;
 
 final class Communities extends Page
@@ -15,8 +17,9 @@ final class Communities extends Page
 
     protected static string|\UnitEnum|null $navigationGroup = 'Social Network';
 
-    public function communities(): mixed
+    public function communities(GetProfile $get, ListCommunities $list): mixed
     {
-        return Community::query()->latest()->limit(50)->get();
+        abort_unless(auth()->check(), 404);
+        return $list->handle($get->forUser(auth()->id()), 50);
     }
 }

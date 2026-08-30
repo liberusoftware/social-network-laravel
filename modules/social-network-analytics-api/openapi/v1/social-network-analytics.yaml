@@ -1,0 +1,41 @@
+openapi: 3.0.3
+info: {title: Social Network Analytics API, version: 0.1.0}
+paths:
+  /api/v1/social-network/analytics/metrics/{metric}:
+    get:
+      summary: Read an aggregated metric
+      parameters:
+        - {name: metric, in: path, required: true, schema: {type: string, pattern: '^[a-z0-9][a-z0-9_.-]{0,119}$'}}
+        - {name: limit, in: query, required: false, schema: {type: integer, minimum: 1, maximum: 100, default: 30}}
+      security: [{sanctum: []}]
+      responses:
+        '200':
+          description: Privacy-filtered metric snapshots.
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/SnapshotCollection'}
+        '403': {description: Insufficient analytics permission.}
+        '404': {description: Unknown or concealed metric.}
+components:
+  securitySchemes:
+    sanctum: {type: http, scheme: bearer, bearerFormat: Sanctum}
+  schemas:
+    SnapshotCollection:
+      type: object
+      required: [data]
+      properties:
+        data:
+          type: array
+          items: {$ref: '#/components/schemas/Snapshot'}
+    Snapshot:
+      type: object
+      required: [id, type, metric, period_start, period_end, cohort_size, value]
+      properties:
+        id: {type: string}
+        type: {type: string, const: social-network-analytics-snapshot}
+        metric: {type: string}
+        period_start: {type: string, format: date}
+        period_end: {type: string, format: date}
+        cohort_size: {type: integer, minimum: 10}
+        value: {type: number}
+        dimensions: {type: object, additionalProperties: true}

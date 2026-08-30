@@ -32,8 +32,18 @@ final readonly class CreateRelationship
         if ($source->is($target)) {
             throw new InvalidArgumentException('A profile cannot relate to itself.');
         } $type === 'follow' ? $this->authorizer->follow($source, $target) : $this->authorizer->friend($source, $target);
-        $relationship = DB::transaction(fn () => Relationship::query()->firstOrCreate(['source_profile_id' => $source->getKey(), 'target_profile_id' => $target->getKey(), 'relationship_type' => $type], ['id' => (string) Str::uuid(), 'status' => $status]));
-        $this->events->dispatch(new RelationshipCreated($relationship));
+        [$relationship, $created] = DB::transaction(function () use ($source, $target, $type, $status): array {
+            $relationship = Relationship::query()->firstOrCreate(
+                ['source_profile_id' => $source->getKey(), 'target_profile_id' => $target->getKey(), 'relationship_type' => $type],
+                ['id' => (string) Str::uuid(), 'status' => $status],
+            );
+
+            return [$relationship, $relationship->wasRecentlyCreated];
+        });
+
+        if ($created) {
+            $this->events->dispatch(new RelationshipCreated($relationship));
+        }
 
         return $relationship;
     }

@@ -61,7 +61,8 @@ final class ThemeDiscovery
                 throw new InvalidTheme("Theme [{$manifest->name()}] has no composer.json.");
             }
             $composer = json_decode(File::get($composerPath), true, flags: JSON_THROW_ON_ERROR);
-            if (! in_array($directory, $trackedPaths, true)
+            if ($this->installedPaths === null
+                && ! in_array($directory, $trackedPaths, true)
                 && in_array($composer['name'] ?? null, $trackedPackageNames, true)) {
                 continue;
             }

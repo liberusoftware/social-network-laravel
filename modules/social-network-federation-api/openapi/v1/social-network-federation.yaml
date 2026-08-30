@@ -1,0 +1,13 @@
+openapi: 3.0.3
+info:
+  title: Social Network Federation API
+  version: 0.1.0
+paths:
+  /api/v1/social-network/federation/inbox:
+    post:
+      summary: Receive a federation activity
+      responses: {'202': {description: Accepted}}
+  /api/v1/social-network/federation/outbox:
+    get:
+      summary: List outbound activities
+      responses: {'200': {description: OK}}

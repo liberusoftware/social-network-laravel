@@ -6,7 +6,7 @@ namespace Liberu\SocialNetwork\SocialGraph\Filament\Pages;
 
 use Filament\Pages\Page;
 use Liberu\SocialNetwork\Profiles\Actions\GetProfile;
-use Liberu\SocialNetwork\SocialGraph\Models\Relationship;
+use Liberu\SocialNetwork\SocialGraph\Actions\ListRelationships;
 
 final class Relationships extends Page
 {
@@ -16,10 +16,17 @@ final class Relationships extends Page
 
     protected static string|\UnitEnum|null $navigationGroup = 'Social Network';
 
-    public function relationships(): mixed
-    {
-        $p = app(GetProfile::class)->forUser(auth()->id());
+    /** @var array<int, array<string, mixed>> */
+    public array $relationshipRows = [];
 
-        return Relationship::query()->where('source_profile_id', $p->getKey())->latest()->get();
+    public function mount(GetProfile $get, ListRelationships $list): void
+    {
+        $this->relationshipRows = $list->handle($get->forUser(auth()->id()))->map(fn ($relationship): array => [
+            'type' => $relationship->relationship_type,
+            'target' => $relationship->target_profile_id,
+            'status' => $relationship->status,
+            'visibility' => $relationship->visibility,
+        ])->all();
     }
+
 }

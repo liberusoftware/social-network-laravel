@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: boilerplate-laravel
-  namespace: boilerplate-laravel
+  name: social-network-laravel
+  namespace: social-network-laravel
   labels:
-    app: boilerplate-laravel
+    app: social-network-laravel
 spec:
   type: ClusterIP
   sessionAffinity: ClientIP
@@ -17,5 +17,5 @@ spec:
     protocol: TCP
     name: http
   selector:
-    app: boilerplate-laravel
+    app: social-network-laravel
     component: application

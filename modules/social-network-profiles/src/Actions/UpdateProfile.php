@@ -47,5 +47,15 @@ final readonly class UpdateProfile
         if (isset($attributes['lifecycle_state']) && ! in_array($attributes['lifecycle_state'], (array) config('social-network-profiles.lifecycle_states'), true)) {
             throw new InvalidArgumentException('The selected profile lifecycle state is not supported.');
         }
+        if (isset($attributes['attributes'])) {
+            if (! is_array($attributes['attributes']) || count($attributes['attributes']) > (int) config('social-network-profiles.maximum_attributes', 32)) {
+                throw new InvalidArgumentException('Profile attributes exceed the configured limit.');
+            }
+            foreach ($attributes['attributes'] as $value) {
+                if (is_scalar($value) && strlen((string) $value) > (int) config('social-network-profiles.maximum_attribute_value_length', 2048)) {
+                    throw new InvalidArgumentException('A profile attribute value exceeds the configured limit.');
+                }
+            }
+        }
     }
 }

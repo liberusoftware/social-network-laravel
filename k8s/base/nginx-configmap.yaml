@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: boilerplate-nginx-config
-  namespace: boilerplate-laravel
+  name: social-network-nginx-config
+  namespace: social-network-laravel
   labels:
-    app: boilerplate-laravel
+    app: social-network-laravel
 data:
   default.conf: |
     server {

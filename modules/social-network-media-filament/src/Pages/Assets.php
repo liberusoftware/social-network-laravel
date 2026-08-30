@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Liberu\SocialNetwork\Media\Filament\Pages;
 
 use Filament\Pages\Page;
+use Liberu\SocialNetwork\Profiles\Actions\GetProfile;
 use Liberu\SocialNetwork\Media\Models\MediaAsset;
 
 final class Assets extends Page
@@ -15,8 +16,9 @@ final class Assets extends Page
 
     protected static string|\UnitEnum|null $navigationGroup = 'Social Network';
 
-    public function assets(): mixed
+    public function assets(GetProfile $get): mixed
     {
-        return MediaAsset::query()->latest()->limit(50)->get();
+        abort_unless(auth()->check(), 404);
+        return MediaAsset::query()->where('owner_profile_id', $get->forUser(auth()->id())->getKey())->latest()->limit(50)->get();
     }
 }

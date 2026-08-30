@@ -1,0 +1,9 @@
+{
+  "$schema": "https://schemas.liberu.dev/module/v1.json",
+  "name": "social-network-discovery", "display_name": "Social Network Discovery",
+  "description": "Privacy-aware search, hashtags, trends, recommendations, and directories.",
+  "version": "0.1.0", "category": "product",
+  "provider": "Liberu\\SocialNetwork\\Discovery\\DiscoveryServiceProvider",
+  "requires": {"php": "^8.5", "laravel": "^13.0", "packages": {"liberusoftware/module-social-network-profiles": "^0.1"}},
+  "capabilities": ["social-network.discovery"], "features": ["Search", "Hashtags", "Trends", "Recommendations", "Directories", "Privacy-aware indexing"], "default_enabled": true
+}

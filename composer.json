@@ -1,12 +1,12 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "liberusoftware/boilerplate-laravel",
+    "name": "liberusoftware/social-network-laravel",
     "type": "project",
-    "description": "Liberu boilerplate Laravel application.",
+    "description": "Liberu social network Laravel application.",
     "keywords": [
         "laravel",
         "framework",
-        "boilerplate"
+        "social-network"
     ],
     "license": "MIT",
     "repositories": [
@@ -421,7 +421,40 @@
             "type": "path",
             "url": "modules/social-network-moderation-livewire",
             "options": {"symlink": false}
-        }
+        },
+        {
+            "type": "path",
+            "url": "modules/social-network-discovery",
+            "options": {"symlink": false}
+        },
+        {
+            "type": "path",
+            "url": "modules/social-network-discovery-api",
+            "options": {"symlink": false}
+        },
+        {
+            "type": "path",
+            "url": "modules/social-network-discovery-filament",
+            "options": {"symlink": false}
+        },
+        {
+            "type": "path",
+            "url": "modules/social-network-discovery-livewire",
+            "options": {"symlink": false}
+        },
+        {"type":"path","url":"modules/social-network-events","options":{"symlink":false}},
+        {"type":"path","url":"modules/social-network-events-api","options":{"symlink":false}},
+        {"type":"path","url":"modules/social-network-events-filament","options":{"symlink":false}},
+        {"type":"path","url":"modules/social-network-events-livewire","options":{"symlink":false}},
+        {"type":"path","url":"modules/social-network-federation","options":{"symlink":false}},
+        {"type":"path","url":"modules/social-network-federation-api","options":{"symlink":false}},
+        {"type":"path","url":"modules/social-network-federation-filament","options":{"symlink":false}},
+        {"type":"path","url":"modules/social-network-federation-livewire","options":{"symlink":false}},
+        {"type":"path","url":"modules/social-network-analytics","options":{"symlink":false}},
+        {"type":"path","url":"modules/social-network-analytics-api","options":{"symlink":false}},
+        {"type":"path","url":"modules/social-network-analytics-filament","options":{"symlink":false}},
+        {"type":"path","url":"modules/social-network-analytics-livewire","options":{"symlink":false}},
+        {"type":"path","url":"modules/webhooks-api","options":{"symlink":false}}
     ],
     "require": {
         "php": "^8.5",
@@ -507,6 +540,23 @@
         "liberusoftware/module-social-network-moderation-api": "^0.1",
         "liberusoftware/module-social-network-moderation-filament": "^0.1",
         "liberusoftware/module-social-network-moderation-livewire": "^0.1",
+        "liberusoftware/module-social-network-discovery": "^0.1",
+        "liberusoftware/module-social-network-discovery-api": "^0.1",
+        "liberusoftware/module-social-network-discovery-filament": "^0.1",
+        "liberusoftware/module-social-network-discovery-livewire": "^0.1",
+        "liberusoftware/module-social-network-events": "^0.1",
+        "liberusoftware/module-social-network-events-api": "^0.1",
+        "liberusoftware/module-social-network-events-filament": "^0.1",
+        "liberusoftware/module-social-network-events-livewire": "^0.1",
+        "liberusoftware/module-social-network-federation": "^0.1",
+        "liberusoftware/module-social-network-federation-api": "^0.1",
+        "liberusoftware/module-social-network-federation-filament": "^0.1",
+        "liberusoftware/module-social-network-federation-livewire": "^0.1",
+        "liberusoftware/module-social-network-analytics": "^0.1",
+        "liberusoftware/module-social-network-analytics-api": "^0.1",
+        "liberusoftware/module-social-network-analytics-filament": "^0.1",
+        "liberusoftware/module-social-network-analytics-livewire": "^0.1",
+        "liberusoftware/module-webhooks-api": "^0.1",
         "liberusoftware/notifications": "^1.0",
         "liberusoftware/observability": "^1.0",
         "liberusoftware/organizations-teams": "^1.0",

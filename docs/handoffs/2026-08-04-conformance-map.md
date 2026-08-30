@@ -1,19 +1,19 @@
-# Handoff — Liberu boilerplate conformance effort
+# Handoff — Liberu social network conformance effort
 
-**Repo:** `/home/tom/code/boilerplate-laravel`
+**Repo:** `/home/tom/code/social-network-laravel`
 **Branch:** `docs/conformance-plan` (branched off `chore/composable-package-readiness`, pushed, **no PR**)
 **Date:** 2026-08-04
 
 ## Status: planning complete, committed, nothing refactored
 
 The wayfinder map
-[#612](https://github.com/liberusoftware/boilerplate-laravel/issues/612) is closed — **15/15
+[#612](https://github.com/liberusoftware/social-network-laravel/issues/612) is closed — **15/15
 tickets**. Its destination was a spec. **No production code was changed.**
 
 **Read these first, in order — do not re-derive their contents:**
 
 1. **`docs/CONFORMANCE.md`** — the deliverable. Scope, every decision with its enforcement mechanism, the defect register, the step −1→9 migration sequence with gates and rollback.
-2. **[The map, #612](https://github.com/liberusoftware/boilerplate-laravel/issues/612)** — Decisions-so-far indexes all 15 tickets; each ticket comment holds the reasoning and the evidence.
+2. **[The map, #612](https://github.com/liberusoftware/social-network-laravel/issues/612)** — Decisions-so-far indexes all 15 tickets; each ticket comment holds the reasoning and the evidence.
 
 Everything factual about the plan lives there. This document covers only what those cannot:
 environment state, traps, and what to do next.
@@ -88,7 +88,7 @@ a pattern that cannot self-match.
 then `pest --coverage-text` (`--coverage` is ambiguous without the plugin). The real fix is step 4
 of the plan.
 
-**7. `gh` needs `-R liberusoftware/boilerplate-laravel`** when the working directory is outside the repo.
+**7. `gh` needs `-R liberusoftware/social-network-laravel`** when the working directory is outside the repo.
 
 ## What the next session should probably do
 

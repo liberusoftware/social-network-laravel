@@ -8,7 +8,7 @@ use Liberu\SocialNetwork\Profiles\Actions\GetProfile;
 use Liberu\SocialNetwork\SocialGraph\Actions\CreateRelationship;
 use Livewire\Component;
 
-final class FollowProfile extends Component
+class FollowProfile extends Component
 {
     public string $profileId = '';
 
@@ -17,6 +17,13 @@ final class FollowProfile extends Component
         $this->validate(['profileId' => ['required', 'uuid']]);
         $create->follow($get->forUser($this->userId()), $get->byId($this->profileId));
         $this->dispatch('social-graph-followed');
+    }
+
+    public function friend(GetProfile $get, CreateRelationship $create): void
+    {
+        $this->validate(['profileId' => ['required', 'uuid']]);
+        $create->friend($get->forUser($this->userId()), $get->byId($this->profileId));
+        $this->dispatch('social-graph-friend-requested');
     }
 
     public function render(): mixed

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Liberu\SocialNetwork\Media\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 final class MediaAsset extends Model
@@ -17,10 +18,15 @@ final class MediaAsset extends Model
 
     protected $keyType = 'string';
 
-    protected $fillable = ['id', 'owner_profile_id', 'type', 'state', 'disk', 'path', 'mime_type', 'size', 'checksum', 'alt_text', 'captions', 'rights', 'metadata'];
+    protected $fillable = ['id', 'owner_profile_id', 'album_id', 'type', 'state', 'disk', 'path', 'mime_type', 'size', 'checksum', 'alt_text', 'captions', 'rights', 'metadata'];
 
     protected function casts(): array
     {
         return ['rights' => 'array', 'metadata' => 'array', 'size' => 'integer'];
+    }
+
+    public function album(): BelongsTo
+    {
+        return $this->belongsTo(Album::class);
     }
 }

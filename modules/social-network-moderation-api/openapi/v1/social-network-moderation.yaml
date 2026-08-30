@@ -1,4 +1,8 @@
 openapi: 3.1.0
 info: {title: Social Network Moderation API, version: 1.0.0}
-paths: {/api/v1/social-network/moderation/reports: {post: {operationId: social.network.moderation.report, security: [{sanctum: []}], responses: {'201': {description: Report created}}}}}
+paths:
+  /api/v1/social-network/moderation/reports:
+    post: {operationId: social.network.moderation.report, security: [{sanctum: []}], responses: {'201': {description: Report created}, '422': {description: Duplicate or invalid report}}}
+  /api/v1/social-network/moderation/reports/{report}/decide:
+    post: {operationId: social.network.moderation.decide, security: [{sanctum: []}], parameters: [{name: report, in: path, required: true, schema: {type: string}}], responses: {'201': {description: Decision recorded}, '422': {description: Report is no longer actionable}}}
 components: {securitySchemes: {sanctum: {type: http, scheme: bearer, bearerFormat: Sanctum}}}

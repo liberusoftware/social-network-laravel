@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0bbdb8c9cf1416b5b564df907738099a",
+    "content-hash": "b9c17cba532e9e3399c35bd4f430a4f6",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -6403,6 +6403,139 @@
             "time": "2026-08-07T14:25:35+00:00"
         },
         {
+            "name": "liberusoftware/module-social-network-analytics",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/social-network-analytics",
+                "reference": "c0bb8a0783222019440285bcfc702499359652b4"
+            },
+            "require": {
+                "laravel/framework": "^13.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "social-network-analytics"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\SocialNetwork\\Analytics\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Privacy-aware social network analytics and metric snapshots.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-social-network-analytics-api",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/social-network-analytics-api",
+                "reference": "3193a3680dc5d862fc930d904dd22c9cd4620058"
+            },
+            "require": {
+                "laravel/framework": "^13.0",
+                "liberusoftware/module-social-network-analytics": "*",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "social-network-analytics-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\SocialNetwork\\Analytics\\Api\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "API adapter for social network analytics.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-social-network-analytics-filament",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/social-network-analytics-filament",
+                "reference": "22f5ba88b66dfc328613e149db2410d6e74a1adb"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "laravel/framework": "^13.0",
+                "liberusoftware/module-social-network-analytics": "*",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "social-network-analytics-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\SocialNetwork\\Analytics\\Filament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament adapter for social network analytics.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-social-network-analytics-livewire",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/social-network-analytics-livewire",
+                "reference": "f9fd5720899f9eb415818700f11207e1af2664bb"
+            },
+            "require": {
+                "laravel/framework": "^13.0",
+                "liberusoftware/module-social-network-analytics": "*",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "social-network-analytics-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\SocialNetwork\\Analytics\\Livewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Livewire adapter for social network analytics.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
             "name": "liberusoftware/module-social-network-communities",
             "version": "0.1.2",
             "dist": {
@@ -6646,6 +6779,137 @@
             }
         },
         {
+            "name": "liberusoftware/module-social-network-discovery",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/social-network-discovery",
+                "reference": "0cb39ed1e08955eaeb1f2d006fabfc4d0d9f3d24"
+            },
+            "require": {
+                "laravel/framework": "^13.0",
+                "liberusoftware/module-social-network-profiles": "^0.1",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "social-network-discovery"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\SocialNetwork\\Discovery\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Framework-neutral discovery domain module.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-social-network-discovery-api",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/social-network-discovery-api",
+                "reference": "4980115039eec4cc064a6d9f15cbdc03226c7a3f"
+            },
+            "require": {
+                "laravel/framework": "^13.0",
+                "liberusoftware/module-social-network-discovery": "^0.1",
+                "liberusoftware/module-social-network-profiles": "^0.1",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "social-network-discovery-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\SocialNetwork\\Discovery\\Api\\": "src/"
+                }
+            },
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-social-network-discovery-filament",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/social-network-discovery-filament",
+                "reference": "a0cf4435a203bc5d5131a680b7ad5fc5a486d3e3"
+            },
+            "require": {
+                "filament/filament": "^5.1",
+                "liberusoftware/module-social-network-discovery": "^0.1",
+                "liberusoftware/module-social-network-profiles": "^0.1",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "social-network-discovery-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\SocialNetwork\\Discovery\\Filament\\": "src/"
+                }
+            },
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-social-network-discovery-livewire",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/social-network-discovery-livewire",
+                "reference": "8d80cc01b2711971e9a96c7b841aaacdf48496da"
+            },
+            "require": {
+                "liberusoftware/module-social-network-discovery": "^0.1",
+                "liberusoftware/module-social-network-profiles": "^0.1",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "social-network-discovery-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\SocialNetwork\\Discovery\\Livewire\\": "src/"
+                }
+            },
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
             "name": "liberusoftware/module-social-network-engagement",
             "version": "0.1.2",
             "dist": {
@@ -6883,6 +7147,267 @@
                 "MIT"
             ],
             "description": "Livewire adapter for Engagement.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-social-network-events",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/social-network-events",
+                "reference": "48ce97445e2ae834d1c088f53520ee578a7c2c03"
+            },
+            "require": {
+                "laravel/framework": "^13.0",
+                "liberusoftware/module-social-network-profiles": "^0.1",
+                "php": "^8.5"
+            },
+            "require-dev": {
+                "pestphp/pest": "^5.0"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "social-network-events"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\SocialNetwork\\Events\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Framework-neutral social events domain module.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-social-network-events-api",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/social-network-events-api",
+                "reference": "77ffbb03e8cc4506a2d36f634c019bf350a9ab13"
+            },
+            "require": {
+                "laravel/framework": "^13.0",
+                "liberusoftware/module-social-network-events": "^0.1",
+                "liberusoftware/module-social-network-profiles": "^0.1",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "social-network-events-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\SocialNetwork\\Events\\Api\\": "src/"
+                }
+            },
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-social-network-events-filament",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/social-network-events-filament",
+                "reference": "ecfe9c518198fa1110f5c79525f7ccea4c8d35a9"
+            },
+            "require": {
+                "filament/filament": "^5.1",
+                "liberusoftware/module-social-network-events": "^0.1",
+                "liberusoftware/module-social-network-profiles": "^0.1",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "social-network-events-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\SocialNetwork\\Events\\Filament\\": "src/"
+                }
+            },
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-social-network-events-livewire",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/social-network-events-livewire",
+                "reference": "f9d6d990ff3a00d59b09778392153e9ea123f3f1"
+            },
+            "require": {
+                "liberusoftware/module-social-network-events": "^0.1",
+                "liberusoftware/module-social-network-profiles": "^0.1",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "social-network-events-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\SocialNetwork\\Events\\Livewire\\": "src/"
+                }
+            },
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-social-network-federation",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/social-network-federation",
+                "reference": "35f7fc45991d3c24f26e1c6dc1e2366d020528d6"
+            },
+            "require": {
+                "laravel/framework": "^13.0",
+                "liberusoftware/module-social-network-profiles": "^0.1",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "social-network-federation"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\SocialNetwork\\Federation\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Federation primitives for the Liberu social network.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-social-network-federation-api",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/social-network-federation-api",
+                "reference": "dc92e6ae3f479c7f26acbf5217199fc025f0fda8"
+            },
+            "require": {
+                "laravel/framework": "^13.0",
+                "liberusoftware/module-social-network-federation": "^0.1",
+                "liberusoftware/module-social-network-profiles": "^0.1",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "social-network-federation-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\SocialNetwork\\Federation\\Api\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "API adapter for social network federation.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-social-network-federation-filament",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/social-network-federation-filament",
+                "reference": "2c5c8d2c2835b9397ff6aa778f5648b31888cb4c"
+            },
+            "require": {
+                "filament/filament": "^5.0",
+                "laravel/framework": "^13.0",
+                "liberusoftware/module-social-network-federation": "^0.1",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "social-network-federation-filament"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\SocialNetwork\\Federation\\Filament\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament adapter for social network federation.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
+            "name": "liberusoftware/module-social-network-federation-livewire",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/social-network-federation-livewire",
+                "reference": "5c8811d24d4f22667aab4afd5cea7af836d06fb7"
+            },
+            "require": {
+                "laravel/framework": "^13.0",
+                "liberusoftware/module-social-network-federation": "^0.1",
+                "livewire/livewire": "^4.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "social-network-federation-livewire"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\SocialNetwork\\Federation\\Livewire\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Livewire adapter for social network federation.",
             "transport-options": {
                 "symlink": false,
                 "relative": true
@@ -9072,6 +9597,40 @@
             }
         },
         {
+            "name": "liberusoftware/module-webhooks-api",
+            "version": "0.1.0",
+            "dist": {
+                "type": "path",
+                "url": "modules/webhooks-api",
+                "reference": "e9560f28ac92cb027bb064c2f4b6c7764edce0c0"
+            },
+            "require": {
+                "laravel/framework": "^13.0",
+                "laravel/sanctum": "^4.0",
+                "liberusoftware/webhooks": "^1.0",
+                "php": "^8.5"
+            },
+            "type": "liberu-module",
+            "extra": {
+                "liberu": {
+                    "name": "webhooks-api"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Liberu\\Webhooks\\Api\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Authenticated API adapter for webhook registration and delivery recovery.",
+            "transport-options": {
+                "symlink": false,
+                "relative": true
+            }
+        },
+        {
             "name": "liberusoftware/notifications",
             "version": "1.4.1",
             "source": {
@@ -9514,16 +10073,16 @@
         },
         {
             "name": "liberusoftware/search",
-            "version": "1.5.1",
+            "version": "1.5.2",
             "source": {
                 "type": "git",
                 "url": "git@github.com:liberusoftware/module-search.git",
-                "reference": "d2617f80de4c267adf4593b357b545c9ec762188"
+                "reference": "8e95f92ac57e37a8808164c56ec03240190336c3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/liberusoftware/module-search/zipball/d2617f80de4c267adf4593b357b545c9ec762188",
-                "reference": "d2617f80de4c267adf4593b357b545c9ec762188",
+                "url": "https://api.github.com/repos/liberusoftware/module-search/zipball/8e95f92ac57e37a8808164c56ec03240190336c3",
+                "reference": "8e95f92ac57e37a8808164c56ec03240190336c3",
                 "shasum": ""
             },
             "require": {
@@ -9563,10 +10122,10 @@
             ],
             "description": "Provider-neutral authorized search contracts and local Eloquent driver.",
             "support": {
-                "source": "https://github.com/liberusoftware/module-search/tree/1.5.1",
+                "source": "https://github.com/liberusoftware/module-search/tree/v1.5.2",
                 "issues": "https://github.com/liberusoftware/module-search/issues"
             },
-            "time": "2026-08-07T14:25:44+00:00"
+            "time": "2026-08-24T17:42:40+00:00"
         },
         {
             "name": "liberusoftware/search-api",
@@ -10061,16 +10620,16 @@
         },
         {
             "name": "liberusoftware/theme-support",
-            "version": "1.4.2",
+            "version": "1.4.3",
             "source": {
                 "type": "git",
                 "url": "git@github.com:liberusoftware/module-theme-support.git",
-                "reference": "22c3d18d23d802265d68f03e58f8dda8b88b48fa"
+                "reference": "cc7019f1d077e498ad647bb566a28ae009b2cb1e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/liberusoftware/module-theme-support/zipball/22c3d18d23d802265d68f03e58f8dda8b88b48fa",
-                "reference": "22c3d18d23d802265d68f03e58f8dda8b88b48fa",
+                "url": "https://api.github.com/repos/liberusoftware/module-theme-support/zipball/cc7019f1d077e498ad647bb566a28ae009b2cb1e",
+                "reference": "cc7019f1d077e498ad647bb566a28ae009b2cb1e",
                 "shasum": ""
             },
             "require": {
@@ -10116,10 +10675,10 @@
             ],
             "description": "Theme discovery and host presentation support for Liberu applications.",
             "support": {
-                "source": "https://github.com/liberusoftware/module-theme-support/tree/1.4.2",
+                "source": "https://github.com/liberusoftware/module-theme-support/tree/v1.4.3",
                 "issues": "https://github.com/liberusoftware/module-theme-support/issues"
             },
-            "time": "2026-08-07T14:25:46+00:00"
+            "time": "2026-08-24T17:42:47+00:00"
         },
         {
             "name": "liberusoftware/theme-support-livewire",
@@ -10281,10 +10840,6 @@
                 "MIT"
             ],
             "description": "Signed filtered webhook endpoints, durable delivery attempts, retry, replay, and secret rotation.",
-            "support": {
-                "source": "https://github.com/liberusoftware/module-webhooks/tree/1.4.1",
-                "issues": "https://github.com/liberusoftware/module-webhooks/issues"
-            },
             "time": "2026-08-07T14:25:58+00:00"
         },
         {
@@ -18608,23 +19163,23 @@
         },
         {
             "name": "vlucas/phpdotenv",
-            "version": "v5.6.4",
+            "version": "v5.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "416df702837983f8d5ff48c9c3fee4f5f57b980b"
+                "reference": "301c07936b16d88628b126b01d082ba153cf4c40"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/416df702837983f8d5ff48c9c3fee4f5f57b980b",
-                "reference": "416df702837983f8d5ff48c9c3fee4f5f57b980b",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/301c07936b16d88628b126b01d082ba153cf4c40",
+                "reference": "301c07936b16d88628b126b01d082ba153cf4c40",
                 "shasum": ""
             },
             "require": {
                 "ext-pcre": "*",
-                "graham-campbell/result-type": "^1.1.4",
+                "graham-campbell/result-type": "^1.2",
                 "php": "^7.2.5 || ^8.0",
-                "phpoption/phpoption": "^1.9.5",
+                "phpoption/phpoption": "^1.10",
                 "symfony/polyfill-ctype": "^1.26",
                 "symfony/polyfill-mbstring": "^1.26",
                 "symfony/polyfill-php80": "^1.26"
@@ -18668,7 +19223,7 @@
                     "homepage": "https://github.com/vlucas"
                 }
             ],
-            "description": "Loads environment variables from `.env` to `getenv()`, `$_ENV` and `$_SERVER` automagically.",
+            "description": "Loads environment variables from `.env` to `$_ENV` and `$_SERVER` automagically, and optionally to `getenv()`.",
             "keywords": [
                 "dotenv",
                 "env",
@@ -18676,7 +19231,7 @@
             ],
             "support": {
                 "issues": "https://github.com/vlucas/phpdotenv/issues",
-                "source": "https://github.com/vlucas/phpdotenv/tree/v5.6.4"
+                "source": "https://github.com/vlucas/phpdotenv/tree/v5.7.0"
             },
             "funding": [
                 {
@@ -18688,7 +19243,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-07-06T19:11:50+00:00"
+            "time": "2026-08-24T18:07:49+00:00"
         },
         {
             "name": "voku/portable-ascii",

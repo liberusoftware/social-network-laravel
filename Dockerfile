@@ -19,6 +19,11 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 # Copy composer files
 COPY composer.json composer.lock ./
 
+# The lockfile includes local path repositories for the application modules and
+# themes. They must be present in this dependency stage before Composer runs.
+COPY modules ./modules
+COPY themes ./themes
+
 # Install composer dependencies (no autoloader yet, will optimize in final stage)
 RUN composer install \
     --no-dev \
@@ -168,4 +173,3 @@ EXPOSE 8080
 ENTRYPOINT ["start-container"]
 
 HEALTHCHECK --start-period=5s --interval=2s --timeout=5s --retries=8 CMD php artisan octane:status || exit 1
-

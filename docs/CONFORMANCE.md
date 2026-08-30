@@ -1,11 +1,11 @@
 # Conformance spec and migration plan
 
-How `boilerplate-laravel` becomes conformant with
+How `social-network-laravel` becomes conformant with
 [liberusoftware/documentation](https://github.com/liberusoftware/documentation), whose
 `architecture/MODULES.md` is declared source of truth.
 
 Produced by the wayfinder map
-[Wayfinder: conform boilerplate-laravel to the Liberu documentation standards](https://github.com/liberusoftware/boilerplate-laravel/issues/612).
+[Wayfinder: conform social-network-laravel to the Liberu documentation standards](https://github.com/liberusoftware/social-network-laravel/issues/612).
 Every decision below links to the ticket holding its reasoning. **This document plans; it changes nothing.**
 
 Section references are to `architecture/MODULES.md` unless stated.
@@ -49,7 +49,7 @@ installed module files in a consuming application; changes flow module repo → 
 
 **Enforced by:** the §6.2 clean-install zero-diff check in the host's `install.yml`.
 
-**Authoring afterwards** — [decided in #633](https://github.com/liberusoftware/boilerplate-laravel/issues/633).
+**Authoring afterwards** — [decided in #633](https://github.com/liberusoftware/social-network-laravel/issues/633).
 A package is edited in a clone at `~/code/<repo>`, cloned on demand rather than kept as a permanent
 44-repo workspace; `modules/` is read-only Composer output. `publish-components` is replaced by
 `scripts/fleet`, which edits, tests, commits and pushes across N repositories but **never tags** — a
@@ -148,8 +148,8 @@ Package-level renames in §3.3 still apply — within the existing vendor.
 
 ### 3.3 Package naming
 
-[Does every foundation package take a -core suffix?](https://github.com/liberusoftware/boilerplate-laravel/issues/614) ·
-[Where does the foundation-filament umbrella split?](https://github.com/liberusoftware/boilerplate-laravel/issues/616)
+[Does every foundation package take a -core suffix?](https://github.com/liberusoftware/social-network-laravel/issues/614) ·
+[Where does the foundation-filament umbrella split?](https://github.com/liberusoftware/social-network-laravel/issues/616)
 
 **`-core` marks provider-neutrality, and only where a sibling provider adapter ships today.**
 Not "core of the application". An adapter must exist, not merely a provider-shaped contract — §4
@@ -195,8 +195,8 @@ checkable, the same reasoning that stripped `application-core`'s suffix.
 
 ### 3.4 Scope: what may live here
 
-[Where do the out-of-scope blog and messaging packages land?](https://github.com/liberusoftware/boilerplate-laravel/issues/613) ·
-[Is each manifest's section 5 category correct?](https://github.com/liberusoftware/boilerplate-laravel/issues/617)
+[Where do the out-of-scope blog and messaging packages land?](https://github.com/liberusoftware/social-network-laravel/issues/613) ·
+[Is each manifest's section 5 category correct?](https://github.com/liberusoftware/social-network-laravel/issues/617)
 
 **`BOILERPLATE.md` is authoritative.** Six packages leave, each to its own repository — none deleted, none merged:
 
@@ -212,7 +212,7 @@ checkable, the same reasoning that stripped `application-core`'s suffix.
 
 ### 3.5 Namespaces
 
-[Does the Liberu\Foundation namespace root survive?](https://github.com/liberusoftware/boilerplate-laravel/issues/625)
+[Does the Liberu\Foundation namespace root survive?](https://github.com/liberusoftware/social-network-laravel/issues/625)
 
 **`Liberu\Foundation\*` and `Liberu\Themes\*` survive.** §9's `Liberu\{Domain}\{Capability}` admits
 two readings; `{Domain}` is the **package family**, so foundation packages are already correct and
@@ -243,8 +243,8 @@ hardcoded `default_enabled: false`, with an architecture rule enforcing the inve
 
 ### 3.7 Test bootstrap
 
-[What does liberu/package-testbench own?](https://github.com/liberusoftware/boilerplate-laravel/issues/615) ·
-[Do contract packages get tests and CI?](https://github.com/liberusoftware/boilerplate-laravel/issues/626)
+[What does liberu/package-testbench own?](https://github.com/liberusoftware/social-network-laravel/issues/615) ·
+[Do contract packages get tests and CI?](https://github.com/liberusoftware/social-network-laravel/issues/626)
 
 **`liberusoftware/package-testbench` is authored** and owns exactly four things:
 
@@ -264,7 +264,7 @@ behaviours break all 40 packages at once and no boundary assertion covers them.
 
 ### 3.8 Architecture rules: 12 → 6
 
-[Rewrite the architecture rule set](https://github.com/liberusoftware/boilerplate-laravel/issues/623)
+[Rewrite the architecture rule set](https://github.com/liberusoftware/social-network-laravel/issues/623)
 
 **A rule lives where it can be acted on.** A host failure the host cannot fix is a bad rule.
 
@@ -284,7 +284,7 @@ prototype showed a hardcoded prefix failing 43 packages under one vendor and pas
 
 ### 3.9 CI
 
-[Which CI workflow set does a package repo need?](https://github.com/liberusoftware/boilerplate-laravel/issues/621)
+[Which CI workflow set does a package repo need?](https://github.com/liberusoftware/social-network-laravel/issues/621)
 
 **Package repos get the §7 three** — `tests.yml`, `install.yml`, `compatibility.yml` — as thin
 callers of **reusable workflows in `liberusoftware/.github`**. (Three separate workflow files with
@@ -298,7 +298,7 @@ put the §6.2 zero-diff check in `install.yml`. `deploy-staging.yml` is not adde
 
 ### 3.10 Coverage
 
-[Measure per-package coverage](https://github.com/liberusoftware/boilerplate-laravel/issues/618)
+[Measure per-package coverage](https://github.com/liberusoftware/social-network-laravel/issues/618)
 
 Pre-migration baseline: fleet **15.1%** (193/1281 lines), median package **12.82%**, **4 Filament
 packages at 0%**, 26 of 40 under 15%.
@@ -697,7 +697,7 @@ packages for carrying a field they are required to carry.
 
 ## 5. Migration sequence
 
-[Sequence the package migration](https://github.com/liberusoftware/boilerplate-laravel/issues/622)
+[Sequence the package migration](https://github.com/liberusoftware/social-network-laravel/issues/622)
 
 **Governing principle: do every cross-cutting change while it is still one atomic commit.** In the
 monorepo a change touching 40 packages is one diff and one green run; after the flip it is 40
@@ -780,10 +780,10 @@ It turned out not to be a conflict between the standard and this repo at all. `P
 mandated `liberusoftware/` in two places, so the standards repo disagreed with **itself**; two of the
 64 named packages that only exist under `liberusoftware/`, making §10.1 unfollowable as written. And
 `liberu/` was never available to adopt — Packagist protects a vendor once anything publishes under it,
-and `liberu/laravel-gramps-xml` belongs to another account ([#627](https://github.com/liberusoftware/boilerplate-laravel/issues/627)).
+and `liberu/laravel-gramps-xml` belongs to another account ([#627](https://github.com/liberusoftware/social-network-laravel/issues/627)).
 
 ## 7. Evidence
 
-- Prototype: branch [`prototype/package-testbench`](https://github.com/liberusoftware/boilerplate-laravel/tree/prototype/package-testbench) — throwaway, do not merge.
-- Coverage baseline and per-package table: [Measure per-package coverage](https://github.com/liberusoftware/boilerplate-laravel/issues/618).
-- All decisions and their reasoning: [the map](https://github.com/liberusoftware/boilerplate-laravel/issues/612).
+- Prototype: branch [`prototype/package-testbench`](https://github.com/liberusoftware/social-network-laravel/tree/prototype/package-testbench) — throwaway, do not merge.
+- Coverage baseline and per-package table: [Measure per-package coverage](https://github.com/liberusoftware/social-network-laravel/issues/618).
+- All decisions and their reasoning: [the map](https://github.com/liberusoftware/social-network-laravel/issues/612).

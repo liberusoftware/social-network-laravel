@@ -6,6 +6,7 @@
   "require": {
     "php": "^8.5",
     "illuminate/database": "^13.0",
+    "illuminate/http": "^13.0",
     "illuminate/support": "^13.0",
     "liberusoftware/module-manager": "^1.0"
   },

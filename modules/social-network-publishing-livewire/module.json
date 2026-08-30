@@ -16,7 +16,17 @@
   },
   "presentation": {
     "livewire": [
-      "social-publishing-composer"
+      "composer",
+      "posts",
+      "articles",
+      "drafts",
+      "audiences",
+      "edits",
+      "mentions",
+      "hashtags",
+      "polls",
+      "links",
+      "schedules"
     ]
   },
   "capabilities": [
@@ -25,6 +35,11 @@
   "default_enabled": true,
   "features": [
     "Draft composition",
+    "Post and article composition",
+    "Audience selection",
+    "Edit and enrichment surfaces",
+    "Poll and link surfaces",
+    "Scheduling surface",
     "Validation feedback"
   ]
 }

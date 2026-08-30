@@ -43,7 +43,7 @@ composer.phar
 .rr.yaml
 
 # stray sqlite artifact from artisan/tinker runs
-/boilerplate-laravel
+/social-network-laravel
 docs/superpowers
 .superpowers
 
