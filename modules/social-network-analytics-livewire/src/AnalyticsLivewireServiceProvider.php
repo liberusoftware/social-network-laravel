@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Liberu\SocialNetwork\Analytics\Livewire;
 
 use Illuminate\Support\ServiceProvider;
-use Livewire\Livewire;
 use Liberu\SocialNetwork\Analytics\Livewire\Components\Dashboard;
+use Livewire\Livewire;
 
 final class AnalyticsLivewireServiceProvider extends ServiceProvider
 {

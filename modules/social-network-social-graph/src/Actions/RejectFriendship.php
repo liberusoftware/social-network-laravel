@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Liberu\SocialNetwork\SocialGraph\Actions;
 
 use Illuminate\Support\Facades\Gate;
-use Illuminate\Support\Facades\DB;
 use Liberu\SocialNetwork\Profiles\Models\Profile;
 use Liberu\SocialNetwork\SocialGraph\Models\Relationship;
 

@@ -27,6 +27,7 @@ final class CommunitiesController extends Controller
     public function index(Request $request, GetProfile $get, ListCommunities $list): JsonResponse
     {
         $data = $request->validate(['limit' => ['sometimes', 'integer', 'min:1', 'max:100']]);
+
         return response()->json(['data' => $list->handle($get->forUser($request->user()->getAuthIdentifier()), $data['limit'] ?? 25)->map(fn (Community $c): array => $this->resource($c))->values()]);
     }
 
@@ -41,6 +42,7 @@ final class CommunitiesController extends Controller
     public function leave(string $community, Request $request, GetProfile $get, LeaveCommunity $leave): JsonResponse
     {
         $leave->handle($get->forUser($request->user()->getAuthIdentifier()), Community::query()->findOrFail($community));
+
         return response()->json(status: 204);
     }
 

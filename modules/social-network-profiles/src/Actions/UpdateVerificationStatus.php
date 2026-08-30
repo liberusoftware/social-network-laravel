@@ -23,9 +23,11 @@ final readonly class UpdateVerificationStatus
         }
         $updated = DB::transaction(function () use ($profile, $status): Profile {
             $profile->forceFill(['verification_status' => $status])->save();
+
             return $profile->refresh();
         });
         $this->events->dispatch(new ProfileVerificationUpdated($updated, $status));
+
         return $updated;
     }
 }

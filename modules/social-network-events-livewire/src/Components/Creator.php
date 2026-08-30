@@ -1,3 +1,32 @@
 <?php
+
 declare(strict_types=1);
-namespace Liberu\SocialNetwork\Events\Livewire\Components; use Livewire\Component; use Liberu\SocialNetwork\Events\Actions\CreateEvent; use Liberu\SocialNetwork\Profiles\Actions\GetProfile; final class Creator extends Component { public string $title=''; public string $description=''; public string $startsAt=''; public function save(GetProfile $get,CreateEvent $create): void { abort_unless(auth()->check(),401); $this->validate(['title'=>['required','max:200'],'description'=>['nullable','max:20000'],'startsAt'=>['required','date']]); $create->handle($get->forUser(auth()->id()),['title'=>$this->title,'description'=>$this->description,'starts_at'=>$this->startsAt]); $this->reset(); $this->dispatch('event-created'); } public function render(): mixed { return view('social-network-events-livewire::livewire.creator'); } }
+
+namespace Liberu\SocialNetwork\Events\Livewire\Components;
+
+use Liberu\SocialNetwork\Events\Actions\CreateEvent;
+use Liberu\SocialNetwork\Profiles\Actions\GetProfile;
+use Livewire\Component;
+
+final class Creator extends Component
+{
+    public string $title = '';
+
+    public string $description = '';
+
+    public string $startsAt = '';
+
+    public function save(GetProfile $get, CreateEvent $create): void
+    {
+        abort_unless(auth()->check(), 401);
+        $this->validate(['title' => ['required', 'max:200'], 'description' => ['nullable', 'max:20000'], 'startsAt' => ['required', 'date']]);
+        $create->handle($get->forUser(auth()->id()), ['title' => $this->title, 'description' => $this->description, 'starts_at' => $this->startsAt]);
+        $this->reset();
+        $this->dispatch('event-created');
+    }
+
+    public function render(): mixed
+    {
+        return view('social-network-events-livewire::livewire.creator');
+    }
+}

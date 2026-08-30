@@ -9,5 +9,6 @@ use Liberu\SocialNetwork\Profiles\Models\Profile;
 interface DiscoveryAuthorizer
 {
     public function search(Profile $viewer): void;
+
     public function index(Profile $owner): void;
 }

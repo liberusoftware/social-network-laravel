@@ -28,5 +28,4 @@ final class Relationships extends Page
             'visibility' => $relationship->visibility,
         ])->all();
     }
-
 }

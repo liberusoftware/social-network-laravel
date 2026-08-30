@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Liberu\SocialNetwork\Notifications\Filament\Pages;
 
 use Filament\Pages\Page;
-use Liberu\SocialNetwork\Profiles\Actions\GetProfile;
 use Liberu\SocialNetwork\Notifications\Models\SocialNotification;
+use Liberu\SocialNetwork\Profiles\Actions\GetProfile;
 
 final class Notifications extends Page
 {
@@ -19,6 +19,7 @@ final class Notifications extends Page
     public function notifications(GetProfile $get): mixed
     {
         abort_unless(auth()->check(), 404);
+
         return SocialNotification::query()->where('profile_id', $get->forUser(auth()->id())->getKey())->latest()->limit(50)->get();
     }
 }

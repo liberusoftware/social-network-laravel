@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Liberu\SocialNetwork\Analytics\Livewire\Components;
 
-use Livewire\Component;
 use Liberu\SocialNetwork\Analytics\Actions\GetMetrics;
+use Livewire\Component;
 
 final class Dashboard extends Component
 {

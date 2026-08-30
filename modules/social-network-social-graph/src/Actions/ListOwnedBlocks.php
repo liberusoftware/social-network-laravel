@@ -17,6 +17,7 @@ final readonly class ListOwnedBlocks
     public function handle(Profile $owner): Collection
     {
         $this->authorizer->list($owner);
+
         return Block::query()->where('source_profile_id', $owner->getKey())->latest()->get();
     }
 }

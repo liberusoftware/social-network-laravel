@@ -25,14 +25,17 @@ final readonly class UpdateLifecycleState
             $profile->forceFill(['lifecycle_state' => $state])->save();
             if ($state === 'deleted' && ! $profile->trashed()) {
                 $profile->delete();
+
                 return $profile;
             }
             if ($state !== 'deleted' && $profile->trashed()) {
                 $profile->restore();
             }
+
             return $profile->refresh();
         });
         $this->events->dispatch(new ProfileLifecycleUpdated($updated, $state));
+
         return $updated;
     }
 }

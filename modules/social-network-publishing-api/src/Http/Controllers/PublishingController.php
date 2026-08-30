@@ -37,6 +37,7 @@ final class PublishingController extends Controller
     public function index(Request $request, GetProfile $get, ListPublications $list): JsonResponse
     {
         $data = $request->validate(['limit' => ['sometimes', 'integer', 'min:1', 'max:100']]);
+
         return response()->json(['data' => $list->handle($get->forUser($request->user()->getAuthIdentifier()), $data['limit'] ?? 25)->map(fn (Publication $publication): array => $this->resource($publication))->values()]);
     }
 
@@ -44,6 +45,7 @@ final class PublishingController extends Controller
     {
         $item = $list->handle($get->forUser($request->user()->getAuthIdentifier()), 100)->firstWhere('id', $publication);
         abort_unless($item !== null, 404);
+
         return response()->json(['data' => $this->resource($item)]);
     }
 
@@ -51,12 +53,14 @@ final class PublishingController extends Controller
     {
         $data = $request->validate(['kind' => ['sometimes', 'in:post,article'], 'audience' => ['sometimes', 'in:public,followers,private'], 'title' => ['sometimes', 'nullable', 'string', 'max:240'], 'body' => ['sometimes', 'nullable', 'string', 'max:100000'], 'metadata' => ['sometimes', 'array'], 'scheduled_at' => ['sometimes', 'nullable', 'date']]);
         $item = $update->handle($get->forUser($request->user()->getAuthIdentifier()), Publication::query()->findOrFail($publication), $data);
+
         return response()->json(['data' => $this->resource($item)]);
     }
 
     public function destroy(string $publication, Request $request, GetProfile $get, DeletePublication $delete): JsonResponse
     {
         $delete->handle($get->forUser($request->user()->getAuthIdentifier()), Publication::query()->findOrFail($publication));
+
         return response()->json(status: 204);
     }
 
@@ -64,6 +68,7 @@ final class PublishingController extends Controller
     {
         $data = $request->validate(['mentions' => ['sometimes', 'array', 'max:100'], 'mentions.*' => ['string', 'uuid'], 'hashtags' => ['sometimes', 'array', 'max:50'], 'hashtags.*' => ['string', 'max:80'], 'links' => ['sometimes', 'array', 'max:20'], 'links.*.url' => ['required_with:links', 'url', 'max:2048'], 'poll' => ['sometimes', 'array'], 'poll.options' => ['required_with:poll', 'array', 'min:2', 'max:20'], 'poll.options.*' => ['string', 'max:200'], 'poll.closes_at' => ['nullable', 'date']]);
         $item = $update->handle($get->forUser($request->user()->getAuthIdentifier()), Publication::query()->findOrFail($publication), $data);
+
         return response()->json(['data' => $this->resource($item)]);
     }
 

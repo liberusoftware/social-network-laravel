@@ -7,10 +7,10 @@ namespace Liberu\SocialNetwork\Moderation\Api\Http\Controllers;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Validation\Rule;
 use Liberu\SocialNetwork\Moderation\Actions\CreateReport;
 use Liberu\SocialNetwork\Moderation\Actions\DecideReport;
 use Liberu\SocialNetwork\Moderation\Models\ModerationReport;
-use Illuminate\Validation\Rule;
 use Liberu\SocialNetwork\Profiles\Actions\GetProfile;
 
 final class ModerationController extends Controller
@@ -27,6 +27,7 @@ final class ModerationController extends Controller
     {
         $data = $request->validate(['action' => ['required', Rule::in((array) config('social-network-moderation.actions'))], 'reason' => ['nullable', 'string', 'max:5000'], 'evidence' => ['sometimes', 'array', 'max:64']]);
         $decision = $decide->handle($get->forUser($request->user()->getAuthIdentifier()), ModerationReport::query()->findOrFail($report), $data['action'], $data['reason'] ?? null, $data['evidence'] ?? []);
+
         return response()->json(['data' => ['id' => $decision->getKey(), 'report_id' => $decision->report_id, 'action' => $decision->action]], 201);
     }
 }

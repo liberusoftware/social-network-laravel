@@ -11,7 +11,9 @@ use Liberu\SocialNetwork\SocialGraph\Actions\SuggestProfiles;
 final class Suggestions extends Page
 {
     protected string $view = 'social-network-social-graph-filament::pages.suggestions';
+
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-sparkles';
+
     protected static string|\UnitEnum|null $navigationGroup = 'Social Network';
 
     /** @var array<int, array{id: string, handle: string}> */

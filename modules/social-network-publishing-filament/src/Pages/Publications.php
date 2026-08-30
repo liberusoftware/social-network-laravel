@@ -19,6 +19,7 @@ final class Publications extends Page
     public function publications(GetProfile $get): mixed
     {
         abort_unless(auth()->check(), 404);
+
         return Publication::query()->where('author_profile_id', $get->forUser(auth()->id())->getKey())->latest()->limit(50)->get();
     }
 }
