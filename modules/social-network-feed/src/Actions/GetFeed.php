@@ -20,12 +20,18 @@ final readonly class GetFeed
         $limit = min(max($limit, 1), (int) config('social-network-feed.max_page_size'));
         $controls = DB::table('social_feed_controls')->where('profile_id', $viewer->getKey())->first();
         $mode = $controls?->mode ?? 'ranked';
-        $filters = $controls?->filters ? json_decode($controls->filters, true) : [];
-        $hidden = $controls?->hidden_items ? json_decode($controls->hidden_items, true) : [];
+        $filters = $controls?->filters ? json_decode($controls->filters, true, 512, JSON_THROW_ON_ERROR) : [];
+        $hidden = $controls?->hidden_items ? json_decode($controls->hidden_items, true, 512, JSON_THROW_ON_ERROR) : [];
+        $filters = is_array($filters) ? array_values(array_filter($filters, 'is_string')) : [];
+        $hidden = is_array($hidden) ? array_values(array_filter($hidden, 'is_string')) : [];
         $query = FeedEntry::query()->where('viewer_profile_id', $viewer->getKey())->where(function ($q): void {
             $q->whereNull('visible_at')->orWhere('visible_at', '<=', now());
         })->when($filters !== [], fn ($q) => $q->whereIn('item_type', $filters))->when($hidden !== [], fn ($q) => $q->whereNotIn('item_id', $hidden));
-        if ($mode === 'chronological') $query->orderByDesc('created_at'); else $query->orderByDesc('rank');
+        if ($mode === 'chronological') {
+            $query->orderByDesc('created_at');
+        } else {
+            $query->orderByDesc('rank');
+        }
         $query->orderByDesc('id')->limit($limit);
         if ($after !== null) {
             $query->where('id', '<', $after);

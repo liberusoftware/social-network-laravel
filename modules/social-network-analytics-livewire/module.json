@@ -1,1 +1,13 @@
-{"name":"social-network-analytics-livewire","display_name":"Social Network Analytics Livewire","description":"Livewire metrics dashboard adapter.","version":"0.1.0","category":"presentation","provider":"Liberu\\SocialNetwork\\Analytics\\Livewire\\AnalyticsLivewireServiceProvider","requires":{"php":"^8.5","laravel":"^13.0","packages":{"liberusoftware/module-social-network-analytics":"*"}},"capabilities":["ui.analytics.dashboard"],"features":["views"],"default_enabled":true}
+{
+  "name": "social-network-analytics-livewire",
+  "display_name": "Social Network Analytics Livewire",
+  "description": "Livewire metrics dashboard adapter.",
+  "version": "0.1.0",
+  "category": "presentation",
+  "provider": "Liberu\\SocialNetwork\\Analytics\\Livewire\\AnalyticsLivewireServiceProvider",
+  "requires": {"php":"^8.5","laravel":"^13.0","packages":{"liberusoftware/module-social-network-analytics":"^0.1"}},
+  "presentation": {"livewire":["dashboard"]},
+  "capabilities": ["social-network.analytics.livewire"],
+  "features": ["metric dashboard", "bounded metric state", "authorized loading"],
+  "default_enabled": true
+}

@@ -15,7 +15,13 @@
   },
   "presentation": {
     "livewire": [
-      "social-core-settings"
+      "settings",
+      "network-settings",
+      "deployment-mode",
+      "terminology",
+      "feature-policy",
+      "shared-ids",
+      "events"
     ]
   },
   "capabilities": [

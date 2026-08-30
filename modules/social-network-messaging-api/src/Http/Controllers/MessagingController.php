@@ -7,11 +7,12 @@ namespace Liberu\SocialNetwork\Messaging\Api\Http\Controllers;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\DB;
 use Liberu\SocialNetwork\Messaging\Actions\AddReaction;
 use Liberu\SocialNetwork\Messaging\Actions\CreateConversation;
+use Liberu\SocialNetwork\Messaging\Actions\ListConversations;
 use Liberu\SocialNetwork\Messaging\Actions\MarkConversationRead;
 use Liberu\SocialNetwork\Messaging\Actions\RemoveReaction;
-use Liberu\SocialNetwork\Messaging\Actions\ListConversations;
 use Liberu\SocialNetwork\Messaging\Actions\SendMessage;
 use Liberu\SocialNetwork\Messaging\Events\UserTyping;
 use Liberu\SocialNetwork\Messaging\Models\Message;
@@ -44,12 +45,13 @@ final class MessagingController extends Controller
             'body' => ['nullable', 'string', 'max:10000'],
             'attachments' => ['sometimes', 'array', 'max:20'],
             'attachments.*' => ['array'],
+            'encrypted' => ['sometimes', 'boolean'],
         ]);
-        $message = $send->handle($get->forUser($request->user()->getAuthIdentifier()), $conversation, $data['body'] ?? '', $data['attachments'] ?? []);
+        $message = $send->handle($get->forUser($request->user()->getAuthIdentifier()), $conversation, $data['body'] ?? '', $data['attachments'] ?? [], (bool) ($data['encrypted'] ?? false));
 
         return response()->json(['data' => [
             'id' => $message->getKey(), 'type' => 'social-network-messages',
-            'conversation_id' => $message->conversation_id, 'body' => $message->body,
+            'conversation_id' => $message->conversation_id, 'body' => $message->displayBody(),
             'state' => $message->state, 'attachments' => $message->attachments,
         ]], 201);
     }
@@ -74,7 +76,7 @@ final class MessagingController extends Controller
     public function typing(string $conversation, Request $request, GetProfile $get): JsonResponse
     {
         $profile = $get->forUser($request->user()->getAuthIdentifier());
-        abort_unless(\Illuminate\Support\Facades\DB::table('social_conversation_members')->where(['conversation_id' => $conversation, 'profile_id' => $profile->getKey()])->exists(), 403);
+        abort_unless(DB::table('social_conversation_members')->where(['conversation_id' => $conversation, 'profile_id' => $profile->getKey()])->exists(), 403);
         broadcast(new UserTyping($conversation, (string) $profile->getKey()))->toOthers();
 
         return response()->json(['data' => ['conversation_id' => $conversation, 'profile_id' => $profile->getKey()]]);

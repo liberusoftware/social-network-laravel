@@ -20,6 +20,9 @@
   "default_enabled": true,
   "features": [
     "Report creation",
-    "Moderation queue"
+    "Duplicate report protection",
+    "Moderation queue",
+    "Auditable decisions",
+    "Lifecycle guards"
   ]
 }

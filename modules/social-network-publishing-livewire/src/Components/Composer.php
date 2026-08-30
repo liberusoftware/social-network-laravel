@@ -8,7 +8,7 @@ use Liberu\SocialNetwork\Profiles\Actions\GetProfile;
 use Liberu\SocialNetwork\Publishing\Actions\CreatePublication;
 use Livewire\Component;
 
-final class Composer extends Component
+class Composer extends Component
 {
     public string $title = '';
 

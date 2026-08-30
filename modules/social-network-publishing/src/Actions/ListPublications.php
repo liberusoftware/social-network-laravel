@@ -13,6 +13,7 @@ final class ListPublications
     public function handle(Profile $viewer, int $limit = 25): Collection
     {
         $limit = max(1, min($limit, 100));
+
         return Publication::query()->where(function ($query) use ($viewer): void {
             $query->where('audience', 'public')
                 ->orWhere('author_profile_id', $viewer->getKey());

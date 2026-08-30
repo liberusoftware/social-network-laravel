@@ -12,6 +12,7 @@ use Livewire\Component;
 final class ListManager extends Component
 {
     public string $name = '';
+
     public string $visibility = 'private';
 
     /** @var array<int, array{id: string, name: string, visibility: string}> */
@@ -39,6 +40,7 @@ final class ListManager extends Component
     private function userId(): int|string
     {
         abort_unless(auth()->check(), 401);
+
         return auth()->id();
     }
 

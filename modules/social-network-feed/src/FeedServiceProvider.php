@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Liberu\SocialNetwork\Feed;
 
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Gate;
-use Liberu\SocialNetwork\Profiles\Models\Profile;
+use Illuminate\Support\ServiceProvider;
 use Liberu\SocialNetwork\Feed\Authorization\GateFeedAuthorizer;
 use Liberu\SocialNetwork\Feed\Contracts\FeedAuthorizer;
+use Liberu\SocialNetwork\Profiles\Models\Profile;
 
 final class FeedServiceProvider extends ServiceProvider
 {

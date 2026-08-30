@@ -7,10 +7,12 @@ namespace Liberu\SocialNetwork\Events\Api\Http\Controllers;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Liberu\SocialNetwork\Events\Actions\AddEventUpdate;
 use Liberu\SocialNetwork\Events\Actions\CreateEvent;
 use Liberu\SocialNetwork\Events\Actions\InviteProfile;
 use Liberu\SocialNetwork\Events\Actions\ListEvents;
 use Liberu\SocialNetwork\Events\Actions\PublishEvent;
+use Liberu\SocialNetwork\Events\Actions\ScheduleReminder;
 use Liberu\SocialNetwork\Events\Actions\SetAttendance;
 use Liberu\SocialNetwork\Events\Actions\UpdateEvent;
 use Liberu\SocialNetwork\Events\Models\Event;
@@ -87,6 +89,32 @@ final class EventsController extends Controller
         $set->handle($get->forUser($request->user()->getAuthIdentifier()), $event, $data['state']);
 
         return response()->json(['data' => ['event_id' => $event->getKey(), 'state' => $data['state']]]);
+    }
+
+    public function updateLog(Event $event, Request $request, GetProfile $get, AddEventUpdate $add): JsonResponse
+    {
+        $data = $request->validate(['body' => ['required', 'string', 'max:20000']]);
+        $update = $add->handle($get->forUser($request->user()->getAuthIdentifier()), $event, $data['body']);
+
+        return response()->json(['data' => [
+            'id' => $update->getKey(),
+            'type' => 'social-network-event-updates',
+            'event_id' => $update->event_id,
+            'body' => $update->body,
+        ]], 201);
+    }
+
+    public function reminder(Event $event, Request $request, GetProfile $get, ScheduleReminder $schedule): JsonResponse
+    {
+        $data = $request->validate(['send_at' => ['required', 'date']]);
+        $reminder = $schedule->handle($get->forUser($request->user()->getAuthIdentifier()), $event, $data['send_at']);
+
+        return response()->json(['data' => [
+            'id' => $reminder->getKey(),
+            'type' => 'social-network-event-reminders',
+            'event_id' => $reminder->event_id,
+            'send_at' => $reminder->send_at?->toISOString(),
+        ]], 201);
     }
 
     private function resource(Event $event): array

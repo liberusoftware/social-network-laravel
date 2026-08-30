@@ -21,6 +21,7 @@ final readonly class InviteProfile
         if ((string) $event->owner_profile_id === (string) $invitee->getKey()) {
             throw new InvalidArgumentException('An event owner cannot be invited.');
         }
+
         return DB::transaction(fn (): Invitation => Invitation::query()->updateOrCreate(
             ['event_id' => $event->getKey(), 'profile_id' => $invitee->getKey()],
             ['state' => 'pending'],

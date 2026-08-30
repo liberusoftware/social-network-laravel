@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Liberu\SocialNetwork\Engagement;
 
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Gate;
-use Liberu\SocialNetwork\Profiles\Models\Profile;
+use Illuminate\Support\ServiceProvider;
 use Liberu\SocialNetwork\Engagement\Authorization\GateEngagementAuthorizer;
 use Liberu\SocialNetwork\Engagement\Contracts\EngagementAuthorizer;
+use Liberu\SocialNetwork\Profiles\Models\Profile;
 
 final class EngagementServiceProvider extends ServiceProvider
 {

@@ -1,1 +1,20 @@
-{"name":"social-network-analytics","display_name":"Social Network Analytics","description":"Privacy-governed growth, engagement, retention, health, and moderation metrics.","version":"0.1.0","category":"product","provider":"Liberu\\SocialNetwork\\Analytics\\AnalyticsServiceProvider","requires":{"packages":[],"modules":[]},"capabilities":["analytics.growth","analytics.engagement","analytics.retention","analytics.moderation"],"features":["config","migrations"],"default_enabled":true}
+{
+  "name": "social-network-analytics",
+  "display_name": "Social Network Analytics",
+  "description": "Privacy-governed growth, engagement, retention, health, delivery, and moderation metrics.",
+  "version": "0.1.0",
+  "category": "product",
+  "provider": "Liberu\\SocialNetwork\\Analytics\\AnalyticsServiceProvider",
+  "requires": {"packages": [], "modules": []},
+  "capabilities": [
+    "analytics.growth",
+    "analytics.engagement",
+    "analytics.retention",
+    "analytics.health",
+    "analytics.delivery",
+    "analytics.moderation",
+    "analytics.privacy-governed-insights"
+  ],
+  "features": ["metric events", "privacy redaction", "cohort snapshots", "retention windows"],
+  "default_enabled": true
+}

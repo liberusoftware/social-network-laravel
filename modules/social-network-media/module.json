@@ -10,7 +10,8 @@
     "php": "^8.5",
     "laravel": "^13.0",
     "packages": {
-      "liberusoftware/module-social-network-profiles": "^0.1"
+      "liberusoftware/module-social-network-profiles": "^0.1",
+      "liberusoftware/module-social-network-social-graph": "^0.1"
     }
   },
   "capabilities": [
@@ -26,6 +27,7 @@
     "Captions",
     "Rights",
     "Delivery"
+    ,"Albums with privacy controls"
   ],
   "default_enabled": true
 }

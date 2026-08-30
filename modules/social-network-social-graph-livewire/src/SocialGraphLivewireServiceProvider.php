@@ -13,8 +13,8 @@ final class SocialGraphLivewireServiceProvider extends ServiceProvider
     {
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'social-network-social-graph-livewire');
         Livewire::component('module-social-network-social-graph::follow-profile', Components\FollowProfile::class);
-        Livewire::component('module-social-network-social-graph::follow-friend-models', Components\FollowProfile::class);
-        Livewire::component('module-social-network-social-graph::requests', Components\FollowProfile::class);
+        Livewire::component('module-social-network-social-graph::follow-friend-models', Components\FollowFriendModels::class);
+        Livewire::component('module-social-network-social-graph::requests', Components\Requests::class);
         Livewire::component('module-social-network-social-graph::block-profile', Components\BlockProfile::class);
         Livewire::component('module-social-network-social-graph::lists', Components\ListManager::class);
         Livewire::component('module-social-network-social-graph::suggestions', Components\Suggestions::class);

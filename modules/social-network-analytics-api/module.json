@@ -1,1 +1,12 @@
-{"name":"social-network-analytics-api","display_name":"Social Network Analytics API","description":"Privacy-filtered metric query endpoints.","version":"0.1.0","category":"product","provider":"Liberu\\SocialNetwork\\Analytics\\Api\\AnalyticsApiServiceProvider","requires":{"php":"^8.5","laravel":"^13.0","packages":{"liberusoftware/module-social-network-analytics":"*"}},"capabilities":["api.analytics.metrics"],"features":["routes","openapi"],"default_enabled":true}
+{
+  "name": "social-network-analytics-api",
+  "display_name": "Social Network Analytics API",
+  "description": "Privacy-filtered metric query endpoints.",
+  "version": "0.1.0",
+  "category": "presentation",
+  "provider": "Liberu\\SocialNetwork\\Analytics\\Api\\AnalyticsApiServiceProvider",
+  "requires": {"php":"^8.5","laravel":"^13.0","packages":{"liberusoftware/module-social-network-analytics":"^0.1"}},
+  "capabilities": ["social-network.analytics.api"],
+  "features": ["authenticated metric reads", "bounded queries", "explicit resource serialization", "OpenAPI contract"],
+  "default_enabled": true
+}

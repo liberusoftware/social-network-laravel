@@ -9,7 +9,7 @@ use Liberu\SocialNetwork\SocialCore\Actions\GetSocialNetworkSettings;
 use Liberu\SocialNetwork\SocialCore\Actions\UpdateSocialNetworkSettings;
 use Livewire\Component;
 
-final class SocialCoreSettings extends Component
+class SocialCoreSettings extends Component
 {
     public string $deploymentMode = 'hosted';
 
@@ -66,7 +66,6 @@ final class SocialCoreSettings extends Component
         return $teamId;
     }
 
-    /** @param mixed $value */
     private function json(mixed $value): string
     {
         return json_encode($value, JSON_PRETTY_PRINT | JSON_THROW_ON_ERROR);
@@ -75,7 +74,12 @@ final class SocialCoreSettings extends Component
     /** @return array<string, mixed> */
     private function decode(string $value): array
     {
-        $decoded = json_decode($value, true, 4, JSON_THROW_ON_ERROR);
+        $decoded = json_decode(
+            $value,
+            true,
+            (int) config('social-network-social-core.maximum_payload_depth', 4),
+            JSON_THROW_ON_ERROR,
+        );
 
         abort_unless(is_array($decoded), 422, 'Social Core values must be JSON objects.');
 

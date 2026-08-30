@@ -23,6 +23,7 @@ final readonly class PublishEvent
         $event->update(['state' => 'published']);
         $event = $event->refresh();
         $this->events->dispatch(new EventPublished($event));
+
         return $event;
     }
 }

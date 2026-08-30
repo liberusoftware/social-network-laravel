@@ -12,6 +12,7 @@ use Livewire\Component;
 final class RelationshipVisibility extends Component
 {
     public string $relationshipId = '';
+
     public string $visibility = 'followers';
 
     public function save(GetProfile $get, UpdateRelationshipVisibility $update): void
@@ -30,6 +31,7 @@ final class RelationshipVisibility extends Component
     private function userId(): int|string
     {
         abort_unless(auth()->check(), 401);
+
         return auth()->id();
     }
 }

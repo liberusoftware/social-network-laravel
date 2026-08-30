@@ -29,7 +29,7 @@ return new class() extends Migration
             $table->uuid('id')->primary();
             $table->foreignUuid('conversation_id')->constrained('social_conversations')->cascadeOnDelete();
             $table->foreignUuid('sender_profile_id')->constrained('social_profiles')->cascadeOnDelete();
-            $table->text('body');
+            $table->text('body')->nullable();
             $table->string('state', 16)->default('sent');
             $table->json('attachments')->nullable();
             $table->timestamps();

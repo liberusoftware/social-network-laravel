@@ -15,4 +15,6 @@ Route::prefix('api/v1/social-network/events')
         Route::post('/{event}/publish', [EventsController::class, 'publish'])->name('publish');
         Route::post('/{event}/invitations', [EventsController::class, 'invite'])->name('invite');
         Route::post('/{event}/attendance', [EventsController::class, 'attendance'])->name('attendance');
+        Route::post('/{event}/updates', [EventsController::class, 'updateLog'])->name('updates.store');
+        Route::post('/{event}/reminders', [EventsController::class, 'reminder'])->name('reminders.store');
     });

@@ -8,7 +8,7 @@ use Liberu\SocialNetwork\Profiles\Actions\GetProfile;
 use Liberu\SocialNetwork\SocialGraph\Actions\CreateRelationship;
 use Livewire\Component;
 
-final class FollowProfile extends Component
+class FollowProfile extends Component
 {
     public string $profileId = '';
 

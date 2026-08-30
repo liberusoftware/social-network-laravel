@@ -16,7 +16,13 @@
   },
   "presentation": {
     "livewire": [
-      "social-graph-follow"
+      "follow-profile",
+      "follow-friend-models",
+      "requests",
+      "block-profile",
+      "lists",
+      "suggestions",
+      "relationship-visibility"
     ]
   },
   "capabilities": [
@@ -25,6 +31,11 @@
   "default_enabled": true,
   "features": [
     "Follow interaction",
+    "Friend requests",
+    "Blocks",
+    "Lists",
+    "Suggestions",
+    "Relationship visibility",
     "Validation feedback"
   ]
 }

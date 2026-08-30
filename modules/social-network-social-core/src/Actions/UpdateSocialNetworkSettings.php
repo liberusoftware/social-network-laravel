@@ -22,7 +22,7 @@ final readonly class UpdateSocialNetworkSettings
     ) {}
 
     /**
-     * @param array<string, mixed> $attributes
+     * @param  array<string, mixed>  $attributes
      */
     public function handle(int|string $teamId, array $attributes, int|string|null $actorId = null): SocialNetworkSettings
     {
@@ -73,6 +73,28 @@ final readonly class UpdateSocialNetworkSettings
             if (is_array($attributes[$field] ?? null) && count($attributes[$field]) > (int) config('social-network-social-core.maximum_payload_keys', 64)) {
                 throw new InvalidArgumentException("The {$field} value contains too many entries.");
             }
+
+            if (array_key_exists($field, $attributes) && is_array($attributes[$field])) {
+                $this->assertDepth($attributes[$field], 1);
+            }
+        }
+    }
+
+    /** @param array<mixed> $value */
+    private function assertDepth(array $value, int $depth): void
+    {
+        $maximumDepth = (int) config('social-network-social-core.maximum_payload_depth', 4);
+
+        foreach ($value as $nested) {
+            if (! is_array($nested)) {
+                continue;
+            }
+
+            if ($depth >= $maximumDepth) {
+                throw new InvalidArgumentException('Social Core values exceed the maximum nesting depth.');
+            }
+
+            $this->assertDepth($nested, $depth + 1);
         }
     }
 }
