@@ -183,9 +183,8 @@
             "url": "https://github.com/liberusoftware/module-two-factor-authentication.git"
         },
         {
-            "type": "path",
-            "url": "modules/webhooks",
-            "options": {"symlink": false}
+            "type": "vcs",
+            "url": "https://github.com/liberusoftware/module-webhooks.git"
         },
         {
             "type": "vcs",
