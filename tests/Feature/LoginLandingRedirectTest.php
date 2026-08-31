@@ -35,5 +35,5 @@ it('sends a normal user to the app panel after login', function () {
 
     $this->actingAs($user)
         ->get('/dashboard')
-        ->assertRedirect(route('filament.app.pages.dashboard'));
+        ->assertRedirect(route('filament.app.pages.setup-account'));
 });
