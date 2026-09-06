@@ -36,6 +36,7 @@ final class PanelNavigation
             'Liberu\\SocialNetwork\\Profiles\\Filament\\Pages\\EditProfile' => 'Account & Team',
             'Liberu\\SocialNetwork\\Publishing\\Filament\\Pages\\Publications' => 'Create',
             'Liberu\\SocialNetwork\\SocialCore\\Filament\\Pages\\SocialCoreSettings' => 'Settings',
+            'Liberu\\Foundation\\SessionsDevicesFilament\\Pages\\AccountSecurity' => 'Account & Team',
             'Liberu\\SocialNetwork\\SocialGraph\\Filament\\Pages\\Blocks' => 'Discover',
             'Liberu\\SocialNetwork\\SocialGraph\\Filament\\Pages\\Lists' => 'Discover',
             'Liberu\\SocialNetwork\\SocialGraph\\Filament\\Pages\\Relationships' => 'Discover',

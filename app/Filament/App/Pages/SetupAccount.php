@@ -45,7 +45,7 @@ final class SetupAccount extends Page implements HasForms
 
     public static function canAccess(): bool
     {
-        return auth()->check() && auth()->user()->current_team_id !== null;
+        return auth()->check() && auth()->user()->ownedTeams()->exists();
     }
 
     public static function shouldRegisterNavigation(): bool
@@ -56,6 +56,9 @@ final class SetupAccount extends Page implements HasForms
     public function mount(): void
     {
         $user = auth()->user();
+        if ($user->current_team_id === null) {
+            $user->forceFill(['current_team_id' => $user->ownedTeams()->latest('teams.id')->value('teams.id')])->save();
+        }
         $team = Team::query()->findOrFail($user->current_team_id);
 
         $this->data = [

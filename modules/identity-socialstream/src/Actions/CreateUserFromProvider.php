@@ -56,14 +56,10 @@ class CreateUserFromProvider implements CreatesUserFromProvider
      */
     protected function createTeam(User $user): void
     {
-        $team = $user->ownedTeams()->save(Team::forceCreate([
+        $user->ownedTeams()->save(Team::forceCreate([
             'user_id' => $user->id,
             'name' => explode(' ', $user->name, 2)[0]."'s Team",
             'personal_team' => true,
         ]));
-
-        // Keep OAuth registration consistent with password registration so the
-        // new user can enter the account setup wizard immediately.
-        $user->forceFill(['current_team_id' => $team->getKey()])->save();
     }
 }
