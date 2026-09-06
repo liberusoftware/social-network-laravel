@@ -14,6 +14,7 @@ use Filament\Schemas\Components\Wizard\Step;
 use Filament\Schemas\Schema;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use JoelButcher\Socialstream\Providers;
 use Liberu\Foundation\Organizations\Models\Team;
 
 final class SetupAccount extends Page implements HasForms
@@ -24,7 +25,7 @@ final class SetupAccount extends Page implements HasForms
 
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-sparkles';
 
-    protected static string|\UnitEnum|null $navigationGroup = 'Account';
+    protected static string|\UnitEnum|null $navigationGroup = 'Account & Team';
 
     protected static ?string $navigationLabel = 'Get started';
 
@@ -38,6 +39,9 @@ final class SetupAccount extends Page implements HasForms
 
     /** @var list<string> */
     public array $connectedProviders = [];
+
+    /** @var list<array{id: string, label: string, configured: bool, connected: bool}> */
+    public array $providerStatus = [];
 
     public static function canAccess(): bool
     {
@@ -59,8 +63,19 @@ final class SetupAccount extends Page implements HasForms
             'team_name' => (string) $team->getAttribute('name'),
             'timezone' => $user->timezone ?? config('app.timezone', 'UTC'),
         ];
-        $this->providers = array_values(array_map('strval', (array) config('socialstream.providers', [])));
+        $this->providers = array_values(array_map(
+            static fn (mixed $provider): string => is_array($provider) ? (string) ($provider['id'] ?? '') : (string) $provider,
+            (array) config('socialstream.providers', []),
+        ));
+        $this->providers = array_values(array_filter($this->providers));
         $this->connectedProviders = $user->connectedAccounts()->pluck('provider')->map(fn ($provider): string => (string) $provider)->all();
+        $this->providerStatus = array_map(fn (string $provider): array => [
+            'id' => $provider,
+            'label' => Providers::name($provider),
+            'configured' => filled(config("services.{$provider}.client_id"))
+                && filled(config("services.{$provider}.client_secret")),
+            'connected' => in_array($provider, $this->connectedProviders, true),
+        ], $this->providers);
     }
 
     public function form(Schema $schema): Schema
@@ -71,7 +86,7 @@ final class SetupAccount extends Page implements HasForms
                     ->description('Make your profile feel like you.')
                     ->schema([
                         TextInput::make('name')->label('Display name')->required()->maxLength(255),
-                        TextInput::make('timezone')->label('Timezone')->required()->maxLength(64)->helperText('Use an IANA timezone such as Europe/London or America/New_York.'),
+                        TextInput::make('timezone')->label('Timezone')->required()->rules(['timezone'])->maxLength(64)->helperText('Use an IANA timezone such as Europe/London or America/New_York.'),
                     ]),
                 Step::make('Your team')
                     ->description('Give your workspace a clear identity.')
@@ -114,6 +129,6 @@ final class SetupAccount extends Page implements HasForms
 
     public function providerLabel(string $provider): string
     {
-        return Str::headline(str_replace('-', ' ', $provider));
+        return Providers::name($provider) ?: Str::headline(str_replace('-', ' ', $provider));
     }
 }

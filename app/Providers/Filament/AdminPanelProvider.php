@@ -20,6 +20,7 @@ use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\PreventRequestForgery;
 use Illuminate\Routing\Middleware\SubstituteBindings;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Liberu\Foundation\ApplicationCore\Http\Middleware\SecurityHeaders;
@@ -51,7 +52,8 @@ class AdminPanelProvider extends PanelProvider
                 'api-tokens' => MenuItem::make()
                     ->label('API tokens')
                     ->icon('heroicon-o-key')
-                    ->url(fn (): string => route('api-tokens.index')),
+                    ->url(fn (): string => Route::has('api-tokens.index') ? route('api-tokens.index') : route('filament.admin.pages.dashboard'))
+                    ->visible(fn (): bool => Route::has('api-tokens.index')),
             ])
             ->bootUsing(fn (Panel $panel) => app(PanelNavigation::class)->configure($panel))
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\Filament\Widgets')
