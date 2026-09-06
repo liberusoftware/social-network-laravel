@@ -20,6 +20,7 @@ use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\PreventRequestForgery;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
+use Illuminate\Support\Facades\Route;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Liberu\Foundation\ApplicationCore\Http\Middleware\SecurityHeaders;
 use Liberu\Foundation\Localization\Http\Middleware\SetLocale;
@@ -34,12 +35,12 @@ class AppPanelProvider extends PanelProvider
             ->colors(app(ThemeColors::class)->forSite())
             ->navigationGroups([
                 'Workspace',
-                'Explore',
-                'Publish',
-                'Engage',
+                'Discover',
+                'Create',
+                'Communicate',
                 'Moderation',
                 'Settings',
-                'Account',
+                'Account & Team',
             ])
             ->discoverResources(in: app_path('Filament/App/Resources'), for: 'App\Filament\App\Resources')
             ->discoverPages(in: app_path('Filament/App/Pages'), for: 'App\Filament\App\Pages')
@@ -50,7 +51,8 @@ class AppPanelProvider extends PanelProvider
                 'api-tokens' => MenuItem::make()
                     ->label('API tokens')
                     ->icon('heroicon-o-key')
-                    ->url(fn (): string => route('api-tokens.index')),
+                    ->url(fn (): string => Route::has('api-tokens.index') ? route('api-tokens.index') : route('filament.app.pages.setup-account'))
+                    ->visible(fn (): bool => Route::has('api-tokens.index')),
             ])
             ->bootUsing(fn (Panel $panel) => app(PanelNavigation::class)->configure($panel))
             ->discoverWidgets(in: app_path('Filament/App/Widgets'), for: 'App\Filament\App\Widgets')
