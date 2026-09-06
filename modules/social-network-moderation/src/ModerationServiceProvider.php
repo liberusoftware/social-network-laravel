@@ -26,6 +26,6 @@ final class ModerationServiceProvider extends ServiceProvider
             return (string) $reporter->user_id === (string) $user->getAuthIdentifier();
         });
 
-        Gate::define('social-network.moderation.decide', fn (object $user, Profile $actor): bool => $user->isAdmin());
+        Gate::define('social-network.moderation.decide', fn (object $user, Profile $actor): bool => (method_exists($user, 'isAdmin') && $user->isAdmin()) || (bool) ($user->is_admin ?? false));
     }
 }

@@ -8,16 +8,20 @@ use Liberu\SocialNetwork\Profiles\Actions\GetProfile;
 use Liberu\SocialNetwork\Publishing\Actions\CreatePublication;
 use Livewire\Component;
 
-final class Composer extends Component
+class Composer extends Component
 {
     public string $title = '';
 
     public string $body = '';
 
+    public string $kind = 'post';
+
+    public string $audience = 'public';
+
     public function save(GetProfile $get, CreatePublication $create): void
     {
-        $this->validate(['title' => ['nullable', 'max:240'], 'body' => ['required_without:title', 'nullable', 'max:100000']]);
-        $create->handle($get->forUser($this->userId()), ['title' => $this->title, 'body' => $this->body]);
+        $this->validate(['kind' => ['required', 'in:post,article'], 'audience' => ['required', 'in:public,followers,private'], 'title' => ['nullable', 'max:240'], 'body' => ['required_without:title', 'nullable', 'max:100000']]);
+        $create->handle($get->forUser($this->userId()), ['kind' => $this->kind, 'audience' => $this->audience, 'title' => $this->title, 'body' => $this->body]);
         $this->reset();
         $this->dispatch('publication-saved');
     }

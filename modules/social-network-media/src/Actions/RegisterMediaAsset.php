@@ -6,10 +6,12 @@ namespace Liberu\SocialNetwork\Media\Actions;
 
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use InvalidArgumentException;
 use Liberu\SocialNetwork\Media\Contracts\MediaAuthorizer;
 use Liberu\SocialNetwork\Media\Events\MediaAssetCreated;
+use Liberu\SocialNetwork\Media\Models\Album;
 use Liberu\SocialNetwork\Media\Models\MediaAsset;
 use Liberu\SocialNetwork\Profiles\Models\Profile;
 
@@ -34,10 +36,18 @@ final readonly class RegisterMediaAsset
         if (str_contains($path, "\0") || str_starts_with($path, '/') || str_contains($path, '://') || preg_match('#(^|/)\.\.(/|$)#', $path) === 1) {
             throw new InvalidArgumentException('The media path must be relative to its configured disk.');
         }
+        if (! Storage::disk($disk)->exists($path)) {
+            throw new InvalidArgumentException('The registered media file does not exist.');
+        }
         if ($alt !== null && mb_strlen((string) $alt) > (int) config('social-network-media.max_alt_text_length')) {
             throw new InvalidArgumentException('Alt text is too long.');
         }
-        $asset = DB::transaction(fn (): MediaAsset => MediaAsset::query()->create(['id' => (string) Str::uuid(), 'owner_profile_id' => $owner->getKey(), 'type' => $type, 'state' => 'pending', 'disk' => $disk, 'path' => $path, 'mime_type' => $attributes['mime_type'] ?? null, 'size' => $attributes['size'] ?? null, 'checksum' => $attributes['checksum'] ?? null, 'alt_text' => $alt, 'captions' => $attributes['captions'] ?? null, 'rights' => $attributes['rights'] ?? [], 'metadata' => $attributes['metadata'] ?? []]));
+        $diskInstance = Storage::disk($disk);
+        $albumId = $attributes['album_id'] ?? null;
+        if ($albumId !== null && ! Album::query()->whereKey($albumId)->where('owner_profile_id', $owner->getKey())->exists()) {
+            throw new InvalidArgumentException('The selected album does not belong to the owner.');
+        }
+        $asset = DB::transaction(fn (): MediaAsset => MediaAsset::query()->create(['id' => (string) Str::uuid(), 'owner_profile_id' => $owner->getKey(), 'album_id' => $albumId, 'type' => $type, 'state' => 'pending', 'disk' => $disk, 'path' => $path, 'mime_type' => $attributes['mime_type'] ?? $diskInstance->mimeType($path), 'size' => $attributes['size'] ?? $diskInstance->size($path), 'checksum' => $attributes['checksum'] ?? $diskInstance->checksum($path), 'alt_text' => $alt, 'captions' => $attributes['captions'] ?? null, 'rights' => $attributes['rights'] ?? [], 'metadata' => $attributes['metadata'] ?? []]));
         $this->events->dispatch(new MediaAssetCreated($asset));
 
         return $asset;

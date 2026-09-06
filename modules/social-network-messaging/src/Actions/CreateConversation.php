@@ -14,13 +14,15 @@ final readonly class CreateConversation
 {
     public function __construct(private MessagingAuthorizer $authorizer) {}
 
-    public function handle(Profile $creator, ?string $title = null): Conversation
+    /** @param array<int, string> $participantIds */
+    public function handle(Profile $creator, ?string $title = null, array $participantIds = []): Conversation
     {
         $this->authorizer->create($creator);
 
-        return DB::transaction(function () use ($creator, $title): Conversation {
+        return DB::transaction(function () use ($creator, $title, $participantIds): Conversation {
             $conversation = Conversation::query()->create(['id' => (string) Str::uuid(), 'created_by_profile_id' => $creator->getKey(), 'title' => $title, 'state' => 'active']);
-            DB::table('social_conversation_members')->insert(['conversation_id' => $conversation->getKey(), 'profile_id' => $creator->getKey(), 'created_at' => now(), 'updated_at' => now()]);
+            $members = collect($participantIds)->push((string) $creator->getKey())->unique()->map(fn (string $profileId): array => ['conversation_id' => $conversation->getKey(), 'profile_id' => $profileId, 'created_at' => now(), 'updated_at' => now()])->all();
+            DB::table('social_conversation_members')->insert($members);
 
             return $conversation;
         });

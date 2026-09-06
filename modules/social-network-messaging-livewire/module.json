@@ -16,7 +16,9 @@
   },
   "presentation": {
     "livewire": [
-      "social-message-composer"
+      "composer",
+      "conversations",
+      "messages"
     ]
   },
   "capabilities": [
@@ -25,6 +27,8 @@
   "default_enabled": true,
   "features": [
     "Message composition",
+    "Conversation state",
+    "Message state",
     "Validation feedback"
   ]
 }

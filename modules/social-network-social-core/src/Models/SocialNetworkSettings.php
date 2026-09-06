@@ -32,6 +32,12 @@ final class SocialNetworkSettings extends Model
     /** @return BelongsTo<Model, $this> */
     public function team(): BelongsTo
     {
-        return $this->belongsTo(config('social-network-social-core.team_model'), 'team_id');
+        $teamModel = config('social-network-social-core.team_model');
+
+        if (! is_string($teamModel) || $teamModel === '') {
+            throw new \LogicException('The Social Core team model is not configured.');
+        }
+
+        return $this->belongsTo($teamModel, 'team_id');
     }
 }

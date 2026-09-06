@@ -1,0 +1,11 @@
+{
+  "name": "liberusoftware/module-social-network-federation",
+  "description": "Federation primitives for the Liberu social network.",
+  "type": "liberu-module",
+  "version": "0.1.0",
+  "license": "MIT",
+  "require": {"php": "^8.5", "laravel/framework": "^13.0", "liberusoftware/module-social-network-profiles": "^0.1"},
+  "autoload": {"psr-4": {"Liberu\\SocialNetwork\\Federation\\": "src/"}},
+  "extra": {"liberu": {"name": "social-network-federation"}},
+  "config": {"allow-plugins": {"pestphp/pest-plugin": true}}
+}

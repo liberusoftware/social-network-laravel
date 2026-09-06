@@ -17,6 +17,12 @@ paths:
     patch:
       operationId: social.network.social.core.update
       security: [{ sanctum: [] }]
+      parameters:
+        - name: If-Match
+          in: header
+          required: false
+          schema: { type: string }
+          description: ETag returned by the latest GET; prevents lost updates.
       requestBody:
         required: true
         content:
@@ -29,10 +35,23 @@ paths:
             application/json:
               schema: { $ref: '#/components/schemas/Resource' }
         '422': { description: Validation problem. }
+        '412':
+          description: The supplied ETag is stale.
+          content:
+            application/problem+json:
+              schema: { $ref: '#/components/schemas/ProblemDetails' }
 components:
   securitySchemes:
     sanctum: { type: http, scheme: bearer, bearerFormat: Sanctum }
   schemas:
+    ProblemDetails:
+      type: object
+      required: [type, title, status]
+      properties:
+        type: { type: string, format: uri }
+        title: { type: string }
+        status: { type: integer, minimum: 400, maximum: 599 }
+        detail: { type: string }
     Resource:
       type: object
       required: [data]

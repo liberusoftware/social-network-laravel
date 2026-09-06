@@ -9,7 +9,8 @@
     "illuminate/database": "^13.0",
     "illuminate/events": "^13.0",
     "illuminate/support": "^13.0",
-    "liberusoftware/module-social-network-profiles": "^0.1"
+    "liberusoftware/module-social-network-profiles": "^0.1",
+    "liberusoftware/module-social-network-social-graph": "^0.1"
   },
   "autoload": {
     "psr-4": {

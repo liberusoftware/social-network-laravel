@@ -1,0 +1,7 @@
+openapi: 3.1.0
+info: {title: Social Network Discovery API, version: 1.0.0}
+paths:
+  /api/v1/social-network/discovery/search: {get: {operationId: social.network.discovery.search, security: [{sanctum: []}], parameters: [{name: q, in: query, required: true, schema: {type: string}}, {name: limit, in: query, schema: {type: integer, maximum: 100}}], responses: {'200': {description: Search results}}}}
+  /api/v1/social-network/discovery/trends: {get: {operationId: social.network.discovery.trends, security: [{sanctum: []}], responses: {'200': {description: Trends}}}}
+  /api/v1/social-network/discovery/index: {post: {operationId: social.network.discovery.index, security: [{sanctum: []}], responses: {'201': {description: Indexed resource}}}}
+components: {securitySchemes: {sanctum: {type: http, scheme: bearer, bearerFormat: Sanctum}}}

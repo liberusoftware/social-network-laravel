@@ -1,4 +1,4 @@
 openapi: 3.1.0
 info: {title: Social Network Feed API, version: 1.0.0}
-paths: {/api/v1/social-network/feed: {get: {operationId: social.network.feed.index, security: [{sanctum: []}], responses: {'200': {description: Feed entries}}}}
+paths: {/api/v1/social-network/feed: {get: {operationId: social.network.feed.index, security: [{sanctum: []}], parameters: [{name: limit, in: query, schema: {type: integer, minimum: 1, maximum: 100}}, {name: after, in: query, schema: {type: string, format: uuid}}], responses: {'200': {description: Feed entries}}}}, /api/v1/social-network/feed/controls: {patch: {operationId: social.network.feed.controls, security: [{sanctum: []}], responses: {'200': {description: Feed controls updated}}}}
 components: {securitySchemes: {sanctum: {type: http, scheme: bearer, bearerFormat: Sanctum}}}

@@ -8,7 +8,7 @@ use Liberu\SocialNetwork\Messaging\Actions\SendMessage;
 use Liberu\SocialNetwork\Profiles\Actions\GetProfile;
 use Livewire\Component;
 
-final class Composer extends Component
+class Composer extends Component
 {
     public string $conversationId = '';
 

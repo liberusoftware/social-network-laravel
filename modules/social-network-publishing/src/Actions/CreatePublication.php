@@ -21,8 +21,11 @@ final readonly class CreatePublication
         $this->authorizer->create($author);
         $kind = (string) ($attributes['kind'] ?? 'post');
         $audience = (string) ($attributes['audience'] ?? 'public');
-        if (! in_array($kind, ['post', 'article'], true) || ! in_array($audience, (array) config('social-network-publishing.audiences'), true)) {
+        if (! in_array($kind, (array) config('social-network-publishing.kinds'), true) || ! in_array($audience, (array) config('social-network-publishing.audiences'), true)) {
             throw new InvalidArgumentException('The publication kind or audience is not supported.');
+        }
+        if (count((array) ($attributes['metadata'] ?? [])) > (int) config('social-network-publishing.maximum_metadata', 64)) {
+            throw new InvalidArgumentException('Publication metadata exceeds the configured limit.');
         }
         if (trim((string) ($attributes['body'] ?? '')) === '' && trim((string) ($attributes['title'] ?? '')) === '') {
             throw new InvalidArgumentException('A publication requires a title or body.');

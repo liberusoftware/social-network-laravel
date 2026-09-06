@@ -15,4 +15,9 @@ final class ModerationReport extends Model
     protected $keyType = 'string';
 
     protected $fillable = ['id', 'reporter_profile_id', 'target_type', 'target_id', 'reason', 'details', 'state', 'assigned_to'];
+
+    protected function casts(): array
+    {
+        return ['created_at' => 'datetime', 'updated_at' => 'datetime'];
+    }
 }

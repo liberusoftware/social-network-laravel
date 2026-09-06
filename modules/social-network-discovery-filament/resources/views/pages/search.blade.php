@@ -1,0 +1,1 @@
+<x-filament-panels::page><form wire:submit="refresh"><label for="discovery-query">Search</label><input id="discovery-query" wire:model="query"><button type="submit">Search</button></form><div class="space-y-2">@foreach($this->results() as $result)<div>{{ $result->body }}</div>@endforeach</div></x-filament-panels::page>

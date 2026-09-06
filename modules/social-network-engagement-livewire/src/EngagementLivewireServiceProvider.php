@@ -13,5 +13,9 @@ final class EngagementLivewireServiceProvider extends ServiceProvider
     {
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'social-network-engagement-livewire');
         Livewire::component('module-social-network-engagement::reactor', Components\Reactor::class);
+        Livewire::component('module-social-network-engagement::comments', Components\Reactor::class);
+        Livewire::component('module-social-network-engagement::replies', Components\Reactor::class);
+        Livewire::component('module-social-network-engagement::shares', Components\Reactor::class);
+        Livewire::component('module-social-network-engagement::bookmarks', Components\Reactor::class);
     }
 }

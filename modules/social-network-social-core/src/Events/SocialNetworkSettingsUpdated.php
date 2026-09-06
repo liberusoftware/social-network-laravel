@@ -9,5 +9,14 @@ use Liberu\SocialNetwork\SocialCore\Models\SocialNetworkSettings;
 
 final readonly class SocialNetworkSettingsUpdated implements ShouldDispatchAfterCommit
 {
-    public function __construct(public SocialNetworkSettings $settings) {}
+    /**
+     * @param  array<string, mixed>  $before
+     * @param  array<string, mixed>  $after
+     */
+    public function __construct(
+        public SocialNetworkSettings $settings,
+        public array $before = [],
+        public array $after = [],
+        public int|string|null $actorId = null,
+    ) {}
 }

@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace Liberu\SocialNetwork\SocialGraph\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Liberu\SocialNetwork\Profiles\Models\Profile;
 
 final class GraphList extends Model
 {
@@ -15,4 +17,9 @@ final class GraphList extends Model
     protected $keyType = 'string';
 
     protected $fillable = ['id', 'owner_profile_id', 'name', 'visibility'];
+
+    public function profiles(): BelongsToMany
+    {
+        return $this->belongsToMany(Profile::class, 'social_graph_list_members', 'list_id', 'profile_id')->withTimestamps();
+    }
 }

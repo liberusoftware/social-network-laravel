@@ -1,4 +1,4 @@
 openapi: 3.1.0
 info: {title: Social Network Engagement API, version: 1.0.0}
-paths: {/api/v1/social-network/engagement: {post: {operationId: social.network.engagement.create, security: [{sanctum: []}], responses: {'201': {description: Engagement created}, '422': {description: Validation problem}}}}}
+paths: {/api/v1/social-network/engagement: {post: {operationId: social.network.engagement.create, security: [{sanctum: []}], responses: {'201': {description: Engagement created}, '422': {description: Validation problem}}}}, /api/v1/social-network/engagement/{engagement}: {delete: {operationId: social.network.engagement.delete, security: [{sanctum: []}], parameters: [{name: engagement, in: path, required: true, schema: {type: string}}], responses: {'204': {description: Engagement deleted}}}}
 components: {securitySchemes: {sanctum: {type: http, scheme: bearer, bearerFormat: Sanctum}}}

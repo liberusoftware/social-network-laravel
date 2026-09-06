@@ -1,4 +1,51 @@
 openapi: 3.1.0
 info: {title: Social Network Media API, version: 1.0.0}
-paths: {/api/v1/social-network/media: {post: {operationId: social.network.media.register, security: [{sanctum: []}], responses: {'201': {description: Media registered}, '422': {description: Validation problem}}}}}
-components: {securitySchemes: {sanctum: {type: http, scheme: bearer, bearerFormat: Sanctum}}}
+paths:
+  /api/v1/social-network/media:
+    get: {operationId: social.network.media.list, security: [{sanctum: []}], responses: {'200': {description: Owned media assets}}}
+    post: {operationId: social.network.media.register, security: [{sanctum: []}], requestBody: {required: true, content: {multipart/form-data: {schema: {$ref: '#/components/schemas/MediaUpload'}}}}, responses: {'201': {description: Media registered}, '422': {description: Validation problem}}}
+  /api/v1/social-network/media/{asset}/ready:
+    post: {operationId: social.network.media.ready, security: [{sanctum: []}], parameters: [{name: asset, in: path, required: true, schema: {type: string}}], responses: {'200': {description: Media processing completed}}}
+  /api/v1/social-network/media/{asset}:
+    get: {operationId: social.network.media.show, security: [{sanctum: []}], parameters: [{name: asset, in: path, required: true, schema: {type: string, format: uuid}}], responses: {'200': {description: Owned media asset}, '403': {description: Asset is not owned by the viewer}}}
+    patch: {operationId: social.network.media.update, security: [{sanctum: []}], parameters: [{name: asset, in: path, required: true, schema: {type: string, format: uuid}}], requestBody: {content: {application/json: {schema: {$ref: '#/components/schemas/MediaUpdate'}}}}, responses: {'200': {description: Media updated}}}
+    delete: {operationId: social.network.media.delete, security: [{sanctum: []}], parameters: [{name: asset, in: path, required: true, schema: {type: string}}], responses: {'204': {description: Media deleted}}}
+  /api/v1/social-network/media/albums:
+    get: {operationId: social.network.media.albums.list, security: [{sanctum: []}], responses: {'200': {description: Visible albums}}}
+    post: {operationId: social.network.media.albums.create, security: [{sanctum: []}], requestBody: {required: true, content: {application/json: {schema: {$ref: '#/components/schemas/Album'}}}}, responses: {'201': {description: Album created}, '422': {description: Validation problem}}}
+  /api/v1/social-network/media/albums/{album}:
+    get: {operationId: social.network.media.albums.show, security: [{sanctum: []}], parameters: [{name: album, in: path, required: true, schema: {type: string, format: uuid}}], responses: {'200': {description: Album with media}, '403': {description: Album is not visible}}}
+    patch: {operationId: social.network.media.albums.update, security: [{sanctum: []}], parameters: [{name: album, in: path, required: true, schema: {type: string, format: uuid}}], requestBody: {content: {application/json: {schema: {$ref: '#/components/schemas/AlbumUpdate'}}}}, responses: {'200': {description: Album updated}}}
+    delete: {operationId: social.network.media.albums.delete, security: [{sanctum: []}], parameters: [{name: album, in: path, required: true, schema: {type: string, format: uuid}}], responses: {'204': {description: Album deleted}}}
+components:
+  securitySchemes: {sanctum: {type: http, scheme: bearer, bearerFormat: Sanctum}}
+  schemas:
+    MediaUpload:
+      type: object
+      required: [type]
+      properties:
+        type: {type: string, enum: [image, video, audio, file]}
+        file: {type: string, format: binary}
+        path: {type: string}
+        album_id: {type: string, format: uuid}
+        alt_text: {type: string, maxLength: 1000}
+    MediaUpdate:
+      type: object
+      properties:
+        album_id: {type: string, format: uuid, nullable: true}
+        alt_text: {type: string, maxLength: 1000}
+        captions: {type: string}
+        rights: {type: object}
+        metadata: {type: object}
+    Album:
+      type: object
+      required: [name]
+      properties:
+        name: {type: string, maxLength: 255}
+        description: {type: string, maxLength: 1000}
+        privacy: {type: string, enum: [public, friends_only, private]}
+        cover_path: {type: string, maxLength: 2048}
+    AlbumUpdate:
+      allOf:
+        - $ref: '#/components/schemas/Album'
+      required: []

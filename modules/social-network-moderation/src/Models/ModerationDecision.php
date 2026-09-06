@@ -12,8 +12,5 @@ final class ModerationDecision extends Model
 
     protected $fillable = ['report_id', 'actor_profile_id', 'action', 'reason', 'evidence'];
 
-    protected function casts(): array
-    {
-        return ['evidence' => 'array'];
-    }
+    protected $casts = ['evidence' => 'array'];
 }

@@ -26,7 +26,8 @@
     "Hashtags",
     "Polls",
     "Links",
-    "Schedules"
+    "Schedules",
+    "Scheduled publication worker"
   ],
   "default_enabled": true
 }

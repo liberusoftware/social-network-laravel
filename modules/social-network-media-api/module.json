@@ -19,7 +19,11 @@
   ],
   "default_enabled": true,
   "features": [
+    "Authenticated uploads",
     "Asset registration",
-    "Processing state"
+    "Metadata and accessibility fields",
+    "Processing state",
+    "Filesystem cleanup",
+    "Albums with privacy controls"
   ]
 }

@@ -6,4 +6,5 @@ use Liberu\SocialNetwork\Feed\Api\Http\Controllers\FeedController;
 
 Route::prefix('api/v1/social-network/feed')->middleware(['auth:sanctum', 'throttle:60,1'])->name('social-network.feed.api.')->group(function (): void {
     Route::get('/', [FeedController::class, 'index'])->name('index');
+    Route::patch('/controls', [FeedController::class, 'controls'])->name('controls');
 });

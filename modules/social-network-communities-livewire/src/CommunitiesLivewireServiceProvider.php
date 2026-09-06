@@ -13,5 +13,7 @@ final class CommunitiesLivewireServiceProvider extends ServiceProvider
     {
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'social-network-communities-livewire');
         Livewire::component('module-social-network-communities::creator', Components\Creator::class);
+        Livewire::component('module-social-network-communities::communities', Components\Creator::class);
+        Livewire::component('module-social-network-communities::membership', Components\Creator::class);
     }
 }

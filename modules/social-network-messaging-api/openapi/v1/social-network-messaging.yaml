@@ -1,4 +1,26 @@
 openapi: 3.1.0
 info: {title: Social Network Messaging API, version: 1.0.0}
-paths: {/api/v1/social-network/messaging/conversations: {post: {operationId: social.network.messaging.createConversation, security: [{sanctum: []}], responses: {'201': {description: Conversation created}}}}, /api/v1/social-network/messaging/conversations/{conversation}/messages: {post: {operationId: social.network.messaging.send, security: [{sanctum: []}], parameters: [{name: conversation, in: path, required: true, schema: {type: string}}], responses: {'201': {description: Message sent}}}}}
-components: {securitySchemes: {sanctum: {type: http, scheme: bearer, bearerFormat: Sanctum}}}
+paths:
+  /api/v1/social-network/messaging/conversations:
+    post:
+      operationId: social.network.messaging.createConversation
+      security: [{sanctum: []}]
+      responses: {'201': {description: Conversation created}}
+  /api/v1/social-network/messaging/conversations/{conversation}/messages:
+    post:
+      operationId: social.network.messaging.send
+      security: [{sanctum: []}]
+      parameters: [{name: conversation, in: path, required: true, schema: {type: string}}]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                body: {type: string, maxLength: 10000}
+                encrypted: {type: boolean, default: false}
+                attachments: {type: array, maxItems: 20, items: {type: object}}
+      responses: {'201': {description: Message sent}}
+components:
+  securitySchemes: {sanctum: {type: http, scheme: bearer, bearerFormat: Sanctum}}

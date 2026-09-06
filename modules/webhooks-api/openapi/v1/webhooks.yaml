@@ -1,0 +1,12 @@
+openapi: 3.1.0
+info: {title: Webhooks API, version: 0.1.0}
+paths:
+  /api/v1/webhooks:
+    get: {summary: List owned webhook endpoints, responses: {'200': {description: OK}}}
+    post: {summary: Register a webhook endpoint, responses: {'201': {description: Created}}}
+  /api/v1/webhooks/{endpoint}/rotate-secret:
+    post: {summary: Rotate an endpoint secret, responses: {'200': {description: Secret returned once}}}
+  /api/v1/webhooks/{endpoint}/deliveries:
+    get: {summary: List delivery evidence, responses: {'200': {description: OK}}}
+  /api/v1/webhooks/{endpoint}/deliveries/{delivery}/replay:
+    post: {summary: Replay a delivery, responses: {'200': {description: Delivery result}}}
