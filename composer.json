@@ -205,256 +205,703 @@
         {
             "type": "path",
             "url": "modules/social-network-social-core",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-social-core-api",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-social-core-filament",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-social-core-livewire",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-profiles",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-profiles-api",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-profiles-filament",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-profiles-livewire",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-social-graph",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-social-graph-api",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-social-graph-filament",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-social-graph-livewire",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-publishing",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-publishing-api",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-publishing-filament",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-publishing-livewire",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-engagement",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-engagement-api",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-engagement-filament",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-engagement-livewire",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-feed",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-feed-api",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-feed-filament",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-feed-livewire",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-media",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-media-api",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-media-filament",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-media-livewire",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-communities",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-communities-api",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-communities-filament",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-communities-livewire",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-messaging",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-messaging-api",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-messaging-filament",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-messaging-livewire",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-notifications",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-notifications-api",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-notifications-filament",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-notifications-livewire",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-moderation",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-moderation-api",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-moderation-filament",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-moderation-livewire",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-discovery",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-discovery-api",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-discovery-filament",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
         {
             "type": "path",
             "url": "modules/social-network-discovery-livewire",
-            "options": {"symlink": false}
+            "options": {
+                "symlink": false
+            }
         },
-        {"type":"path","url":"modules/social-network-events","options":{"symlink":false}},
-        {"type":"path","url":"modules/social-network-events-api","options":{"symlink":false}},
-        {"type":"path","url":"modules/social-network-events-filament","options":{"symlink":false}},
-        {"type":"path","url":"modules/social-network-events-livewire","options":{"symlink":false}},
-        {"type":"path","url":"modules/social-network-federation","options":{"symlink":false}},
-        {"type":"path","url":"modules/social-network-federation-api","options":{"symlink":false}},
-        {"type":"path","url":"modules/social-network-federation-filament","options":{"symlink":false}},
-        {"type":"path","url":"modules/social-network-federation-livewire","options":{"symlink":false}},
-        {"type":"path","url":"modules/social-network-analytics","options":{"symlink":false}},
-        {"type":"path","url":"modules/social-network-analytics-api","options":{"symlink":false}},
-        {"type":"path","url":"modules/social-network-analytics-filament","options":{"symlink":false}},
-        {"type":"path","url":"modules/social-network-analytics-livewire","options":{"symlink":false}},
-        {"type":"path","url":"modules/webhooks-api","options":{"symlink":false}}
+        {
+            "type": "path",
+            "url": "modules/social-network-events",
+            "options": {
+                "symlink": false
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/social-network-events-api",
+            "options": {
+                "symlink": false
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/social-network-events-filament",
+            "options": {
+                "symlink": false
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/social-network-events-livewire",
+            "options": {
+                "symlink": false
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/social-network-federation",
+            "options": {
+                "symlink": false
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/social-network-federation-api",
+            "options": {
+                "symlink": false
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/social-network-federation-filament",
+            "options": {
+                "symlink": false
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/social-network-federation-livewire",
+            "options": {
+                "symlink": false
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/social-network-analytics",
+            "options": {
+                "symlink": false
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/social-network-analytics-api",
+            "options": {
+                "symlink": false
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/social-network-analytics-filament",
+            "options": {
+                "symlink": false
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/social-network-analytics-livewire",
+            "options": {
+                "symlink": false
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/webhooks-api",
+            "options": {
+                "symlink": false
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/activity-comments",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/analytics-core",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/analytics-google",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/analytics-meta",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/api-access",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/application",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/audit",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/currency-context",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/developer-experience",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/feature-flags",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/files-media",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/identity-core-filament",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/identity-core",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/identity-socialstream",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/import-export",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/integrations",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/jetstream-bridge",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/localization-core-livewire",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/localization-core",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/localization-mymemory",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/module-manager-filament",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/module-manager",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/notifications",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/observability",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/organizations-teams-filament",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/organizations-teams",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/profiles",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/roles-permissions-filament",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/roles-permissions",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/scheduler-queues",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/search-api",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/search",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/sessions-devices-filament",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/sessions-devices",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/settings-filament",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/settings",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/theme-support-livewire",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/theme-support",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "modules/two-factor-authentication",
+            "options": {
+                "symlink": true
+            }
+        }
     ],
     "require": {
         "php": "^8.5",
