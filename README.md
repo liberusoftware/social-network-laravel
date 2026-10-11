@@ -121,6 +121,7 @@ The test suite covers cross-domain behaviour, module providers, API boundaries, 
 
 ## Documentation
 
+- [Social architecture](docs/SOCIAL_ARCHITECTURE.md)
 - [Module development](docs/MODULE_DEVELOPMENT.md)
 - [Foundation module matrix](docs/FOUNDATION_MODULE_MATRIX.md)
 - [Messaging](docs/MESSAGING.md)
