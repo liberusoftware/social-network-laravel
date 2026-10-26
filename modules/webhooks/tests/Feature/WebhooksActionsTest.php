@@ -17,9 +17,9 @@ beforeEach(function (): void {
 });
 
 it('registers, queues, delivers, and rotates webhook endpoints', function (): void {
-    Http::fake(['https://example.test/*' => Http::response('accepted', 202)]);
+    Http::fake(['https://8.8.8.8/*' => Http::response('accepted', 202)]);
 
-    $endpoint = app(RegisterEndpoint::class)->handle('owner-1', 'https://example.test/hooks', ['post.created'], 'initial-secret');
+    $endpoint = app(RegisterEndpoint::class)->handle('owner-1', 'https://8.8.8.8/hooks', ['post.created'], 'initial-secret');
     expect($endpoint)->toBeInstanceOf(WebhookEndpoint::class)
         ->and(app(SigningSecretVault::class)->open($endpoint->signing_secret))->toBe('initial-secret');
 

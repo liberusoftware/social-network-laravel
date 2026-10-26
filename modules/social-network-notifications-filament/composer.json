@@ -6,7 +6,7 @@
   "version": "0.1.2",
   "require": {
     "php": "^8.5",
-    "filament/filament": "^5.1",
+    "filament/filament": "^5.11.0",
     "liberusoftware/module-social-network-notifications": "^0.1",
     "liberusoftware/module-social-network-profiles": "^0.1"
   },
@@ -34,7 +34,7 @@
   },
   "require-dev": {
     "liberusoftware/package-testbench": "^1.7",
-    "pestphp/pest": "^5.0"
+    "pestphp/pest": "^5.3.3"
   },
   "autoload-dev": {
     "psr-4": {

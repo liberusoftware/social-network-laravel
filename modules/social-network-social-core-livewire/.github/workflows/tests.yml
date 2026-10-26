@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   tests:
-    uses: liberusoftware/.github/.github/workflows/package-tests.yml@75d1786646b095ba49360f735f27e0b2fa932b8d
+    uses: liberusoftware/.github/.github/workflows/package-tests.yml@75d1786646b095ba49360f735f27e0b2fa932b8d # main
     with:
       coverage-threshold: 0
       phpstan-level: -1

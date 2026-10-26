@@ -6,9 +6,9 @@
   "version": "0.1.2",
   "require": {
     "php": "^8.5",
-    "illuminate/database": "^13.0",
-    "illuminate/events": "^13.0",
-    "illuminate/support": "^13.0",
+    "illuminate/database": "^13.38.0",
+    "illuminate/events": "^13.38.0",
+    "illuminate/support": "^13.38.0",
     "liberusoftware/module-social-network-profiles": "^0.1",
     "liberusoftware/module-social-network-social-graph": "^0.1"
   },
@@ -36,7 +36,7 @@
   },
   "require-dev": {
     "liberusoftware/package-testbench": "^1.7",
-    "pestphp/pest": "^5.0"
+    "pestphp/pest": "^5.3.3"
   },
   "autoload-dev": {
     "psr-4": {
